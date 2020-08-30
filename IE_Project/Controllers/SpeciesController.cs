@@ -120,6 +120,17 @@ namespace IE_Project.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult Index(string searchTxt)
+        {
+            var species = db.Species.ToList();
+            if(searchTxt != null)
+            {
+                species = db.Species.Where(x => x.name.Contains(searchTxt)).ToList();
+            }
+            return View(species);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

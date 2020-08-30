@@ -5,66 +5,120 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<head>
+    <style>
+        .cntr {
+            position: center;
+            width: 700%;
+            margin: 0 auto;
+        }
+        .aParent div {
+            float: left;
+            clear: none;
+        }
+    </style>
+</head>
+<div class="bradcam_area breadcam_bg overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Find species</h3>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.habitant)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category1.category1)
-        </th>
-        <th></th>
-    </tr>
+<body>
+    <h2>
+        List of Species
+    </h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.habitant)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category1.category1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.speciesId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.speciesId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.speciesId })
-        </td>
-    </tr>
-}
+    <div class="container-fluid">
+        <div class="row">
+            @using (Html.BeginForm("Index", "Species", FormMethod.Post))
+            {
+                <div class="form-horizontal">
+                    <div class="form-group aParent cntr">
+                        @Html.Label(" ", new { @class = "col-md-2 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextBox("searchTxt", null, new { @class = "form-control cntr", @placeholder = "Search species here", @style = "max-width: 40%" })
+                        </div>
 
-</table>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span>Search</button>
+                            <br>
+                            <br>
+                     
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped table table-bordered">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.category)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.habitant)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.description)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.habitant)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+                                        @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.speciesId }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.speciesId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.speciesId })
+                                </td>*@
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+</body>
+
+
+
