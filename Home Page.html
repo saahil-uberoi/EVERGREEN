@@ -186,117 +186,119 @@
         </nav>
         <!--Container-->
         <div class="container">
+          <div class="container-fluid">
             <br><br>
             <div class="row">
-                <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
-                    <h1 style="text-align: center;">Welcome to the Evergreen Grasslands</h1>
-                    <hr>
-                    <br>
-                </div>
-                <!--Add Moving Images-->
-                <div class="row">
-                    <div class="column">
-                      <img src="g1.jpg" style="width:45%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" align="left">
-                    </div>
-                    <div class="column">
-                        <img src="g2.jpg" style="width:45%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" align="right">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="column">
-                        <img src="g3.jpg" style="width:45%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" align="left">
-                    </div>
-                    <div class="column">
-                      <img src="g4.jpg" style="width:45%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor" align="right">
-                    </div>
-                </div><br><br>
+              <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
+                <h1 style="text-align: center;">Welcome to the Evergreen Grasslands</h1>
                 <hr>
-                  <!--</div>-->
-                  <div id="myModal" class="modal">
-                      <span class="close cursor" onclick="closeModal()">&times;</span>
-                      <div class="modal-content">
-                        <div class="mySlides">
-                              <div class="numbertext">1 / 4</div>
-                              <img src="g1.jpg" style="width:100%">
-                        </div>
-                            <div class="mySlides">
-                                <div class="numbertext">2 / 4</div>
-                        <img src="g2.jpg" style="width:100%">
-                      </div>
-                  
-                      <div class="mySlides">
-                        <div class="numbertext">3 / 4</div>
-                        <img src="g3.jpg" style="width:100%">
-                      </div>
-                      
-                      <div class="mySlides">
-                        <div class="numbertext">4 / 4</div>
-                        <img src="g4.jpg" style="width:100%">
-                      </div>
-                      
-                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  
-                      <div class="caption-container">
-                        <p id="caption"></p>
-                      </div>
-                  
-                  
-                      <div class="column">
-                        <img class="demo cursor" src="g1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Woody Grasslads">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="g2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dry land">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="g3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bushy">
-                      </div>
-                      <div class="column">
-                        <img class="demo cursor" src="g4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Rocky">
-                      </div>
-                    </div>
+                <br>
+              </div>
+              <!--Add Moving Images-->
+              <div class="row">
+                <div class="column">
+                  <img src="g1.jpg" style="width:45%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
+                    align="left">
+                </div>
+                <div class="column">
+                  <img src="g2.jpg" style="width:45%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
+                    align="right">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="column">
+                  <img src="g3.jpg" style="width:45%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
+                    align="left">
+                </div>
+                <div class="column">
+                  <img src="g4.jpg" style="width:45%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
+                    align="right">
+                </div>
+              </div>
+              <hr>
+              <!--</div>-->
+              <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                  <div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="g1.jpg" style="width:100%">
                   </div>
-                  <!--Script-->
-                  <script>
-                    function openModal() {
-                      document.getElementById('myModal').style.display = "block";
-                    }
-                    
-                    function closeModal() {
-                      document.getElementById('myModal').style.display = "none";
-                    }
-                    
-                    var slideIndex = 1;
-                    showSlides(slideIndex);
-                    
-                    function plusSlides(n) {
-                      showSlides(slideIndex += n);
-                    }
-                    
-                    function currentSlide(n) {
-                      showSlides(slideIndex = n);
-                    }
-                    
-                    function showSlides(n) {
-                      var i;
-                      var slides = document.getElementsByClassName("mySlides");
-                      var dots = document.getElementsByClassName("demo");
-                      var captionText = document.getElementById("caption");
-                      if (n > slides.length) {slideIndex = 1}
-                      if (n < 1) {slideIndex = slides.length}
-                      for (i = 0; i < slides.length; i++) {
-                          slides[i].style.display = "none";
-                      }
-                      for (i = 0; i < dots.length; i++) {
-                          dots[i].className = dots[i].className.replace(" active", "");
-                      }
-                      slides[slideIndex-1].style.display = "block";
-                      dots[slideIndex-1].className += " active";
-                      captionText.innerHTML = dots[slideIndex-1].alt;
-                    }
-                    </script>
+                  <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="g2.jpg" style="width:100%">
+                  </div>
+    
+                  <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="g3.jpg" style="width:100%">
+                  </div>
+                  <div class="mySlides">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="g4.jpg" style="width:100%">
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <div class="caption-container">
+                    <p id="caption"> </p>
+                  </div>
+                  <div class="column1">
+                    <img class="demo cursor" src="g1.jpg" style="width:100%" onclick="currentSlide(1)"
+                      alt="Woody Grasslads">
+                  </div>
+                  <div class="column1">
+                    <img class="demo cursor" src="g2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dry land">
+                  </div>
+                  <div class="column1">
+                    <img class="demo cursor" src="g3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bushy">
+                  </div>
+                  <div class="column1">
+                    <img class="demo cursor" src="g4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Rocky">
+                  </div>
+                </div>
+              </div>
+              <!--Script-->
+              <script>
+                function openModal() {
+                  document.getElementById('myModal').style.display = "block";
+                }
+    
+                function closeModal() {
+                  document.getElementById('myModal').style.display = "none";
+                }
+    
+                var slideIndex = 1;
+                showSlides(slideIndex);
+    
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+    
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+    
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("demo");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) { slideIndex = 1 }
+                  if (n < 1) { slideIndex = slides.length }
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex - 1].style.display = "block";
+                  dots[slideIndex - 1].className += " active";
+                  captionText.innerHTML = dots[slideIndex - 1].alt;
+                }
+              </script>
             </div>
-        </div>
+          </div>
+        </div><br>
         <!--Footnote-->
         <footer class="container-fluid text-center">
             <p style=" font-size:100%;">All rights reserved copyright &#169; 2020</p>
