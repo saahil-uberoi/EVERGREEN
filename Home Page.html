@@ -1,307 +1,406 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Grasslands</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="jquery/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/new1.css">
-        <link rel="stylesheet" href="risewp/css/editor-style.css">
-        <link rel="stylesheet" href="risewp/css/jPushMenu.css">
-        <script src="js/bootstrap.min.js"></script>
-        <script src="css/boot.min.css"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <style>
-            body{background-image:url("*.jpg");overflow: scroll;}
-            footer {
-            background-color:#000000;
-            color:white;
-            padding:10px;
-            position:fixed;
-            bottom:0;
-            left:0;
-            right:0;
-            }
-            .container
-            {height:relative;width: 70%;}
-            html,body {height:100%;}
-	        table{
-	        display: inline-table;
-	        float:left;
-	        margin:10px;}
-            tr.noBorder td {border: 0;}
-            .button {
-                position: relative;
-                background-color: #4CAF50;
-                border: none;
-                font-size: 28px;
-                color: #FFFFFF;
-                padding: 15px;
-                width: 200px;
-                text-align: center;
-                transition-duration: 0.4s;
-                text-decoration: none;
-                overflow: hidden;
-                cursor: pointer;
-                }
-            .button:after {
-                content: "";
-                background: #90EE90;
-                display: block;
-                position: absolute;
-                padding-top: 300%;
-                padding-left: 350%;
-                margin-left: -20px!important;
-                margin-top: -120%;
-                opacity: 0;
-                transition: all 0.8s
-                }
-                .button:active:after {
-                    padding: 0;
-                    margin: 0;
-                    opacity: 0.85;
-                    transition: 0s
-                    }
-            /* The Modal (background) */
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1;
-                padding-top: 100px;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: black;
-                }
-            /* Modal Content */
-            .modal-content {
-                position: relative;
-                background-color: #fefefe;
-                margin: auto;
-                padding: 0;
-                width: 90%;
-                max-width: 1200px;
-                }
-            /* The Close Button */
-            .close {
-                color: white;
-                position: relative;
-                top: 10px;
-                right: 25px;
-                font-size: 35px;
-                font-weight: bold;
-                }
-                .close:hover,
-                .close:focus {
-                    color: #999;
-                    text-decoration: none;
-                    cursor: pointer;
-                    }
-                .mySlides {
-                    display: none;
-                    }
-                .cursor {
-                    cursor: pointer}
-            /* Position the "next button" to the right */
-            .next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-                }
-            /* Next & previous buttons */
-            .prev,
-            .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                padding: 16px;
-                margin-top: -50px;
-                color: white;
-                font-weight: bold;
-                font-size: 20px;
-                transition: 0.6s ease;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-                -webkit-user-select: none;
-                }
-            /* On hover, add a black background color with a little bit see-through */
-            .prev:hover,
-            .next:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-                }
-            /* Number text (1/3 etc) */
-            .numbertext {
-                color: #f2f2f2;
-                font-size: 12px;
-                padding: 8px 12px;
-                position: absolute;
-                top: 0;
-                }
-                img {
-                    margin-bottom: -4px;
-                    }
-            .caption-container {
-                text-align: center;
-                background-color: black;
-                padding: 2px 18px;
-                color: white;
-                }
-            .demo {
-                opacity: 0.6;
-                }
-            .active,
-            .demo:hover {
-                opacity: 1;
-                }
-            img.hover-shadow {
-                transition: 0.3s
-                }
-            .hover-shadow:hover {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-                }
-        </style>
-    </head>
-    <body>
-        <!--Navigation Bar-->
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
-                </button>
-                <a class="navbar-brand" href="Home Page.html">Evergreen</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="*.html">Grasslands</a></li></ul>
-                </div>
-            </div>
-        </nav>
-        <!--Container-->
-        <div class="container">
-          <div class="container-fluid">
-            <br><br>
-            <div class="row">
-              <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
-                <h1 style="text-align: center;">Welcome to the Evergreen Grasslands</h1>
-                <hr>
-                <br>
-              </div>
-              <!--Add Moving Images-->
-              <div class="row">
-                <div class="column">
-                  <img src="g1.jpg" style="width:45%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
-                    align="left">
-                </div>
-                <div class="column">
-                  <img src="g2.jpg" style="width:45%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
-                    align="right">
-                </div>
-              </div><br>
-              <div class="row">
-                <div class="column">
-                  <img src="g3.jpg" style="width:45%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
-                    align="left">
-                </div>
-                <div class="column">
-                  <img src="g4.jpg" style="width:45%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
-                    align="right">
-                </div>
-              </div>
-              <hr>
-              <!--</div>-->
-              <div id="myModal" class="modal">
-                <span class="close cursor" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
-                  <div class="mySlides">
-                    <div class="numbertext">1 / 4</div>
-                    <img src="g1.jpg" style="width:100%">
-                  </div>
-                  <div class="mySlides">
-                    <div class="numbertext">2 / 4</div>
-                    <img src="g2.jpg" style="width:100%">
-                  </div>
-    
-                  <div class="mySlides">
-                    <div class="numbertext">3 / 4</div>
-                    <img src="g3.jpg" style="width:100%">
-                  </div>
-                  <div class="mySlides">
-                    <div class="numbertext">4 / 4</div>
-                    <img src="g4.jpg" style="width:100%">
-                  </div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                  <div class="caption-container">
-                    <p id="caption"> </p>
-                  </div>
-                  <div class="column1">
-                    <img class="demo cursor" src="g1.jpg" style="width:100%" onclick="currentSlide(1)"
-                      alt="Woody Grasslads">
-                  </div>
-                  <div class="column1">
-                    <img class="demo cursor" src="g2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dry land">
-                  </div>
-                  <div class="column1">
-                    <img class="demo cursor" src="g3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bushy">
-                  </div>
-                  <div class="column1">
-                    <img class="demo cursor" src="g4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Rocky">
-                  </div>
-                </div>
-              </div>
-              <!--Script-->
-              <script>
-                function openModal() {
-                  document.getElementById('myModal').style.display = "block";
-                }
-    
-                function closeModal() {
-                  document.getElementById('myModal').style.display = "none";
-                }
-    
-                var slideIndex = 1;
-                showSlides(slideIndex);
-    
-                function plusSlides(n) {
-                  showSlides(slideIndex += n);
-                }
-    
-                function currentSlide(n) {
-                  showSlides(slideIndex = n);
-                }
-    
-                function showSlides(n) {
-                  var i;
-                  var slides = document.getElementsByClassName("mySlides");
-                  var dots = document.getElementsByClassName("demo");
-                  var captionText = document.getElementById("caption");
-                  if (n > slides.length) { slideIndex = 1 }
-                  if (n < 1) { slideIndex = slides.length }
-                  for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                  }
-                  for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                  }
-                  slides[slideIndex - 1].style.display = "block";
-                  dots[slideIndex - 1].className += " active";
-                  captionText.innerHTML = dots[slideIndex - 1].alt;
-                }
-              </script>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grasslands</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="jquery/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/new1.css">
+  <link rel="stylesheet" href="risewp/css/editor-style.css">
+  <link rel="stylesheet" href="risewp/css/jPushMenu.css">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="css/boot.min.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-image: url("*.jpg");
+      overflow: scroll;
+    }
+
+    footer {
+      background-color: #000000;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .container {
+      height: relative;
+      width: 70%;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    table {
+      display: inline-table;
+      float: left;
+      margin: 10px;
+    }
+
+    tr.noBorder td {
+      border: 0;
+    }
+
+    .button {
+      position: relative;
+      background-color: #4CAF50;
+      border: none;
+      font-size: 28px;
+      color: #FFFFFF;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      transition-duration: 0.4s;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .button:after {
+      content: "";
+      background: #90EE90;
+      display: block;
+      position: absolute;
+      padding-top: 300%;
+      padding-left: 350%;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+
+    .button:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 0.85;
+      transition: 0s
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    /* The Close Button */
+    .close {
+      color: white;
+      position: relative;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #999;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .cursor {
+      cursor: pointer
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    img {
+      margin-bottom: -4px;
+    }
+
+    .caption-container {
+      text-align: center;
+      background-color: black;
+      padding: 2px 18px;
+      color: white;
+    }
+
+    .demo {
+      opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+
+    img.hover-shadow {
+      transition: 0.3s
+    }
+
+    .hover-shadow:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+  </style>
+  <!--Parallax-->
+  <style>
+    .parallax {
+      /* The image used */
+      background-image: url("g5.jpg");
+
+      /* Set a specific height */
+      min-height: 500px;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="Home Page.html">Evergreen</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Home Page.html">Grasslands</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--cover parallax-->
+  <div class="parallax" img-src: url("g6.jpg") style="background-position:cover; height: 100%;"></div>
+  <!--Main Container-->
+  <div class="container">
+    <div class="container-fluid">
+      <br><br>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
+          <h1 style="text-align: center;">Welcome to the Evergreen Grasslands</h1>
+          <hr>
+          <br>
+        </div>
+        <!--Add Moving Images-->
+        <div class="row">
+          <div class="column">
+            <img src="g1.jpg" style="width:45%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"
+              align="left">
+          </div>
+          <div class="column">
+            <img src="g2.jpg" style="width:45%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"
+              align="right">
           </div>
         </div><br>
-        <!--Footnote-->
-        <footer class="container-fluid text-center">
-            <p style=" font-size:100%;">All rights reserved copyright &#169; 2020</p>
-        </footer>
-    </body>
+        <div class="row">
+          <div class="column">
+            <img src="g3.jpg" style="width:45%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"
+              align="left">
+          </div>
+          <div class="column">
+            <img src="g4.jpg" style="width:45%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor"
+              align="right">
+          </div>
+        </div>
+        <hr>
+        <!--</div>-->
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+            <div class="mySlides">
+              <div class="numbertext">1 / 4</div>
+              <img src="g1.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">2 / 4</div>
+              <img src="g2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3 / 4</div>
+              <img src="g3.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">4 / 4</div>
+              <img src="g4.jpg" style="width:100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="caption-container">
+              <p id="caption"> </p>
+            </div>
+            <div class="column1">
+              <img class="demo cursor" src="g1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Woody Grasslads">
+            </div>
+            <div class="column1">
+              <img class="demo cursor" src="g2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Dry land">
+            </div>
+            <div class="column1">
+              <img class="demo cursor" src="g3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bushy">
+            </div>
+            <div class="column1">
+              <img class="demo cursor" src="g4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Rocky">
+            </div>
+          </div>
+        </div>
+        <!--Script-->
+        <script>
+          function openModal() {
+            document.getElementById('myModal').style.display = "block";
+          }
+
+          function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+          }
+
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+          }
+        </script>
+      </div>
+    </div>
+  </div><br>
+  <!--parallax-->
+  <div class="parallax"></div>
+    <!--Container for Introduction-->
+    <div class="container" style="height: relative; width:70%;">
+      
+      <div class="row" style="widows: 50%">
+        <div class="column">
+        <h3 style="text-align: left;">About Grasslands</h3>
+        <img src="g12.jpg" style="width:25%" class="hover-shadow cursor" align="right">
+        <p align="left" style="width:30%;">Grassland is a vegetation area dominated by almost continuously covered grass, and it is
+          also one of the most widely distributed main vegetation types in the world. Usually natural grassland can be
+          considered as the middle part of the environmental gradient, with forest at one end and desert at the other end.
+          The grassland plays an important balancing role for the earth's environment.
+        </p>
+      <h3 style="text-align: left;">History of Victorian Grassland</h3>
+        <p align="left" style="width:30%;">
+          When Europeans first arrived in western Victoria, much of the extensive undulating plains they saw were covered
+          with native grasslands. However, starting from the 1830s, the local grasslands were quickly occupied because
+          grazing there did not require much effort. Soon after, large areas of native grassland in Victoria were
+          completely replaced by introduced pastures, crops and weeds. For people living in Victoria, the Victoria
+          Volcanic Plain, located from the west of Melbourne to the border of South Australia, is the largest natural
+          grassland nowadays, but compared to the pre-European colonial era, it has only 5% of the area left.
+        </p>
+        
+        <h3>Grassland Ecosystem of Victoria Volcanic Plain</h3>
+        <img src="g13.png" style="width:25%" class="hover-shadow cursor" align="right">
+        <p align="left" style="width:30%;">
+          The natural temperate grassland of the Victoria Volcanic Plain is a highly fragmented and critically endangered
+          ecological community. It is well known that the largest native animals on the Aus tralian grassland is the
+          kangaroo, the biggest of which is the red kangaroo, characteristic of the natural grassland in the dry inland
+          areas. But because of the arrival of European immigrants, mammals introduced from other continents have become
+          equally common. These animals include domestic animals, especially cattle and sheep, as well as a series of wild
+          animals such as camels, horses, donkeys and goats. The biggest natural enemy to the grassland is the European
+          rabbit, they are widely distributed, have strong reproductive ability, and their destructive power is also
+          amazing. However, Australia does not have large predators, so the main predator is dingo. There are very diverse
+          reptiles, especially lizards, and various birds including large flightless emu, and various parrots.
+        </p>
+          <hr>
+      </div>
+    </div>
+
+  <!--Footnote-->
+  <footer class="container-fluid text-center">
+    <p style=" font-size:100%;">All rights reserved copyright &#169; 2020</p>
+  </footer>
+</body>
+
 </html>
