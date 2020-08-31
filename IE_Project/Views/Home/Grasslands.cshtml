@@ -1,154 +1,142 @@
-﻿<!-- bradcam_area_start -->
-    <head>
-        <div class="bradcam_area breadcam_bg overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>Grassland Information</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- bradcam_area_end -->
-
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-
-            .img-comp-container {
-                position: relative;
-                height: 200px; /*should be the same height as the images*/
-            }
-
-            .img-comp-img {
-                position: absolute;
-                width: auto;
-                height: auto;
-                overflow: hidden;
-            }
-
-                .img-comp-img img {
-                    display: block;
-                    vertical-align: middle;
-                }
-
-            .img-comp-slider {
-                position: absolute;
-                z-index: 9;
-                cursor: ew-resize;
-                /*set the appearance of the slider:*/
-                width: 40px;
-                height: 40px;
-                background-color: #2196F3;
-                opacity: 0.7;
-                border-radius: 50%;
-            }
-        </style>
-
-        <script>
-            function initComparisons() {
-                var x, i;
-                /*find all elements with an "overlay" class:*/
-                x = document.getElementsByClassName("img-comp-overlay");
-                for (i = 0; i < x.length; i++) {
-                    /*once for each "overlay" element:
-                    pass the "overlay" element as a parameter when executing the compareImages function:*/
-                    compareImages(x[i]);
-                }
-                function compareImages(img) {
-                    var slider, img, clicked = 0, w, h;
-                    /*get the width and height of the img element*/
-                    w = img.offsetWidth;
-                    h = img.offsetHeight;
-                    /*set the width of the img element to 50%:*/
-                    img.style.width = (w / 2) + "px";
-                    /*create slider:*/
-                    slider = document.createElement("DIV");
-                    slider.setAttribute("class", "img-comp-slider");
-                    /*insert slider*/
-                    img.parentElement.insertBefore(slider, img);
-                    /*position the slider in the middle:*/
-                    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
-                    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-                    /*execute a function when the mouse button is pressed:*/
-                    slider.addEventListener("mousedown", slideReady);
-                    /*and another function when the mouse button is released:*/
-                    window.addEventListener("mouseup", slideFinish);
-                    /*or touched (for touch screens:*/
-                    slider.addEventListener("touchstart", slideReady);
-                    /*and released (for touch screens:*/
-                    window.addEventListener("touchend", slideFinish);
-                    function slideReady(e) {
-                        /*prevent any other actions that may occur when moving over the image:*/
-                        e.preventDefault();
-                        /*the slider is now clicked and ready to move:*/
-                        clicked = 1;
-                        /*execute a function when the slider is moved:*/
-                        window.addEventListener("mousemove", slideMove);
-                        window.addEventListener("touchmove", slideMove);
-                    }
-                    function slideFinish() {
-                        /*the slider is no longer clicked:*/
-                        clicked = 0;
-                    }
-                    function slideMove(e) {
-                        var pos;
-                        /*if the slider is no longer clicked, exit this function:*/
-                        if (clicked == 0) return false;
-                        /*get the cursor's x position:*/
-                        pos = getCursorPos(e)
-                        /*prevent the slider from being positioned outside the image:*/
-                        if (pos < 0) pos = 0;
-                        if (pos > w) pos = w;
-                        /*execute a function that will resize the overlay image according to the cursor:*/
-                        slide(pos);
-                    }
-                    function getCursorPos(e) {
-                        var a, x = 0;
-                        e = e || window.event;
-                        /*get the x positions of the image:*/
-                        a = img.getBoundingClientRect();
-                        /*calculate the cursor's x coordinate, relative to the image:*/
-                        x = e.pageX - a.left;
-                        /*consider any page scrolling:*/
-                        x = x - window.pageXOffset;
-                        return x;
-                    }
-                    function slide(x) {
-                        /*resize the image:*/
-                        img.style.width = x + "px";
-                        /*position the slider:*/
-                        slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-                    }
-                }
-            }
-        </script>
-    </head>
-
-    <body>
+﻿<!DOCTYPE html>
+<html>
+<!-- bradcam_area_start -->
+<head>
+    <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-8">
-                    <div class="slider_text">
-                        <h3>
-                            Information
-                        </h3>
-                        <p>
-                            Grasslands ecosystem in Victoria is found to be flat to gently undulating country at low altitudes (usually below 700m) in low to medium rainfall areas
-                            (anywhere in between 400-1000 mm per year) on relatively nutrient-rich loam, clay loam and alluvial soils.
-                            Approx. 10% of the Grassland in Victoria falls on public land while a little under 5% is represented in conservation parks and reserves.
-                            There are few grassland reserves around Victoria are considered as part of the urban green space,
-                            although most of the area is fenced off to be protected, but some of the reserves sit in a worst situation,
-                            the open areas that were not protected from the fence are polluted by visitors. Although the Victorian government has a very detailed report for the ecological protection planning,
-                            these issues are not being broadcast for the public, hence it didn't get enough attention from the public, the public has a certain misunderstanding about the existence of the reserve.
-                        </p>
-                    </div>
+                <div class="col-lg-12">
+                    <h3>Grassland Information</h3>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- bradcam_area_end -->
 
-        <div class="container">
+    <style>
+
+
+
+    </style>
+    <link rel="stylesheet" href="~/css/info.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <div class="slider_text">
+                    <h3>
+                    </h3>
+                    <h2>
+                        About Grassland
+
+                    </h2>
+                    <p>
+                        Grassland is a vegetation area dominated by almost continuously covered grass, and it is also one of the most widely distributed main vegetation types in the world.
+                        Usually natural grassland can be considered as the middle part of the environmental gradient, with forest at one end and desert at the other end.
+                        The grassland plays an important balancing role for the earth's environment.
+
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>
+                        History of Victorian Grassland
+                    </h2>
+                    <p>
+                        When Europeans first arrived in western Victoria, much of the extensive undulating plains they saw were covered with native grasslands.
+                        However, starting from the 1830s, the local grasslands were quickly occupied because grazing there did not require much effort. Soon after,
+                        large areas of native grassland in Victoria were completely replaced by introduced pastures, crops and weeds.
+                        For people living in Victoria, the Victoria Volcanic Plain,
+                        located from the west of Melbourne to the border of South Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial era, it has only 5% of the area left.
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h2>
+                        <h2>
+                            Grassland Ecosystem of Victoria Volcanic Plain
+                        </h2>
+                        <p>
+                            The natural temperate grassland of the Victoria Volcanic Plain is a highly fragmented and critically endangered ecological community.
+                            It is well known that the largest native animals on the Australian grassland is the kangaroo, the biggest of which is the red kangaroo, characteristic of the natural grassland in the dry inland areas.
+                            But because of the arrival of European immigrants, mammals introduced from other continents have become equally common.
+                            These animals include domestic animals, especially cattle and sheep, as well as a series of wild animals such as camels, horses, donkeys and goats.
+                            The biggest natural enemy to the grassland is the European rabbit, they are widely distributed, have strong reproductive ability, and their destructive power is also amazing.
+                            However, Australia does not have large predators, so the main predator is dingo. There are very diverse reptiles, especially lizards, and various birds including large flightless emu, and various parrots.
+                        </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <img src="~/img/info_grasslands.jpg" class="imgTxt" style="width:100%; padding: 10px 10px 30px 10px" />
+                </div>
+                <div>
+                    <img src="~/img/vicBioregions.png" class="imgTxt" style="width:100%; padding: 10px 10px 100px 10px" />
+                </div>
+                <div>
+                    <img src="~/img/info_rabbits.jpg" class="imgTxt" style="width:100%; padding: 10px 10px 10px 10px " />
+                    <p>Rabbits can impact native vegetation, revegetation, and pastures alike. Photo: Pest Smart CRC</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Container-->
+    <div align="center">
+        <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
+            <h1 style="text-align: center;">Discover species in each habitat</h1>
+            <hr>
+            <br>
+        </div>
+        <div>
+            <div class="habitatContainer">
+                <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
+                <div class="habitatOverlay  habitatOverlayLeft">
+                    <a href='@Url.Action("Wetland", "Home")'>
+                        <div class="habitatText">Wetland</div>
+                    </a>
+                </div>
+            </div>
+            <div class="habitatContainer">
+                <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
+                <div class="habitatOverlay habitatOverlayFade">
+                    <a href='@Url.Action("Testing", "Home")'>
+                        <div class="habitatText">Woodland</div>
+                    </a>
+                </div>
+            </div>
+            <div class="habitatContainer">
+                <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                <div class="habitatOverlay habitatOverlayRight">
+                    <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                        <div class="habitatText">Heavier-soils Plains</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*    <a href='@Url.Action("Testing", "Home")'>
+        <img src='@Url.Content("~/img/info_woodland.jpg")' />
+    </a>*@
+
+
+    <!--End Container-->
+    @*<div class="container">
             <div class="img-comp-container">
                 <div class="img-comp-img">
                     <img src="~/img/2020new.jpg" width="300" height="200">
@@ -158,14 +146,17 @@
                 </div>
             </div>
             <p>Reference: </p>
-        </div>
-        
+        </div>*@
 
 
-        
 
-        <script>
-            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-            initComparisons();
-        </script>
-    </body>
+
+
+
+
+
+</body>
+
+
+</html>
+

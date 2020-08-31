@@ -41,6 +41,20 @@ namespace IE_Project.Controllers
             return View();
         }
 
+        public ActionResult Wetland()
+        {
+            ViewBag.Message = "Your Wetland page.";
+
+            return View();
+        }
+
+        public ActionResult HeavierSoilsPlains()
+        {
+            ViewBag.Message = "Your Heavier-soils Plains page.";
+
+            return View();
+        }
+
 
     }
 }

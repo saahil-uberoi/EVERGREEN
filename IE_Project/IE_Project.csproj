@@ -218,7 +218,10 @@
     <Content Include="css\flaticon.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\gijgo.css" />
+    <Content Include="css\hotspot2.css" />
+    <Content Include="css\hotspot1.css" />
     <Content Include="css\hotspot.css" />
+    <Content Include="css\info.css" />
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\nice-select.css" />
     <Content Include="css\owl.carousel.min.css" />
@@ -305,6 +308,11 @@
     <Content Include="img\aboutBg.jpg" />
     <Content Include="img\grassy_woodlands.jpg" />
     <Content Include="img\growlingGrassFrog.jpg" />
+    <Content Include="img\info_grasslands.jpg" />
+    <Content Include="img\info_rabbits.jpg" />
+    <Content Include="img\info_soilsPlains.jpg" />
+    <Content Include="img\info_wetland.jpg" />
+    <Content Include="img\info_woodland.jpg" />
     <Content Include="img\laughingKookaburra.jpg" />
     <Content Include="img\lizard.jpg" />
     <Content Include="img\mainBr2.jpg" />
@@ -344,6 +352,7 @@
     <Content Include="img\team\2.png" />
     <Content Include="img\team\3.png" />
     <Content Include="img\testmonial\1.png" />
+    <Content Include="img\vicBioregions.png" />
     <Content Include="js\ajax-form.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.js" />
@@ -363,6 +372,7 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\popper.min.js" />
+    <Content Include="js\myjs.js" />
     <Content Include="js\scrollIt.js" />
     <Content Include="js\vendor\jquery-1.12.4.min.js" />
     <Content Include="js\vendor\modernizr-3.5.0.min.js" />
@@ -417,6 +427,10 @@
     <Content Include="Models\SpeciesDB.edmx.diagram">
       <DependentUpon>SpeciesDB.edmx</DependentUpon>
     </Content>
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -499,6 +513,8 @@
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Home\Wetland.cshtml" />
+    <Content Include="Views\Home\HeavierSoilsPlains.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

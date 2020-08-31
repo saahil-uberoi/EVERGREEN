@@ -1,0 +1,100 @@
+﻿.habitatTitle {
+    font-family: sans-serif;
+    color: #dc2d5e;
+}
+
+.habitatContainer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+
+.habitatImage {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+
+.habitatText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+}
+
+.habitatOverlayFade {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ff946bbd;
+}
+
+.habitatOverlay {
+    position: absolute;
+    opacity: 0;
+    transition: all .3s ease;
+    background-color: #008cba;
+}
+
+.habitatContainer:hover .habitatOverlay, .habitatContainer:hover .habitatOverlayFade {
+    opacity: 1;
+}
+
+.habitatOverlayLeft {
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #00b1ba;
+}
+
+.habitatOverlayRight {
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    background-color: #12888e;
+}
+
+.habitatContainer:hover .habitatOverlayLeft, .habitatContainer:hover .habitatOverlayRight {
+    width: 100%;
+}
+
+.habitatOverlayTop {
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: #d63c58;
+}
+
+.habitatOverlayBottom {
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #941e33;
+}
+
+.habitatContainer:hover .overlayTop, .habitatContainer:hover .habitatOverlayBottom {
+    height: 100%;
+}
+
+.habitatOverlayCross {
+    width: 0%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: #e47a52;
+}
+
+.habitatContainer:hover .habitatOverlayCross {
+    height: 100%;
+    width: 100%;
+}
