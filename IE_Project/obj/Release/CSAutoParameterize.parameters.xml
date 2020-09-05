@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-IE_Project-20200823070809.mdf;Initial Catalog=aspnet-IE_Project-20200823070809;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ivan\\source\\repos\\IE_Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="SpeciesModelContainer-Web.config Connection String" description="SpeciesModelContainer Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.SpeciesModel.csdl|res://*/Models.SpeciesModel.ssdl|res://*/Models.SpeciesModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SpeciesDB.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ivan\\source\\repos\\IE_Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SpeciesModelContainer']/@connectionString" />
+  </parameter>
+  <parameter name="SpeciesDBEntities-Web.config Connection String" description="SpeciesDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.SpeciesDB.csdl|res://*/Models.SpeciesDB.ssdl|res://*/Models.SpeciesDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\SpeciesDB.mdf;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ivan\\source\\repos\\IE_Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SpeciesDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="fit5120-ie-dbdbserver.database.windows.net-Web.config Connection String" description="fit5120-ie-dbdbserver.database.windows.net Connection String used in web.config by the application to access the database." defaultValue="[PlaceHolder for connection: ]" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ivan\\source\\repos\\IE_Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='fit5120-ie-dbdbserver.database.windows.net']/@connectionString" />
+  </parameter>
+</parameters>

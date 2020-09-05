@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpeciesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Species">
+    <Key>
+      <PropertyRef Name="speciesId" />
+    </Key>
+    <Property Name="speciesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+    <Property Name="habitant" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="categoryID" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_Species_dbo_Category_categoryID">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Species" Type="Self.Species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="Species">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SpeciesDBModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Species" EntityType="Self.Species" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Species_dbo_Category_categoryID" Association="Self.FK_dbo_Species_dbo_Category_categoryID">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Species" EntitySet="Species" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

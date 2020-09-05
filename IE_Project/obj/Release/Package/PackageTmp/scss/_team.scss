@@ -1,0 +1,46 @@
+.team_area{
+    padding-bottom: 120px;
+    padding-top: 150px;
+    @media #{$mobile_device} {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .single_team_member{
+        @media #{$tablet_device} {
+            margin-bottom: 30px;
+        }
+        .team_thumb{
+            overflow: hidden;
+            img{
+                width: 100%;
+                @include transform(scale(1));
+                @include transition(.3s);
+            }
+        }
+        .member_info{
+            background: #fdf9f6;
+            padding: 36px 0 35px 0;
+            h3{
+                font-size: 25px;
+                font-weight: 400;
+                color: #222222;
+                margin-bottom: 0;
+                margin-bottom: 6px;
+            }
+            p{
+                font-size: 18px;
+                font-weight: 400;
+                font-family: $font2;
+                color: #eb592d;
+                margin-bottom: 0;
+            }
+        }
+        &:hover{
+            .team_thumb{
+                img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+}

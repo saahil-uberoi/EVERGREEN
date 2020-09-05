@@ -1,0 +1,83 @@
+.slider_bg_1{
+    background-image: url(../img/banner/banner.png);
+}
+.slider_bg_2{
+    background-image: url(../img/banner/banner2.png);
+}
+.slider_bg_3{
+    background-image: url(../img/banner/banner3.png);
+}
+.slider_area{
+    .single_slider{
+        height: 900px;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media #{$mobile_device} {
+            height: 600px;
+        }
+        @media #{$tablet_device} {
+            height: 600px;
+        }
+        .slider_text{
+            h3{
+             color: #ffffff;
+             font-family: $font1;
+             font-size: 65px;
+             font-weight: 900;
+             margin-bottom: 4px;
+             line-height: 75px;
+             @media #{$mobile_device} {
+               font-size: 33px;
+               line-height: 40px;
+            }
+             @media #{$tablet_device} {
+               font-size: 30px;
+               line-height: 46px;
+            }
+             @media #{$mid_device} {
+               font-size: 35px;
+               line-height: 45px;
+            }
+            }
+            p{
+                font-size: 16px;
+                font-weight: 400;
+                color: #ffffff;
+                margin-bottom: 0;
+                margin-top: 0;
+                line-height: 26px;
+                display: inline-block;
+                position: relative;
+                margin-bottom: 41px;
+                margin-top: 22px;
+             @media #{$mid_device} {
+                font-size: 16px;
+             }
+             @media #{$mobile_device} {
+                font-size: 16px;
+             }
+            }
+        }
+    } 
+
+    .owl-dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 25px;
+        .owl-dot {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: rgba(252, 229, 207,.2);
+            margin: 0 6px;
+            &.active{
+                background: #fff; 
+            }
+        }
+    }
+}
+  

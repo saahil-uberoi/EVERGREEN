@@ -37,7 +37,8 @@ namespace IE_Project
                       "~/css/gijgo.css",
                       "~/css/animate.css",
                       "~/css/slicknav.css",
-                      "~/css/style.css"));
+                      "~/css/style.css",
+                      "~/css/info.css"));
         }
     }
 }

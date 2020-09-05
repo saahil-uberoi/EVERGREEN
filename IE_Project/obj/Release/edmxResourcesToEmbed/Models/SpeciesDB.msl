@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpeciesDBModelStoreContainer" CdmEntityContainer="SpeciesDBEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="SpeciesDBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+          <ScalarProperty Name="category1" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Species">
+      <EntityTypeMapping TypeName="SpeciesDBModel.Species">
+        <MappingFragment StoreEntitySet="Species">
+          <ScalarProperty Name="speciesId" ColumnName="speciesId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="habitant" ColumnName="habitant" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
