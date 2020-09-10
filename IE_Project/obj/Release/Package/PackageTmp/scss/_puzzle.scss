@@ -1,0 +1,122 @@
+﻿$size: 400px
+$pieces: 4
+$url: 'http://xprimiendo.com/demos/angular-puzzle/cat-image.jpg'
+$ease: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+
+html
+  height: 100%
+  
+body
+  height: 100%
+  margin: 0
+  padding: 0
+  
+#container
+  height: 100%
+  width: 100%
+  
+#board
+  color: #000
+  font-family: Arial
+  font-size: 0
+  font-weight: bold
+  height: 50px
+  margin: 0 auto
+  text-transform: uppercase
+  width: $size
+  
+.panel
+  display: inline-block
+  font-size: 14px
+  height: 100%
+  line-height: 50px
+  width: 50%
+  
+  span
+    color: #666
+  
+.panel-l
+  text-align: left
+  
+.panel-r
+  text-align: right
+  
+#puzzle
+  height: $size + 50px
+  margin: 0 auto
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  width: $size
+  
+.piece
+  background-image: url($url)
+  background-repeat: no-repeat
+  background-size: $size $size
+  border-bottom: 1px solid white
+  border-right: 1px solid white
+  box-sizing: border-box
+  height: $size / $pieces
+  position: absolute
+  transition: transform .25s $ease, opacity .25s $ease
+  width: $size / $pieces
+  
+  .puzzle-solved &
+    opacity: .5
+    pointer-events: none
+  
+//--- Pieces
+$row: 0
+$col: 0
+
+@for $i from 0 through $pieces - 1
+  
+  .piece-pos-#{$pieces - 1}-#{$i}
+    border-bottom: none
+
+  .piece-pos-#{$i}-#{$pieces - 1}
+    border-right: none
+
+@for $i from 1 through $pieces * $pieces
+
+  .piece-#{$i}
+    background-position: -#{$col * $size / $pieces} -#{$row * $size / $pieces}
+
+  .piece-pos-#{$row}-#{$col}
+    transform: translate(#{$col * 100}#{'%'}, #{$row * 100}#{'%'})
+
+  $col: $col + 1
+
+  @if $col == $pieces
+    $col: 0
+    $row: $row + 1
+
+.piece-active
+  opacity: 0
+  
+#message
+  background: white
+  border-radius: 5px
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .25)
+  display: none
+  font-family: Arial
+  font-size: 14px
+  font-weight: bold
+  left: 50%
+  padding: 20px 50px
+  position: absolute
+  top: 50%
+  text-align: center
+  transform: translate(-50%, -50%)
+  white-space: nowrap
+  z-index: 2
+  
+  a
+    color: black
+    font-weight: normal
+    
+    &:hover
+      text-decoration: none
+    
+  .puzzle-solved &
+    display: block

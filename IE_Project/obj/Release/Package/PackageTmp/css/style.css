@@ -2430,13 +2430,13 @@ h3 {
 
 /* line 1, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
 .footer {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background: #0d0e0f;
-  position: relative;
-  z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #000000;
+    position: relative;
+    z-index: 0;
 }
 
 /* line 9, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */

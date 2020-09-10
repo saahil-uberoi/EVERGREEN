@@ -1,22 +1,114 @@
-﻿
-@{
-    ViewBag.Title = "ViewGame";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<h2>ViewGame</h2>
+<head>
+    <meta charset="UTF-8">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="~/css/game-DandD.css">
+    <script src="~/js/game-DandD.js"></script>
+    <title>Image Puzzle</title>
+</head>
 
-<section class="score">
-    <span class="correct">0</span>/<span class="total">0</span>
-    <button id="play-again-btn">Play Again</button>
-</section>
-<section class="draggable-items">
-    <!-- Will be dynamically populated - Example Element: -->
-    <!-- <i class="fab fa-codepen draggable" draggable="true" style="color: #111111;" id="codepen"></i> -->
-</section>
-<section class="matching-pairs">
-    <!-- Will be dynamically populated - Example Element: -->
-    <!-- <div class="matching-pair">
-      <span class="label">Codepen</span><span class="droppable" data-brand="codepen"></span>
-    </div> -->
-</section>
+
+
+<body>
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>🧩Puzzle Game🧩</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+
+    <div onload="prepararDnD();">
+        <div id="fondo-negro" onClick="comenzar();">
+            <div id="winner-text"></div><br>
+            <div id="comentario"></div>
+        </div>
+        <header id="top">
+            <!-- <img src="imgs/logo.png" alt="Puzzle"> -->
+            <div>
+                @*<h1>🧩Image Puzzle🧩</h1>*@
+            </div>
+        </header>
+        <!-- <input style="display: none;" type="checkbox" id="ckb-menu">
+        <nav>
+            <ul>
+                <li><label for="ckb-menu">&equiv;</label></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acerca.html">acerca</a></li>
+            </ul>
+        </nav> -->
+        <section id="sectionPpal">
+            <!-- <article style="text-align:center;">
+                <h2>SUPERPUZZLE</h2>
+                <p>Introduce una imagen, selecciona dificultad y que comience el juego</p>
+            </article> -->
+            <div style="text-align:center;">
+                <section>
+                    <article id="parte1">
+                        <br><br>
+                        <div id="introducirImg">
+                            <button onClick="introducirImagen();"> Select an Image </button>
+                            <div id="msg-emergente1">
+                            </div>
+                            <input type="button" id="btn-cerrar" onclick="cerrarMsg();" value="X" />
+                            <input type="file" id="foto" name="foto" accept="image/*" onchange='archivoSubido(event,this);'>
+                            <br>
+                            <div id="img-container" onClick="introducirImagen();">
+                                <img id="img" src="https://raw.githubusercontent.com/reymon359/web-experiments/master/Image%20Puzzle/addImage.png" alt="" width="360" height="240" />
+                            </div>
+                            <p> <small> You can also click or drag and drop an image up here</small></p>
+                        </div>
+                        <div style="display:none;margin-top: 50px;" id="img-container2">
+                            <img id="imgAyuda" src="https://raw.githubusercontent.com/reymon359/web-experiments/master/Image%20Puzzle/addImage.png" alt="" width="360" height="240" />
+                        </div>
+                    </article>
+                    <article id="parte2">
+                        <div id="seleccionDificultad">
+                            <p>Select a line color and a difficulty</p>
+                            Line color: <input id="colLinea" onchange='cambiarColorlina(event);' type="color"><br>
+                            <br>
+                            <button id="chupao" style="background-color:#c722b1" onClick="chupao();"> easy </button>
+                            <button id="facil" style="background-color:#39c722" onClick="facil();"> normal </button>
+                            <button id="media" style="background-color:#c5c722" onClick="media();"> hard </button>
+                            <button id="dificil" style="background-color:#c73f22" onClick="dificil();"> extreme </button>
+                            <br>
+                        </div>
+                        <div style="display:none;text-align:center" id="mov-container">
+                            <h2>Score</h2>
+                            <p> Wrong pieces: <span id="piezasMal"></span></p>
+                            <p> Moves: <span id="movimientos"></span></p>
+                            <p> Time: <span id="segundos"></span> seconds</p>
+                        </div>
+                        <div id="paLimpiar">
+                            <canvas id="canvas-puzzle" width="360" height="240"></canvas>
+                        </div>
+                        <canvas style="display:none" onmouseover="resetearPuzzleYCheckWin()" id="canvas-puzzle3" width="360" height="240"></canvas>
+                        <canvas style="display:none" id="canvas-puzzle2" width="480" height="360"></canvas>
+                        <canvas style="display:none" id="canvas-puzzle25" width="360" height="240"></canvas>
+                    </article>
+                </section>
+                <div style="display:none" id="piezas-container">
+                </div>
+                <div id="msg-emergente2">
+                </div>
+                <input type="button" id="btn-cerrar2" onclick="cerrarMsg();" value="X" />
+                <br>
+                <button id="comenzarBut" disabled style="background-color:#c3c3c3" onClick="comenzar();"> Start </button>
+                <button id="terminarBut" disabled style="background-color:#c3c3c3" onClick="finalizar();"> End </button>
+                <button id="ayudaBut" disabled style="background-color:#c3c3c3" onClick="ayuda();"> Hint </button>
+                <br>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>
+@*<script src="https://cdn.jsdelivr.net/gh/reymon359/web-experiments/Social%20Signature/socialsignature.min.js" crossorigin="anonymous"></script>*@

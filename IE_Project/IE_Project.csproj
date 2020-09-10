@@ -512,6 +512,9 @@
     <Content Include="Views\Species\Edit.cshtml" />
     <Content Include="Views\Species\Index.cshtml" />
     <Content Include="scss\_puzzle.scss" />
+    <Content Include="Views\Home\SeeMore1.cshtml" />
+    <Content Include="Views\Home\SeeMore2.cshtml" />
+    <Content Include="Views\Home\SeeMore3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
