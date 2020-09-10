@@ -1,6 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+     <script language="JavaScript">
+
+         var password = "";
+         password = prompt('Please Enter Your Password:', '');
+         if (password != 'duderlypa$$word1') {
+             alert("Wrong Password");
+             window.opener = null; window.close();
+         }  // close the page, if the password is wrong.
+
+     </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>MelGrass</title>
@@ -8,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
     <!-- Place favicon.ico in the root directory -->
     <!-- CSS here -->
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
@@ -41,7 +51,7 @@
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo-img">
                                 <a href="~/Home/Index">
-                                    <img src="~/img/grassland_icon.png" alt="" style="width:30%;" />
+                                    <img src="~/img/grassland_logo.png" alt="" style="width:60%;" />
                                 </a>
                             </div>
                         </div>
@@ -85,12 +95,93 @@
     </header>
     <!-- header-end -->
 
+    
+
     <div>
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Evergreen Victoria</p>
+        <!-- footer_start  -->
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-6 col-lg-5 ">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <img src="~/img/grassland_logo.png" alt="">
+                                    </a>
+                                </div>
+                                <p class="address_text">
+                                    <br> <br> <br>
+                                </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Information
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="~/Home/About">About</a></li>
+                                    <li><a href="~/Home/Grasslands">Information</a></li>
+                                    <li><a href="~/Home/Contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2  col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Follow Us
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="#">FaceBook</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                    <li><a href="#"> Twitter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <!-- footer_end  -->
+        @*<footer>
+            <p>&copy; @DateTime.Now.Year - Evergreen Victoria</p>
+        </footer>*@
     </div>
     <style>
         .home-act {

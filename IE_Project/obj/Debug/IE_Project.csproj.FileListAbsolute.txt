@@ -57,6 +57,8 @@ C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.Security.Cookies.dll
@@ -77,6 +79,10 @@ C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.WebPages.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.WebPages.Razor.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\WebGrease.dll
+C:\Users\Ivan\source\repos\IE_Project\bin\EntityFramework.xml
+C:\Users\Ivan\source\repos\IE_Project\bin\EntityFramework.SqlServer.xml
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.Helpers.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.Mvc.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.Optimization.xml
@@ -86,8 +92,6 @@ C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\System.Web.WebPages.Razor.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Newtonsoft.Json.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Antlr3.Runtime.pdb
-C:\Users\Ivan\source\repos\IE_Project\bin\EntityFramework.xml
-C:\Users\Ivan\source\repos\IE_Project\bin\EntityFramework.SqlServer.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -106,7 +110,3 @@ C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csproj.CopyComplete
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.dll
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.pdb
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csprojAssemblyReference.cache
-C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
-C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
-C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
-C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

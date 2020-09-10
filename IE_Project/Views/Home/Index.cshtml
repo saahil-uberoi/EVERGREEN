@@ -90,33 +90,31 @@
     <div align="center">
         <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
             <h1 style="text-align: center;">Discover species in each habitat</h1>
+            <p>Click the image to discover more</p>
             <br>
             <br>
         </div>
         <div>
             <div class="habitatContainer">
+                <a href='@Url.Action("Wetland", "Home")'/>
                 <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
                 <div class="habitatOverlay habitatOverlayLeft">
-                    <a href='@Url.Action("Wetland", "Home")'>
-                        <div class="habitatText">Wetland</div>
-                    </a>
+                    <div class="habitatText">Wetland</div>
                 </div>
             </div>
             <div class="habitatContainer">
+                <a href='@Url.Action("Testing", "Home")'/>
                 <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
                 <div class="habitatOverlay habitatOverlayFade">
-                    <a href='@Url.Action("Testing", "Home")'>
-                        <div class="habitatText">Woodland</div>
-                    </a>
+                    <div class="habitatText">Woodland</div>
                 </div>
             </div>
             <div class="habitatContainer">
-                <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
-                <div class="habitatOverlay habitatOverlayRight">
-                    <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                   <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                    <div class="habitatOverlay habitatOverlayRight">
                         <div class="habitatText">Heavier-soils Plains</div>
-                    </a>
-                </div>
+                    </div>
             </div>
         </div>
     </div>

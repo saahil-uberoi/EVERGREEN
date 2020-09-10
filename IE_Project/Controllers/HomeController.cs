@@ -55,6 +55,13 @@ namespace IE_Project.Controllers
             return View();
         }
 
+        public ActionResult ViewGame()
+        {
+            ViewBag.Message = "Your Game page.";
+
+            return View();
+        }
+
 
     }
 }

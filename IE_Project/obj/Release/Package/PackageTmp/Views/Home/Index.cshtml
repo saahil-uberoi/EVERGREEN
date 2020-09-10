@@ -1,13 +1,11 @@
-﻿<!doctype html>
-<html class="no-js" lang="zxx">
-<head>
-
+﻿<head>
+    <title>Home</title>
 </head>
 <body>
     <!-- slider_area_start -->
-    <div class="slider_area" >
+    <div class="slider_area">
         <div class="slider_active owl-carousel">
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay" >
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-8">
@@ -55,17 +53,18 @@
         </div>
     </div>
     <!-- slider_area_end -->
-     about_area_start 
+
+    <!-- about_area_start -->
     <div class="about_area ">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="about_thumbs">
                         <div class="large_img_1">
-                            <img src="img/about/about_lft.png" alt="">
+                            <img src="https://images.unsplash.com/photo-1578665235542-094dfce40e31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
                         </div>
                         <div class="small_img_1">
-                            <img src="img/about/about_right.png" alt="">
+                            <img src="https://images.unsplash.com/photo-1553672406-55f0b2129d30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80" alt="">
                         </div>
                     </div>
                 </div>
@@ -79,55 +78,49 @@
                             Victoria Volcanic Plains
                             <span></span>
                         </p>
-                        <a href="about.html" class="boxed-btn3">About Us</a>
+                        <a href="~/Home/About" class="boxed-btn3">About Us</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-     about_area_end 
-    <br>
-    <br>
+    <!-- about_area_end-->
+
     <!--habitat_container_start-->
     <div align="center">
         <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
             <h1 style="text-align: center;">Discover species in each habitat</h1>
-            <hr>
+            <p>Click the image to discover more</p>
+            <br>
             <br>
         </div>
         <div>
             <div class="habitatContainer">
+                <a href='@Url.Action("Wetland", "Home")'/>
                 <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
-                <div class="habitatOverlay  habitatOverlayLeft">
-                    <a href='@Url.Action("Wetland", "Home")'>
-                        <div class="habitatText">Wetland</div>
-                    </a>
+                <div class="habitatOverlay habitatOverlayLeft">
+                    <div class="habitatText">Wetland</div>
                 </div>
             </div>
             <div class="habitatContainer">
+                <a href='@Url.Action("Testing", "Home")'/>
                 <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
                 <div class="habitatOverlay habitatOverlayFade">
-                    <a href='@Url.Action("Testing", "Home")'>
-                        <div class="habitatText">Woodland</div>
-                    </a>
+                    <div class="habitatText">Woodland</div>
                 </div>
             </div>
             <div class="habitatContainer">
-                <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
-                <div class="habitatOverlay habitatOverlayRight">
-                    <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                   <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                    <div class="habitatOverlay habitatOverlayRight">
                         <div class="habitatText">Heavier-soils Plains</div>
-                    </a>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
     <!--habitat_container_end-->
 
-
-
-
 </body>
 
-</html>
+
 

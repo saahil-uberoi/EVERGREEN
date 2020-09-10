@@ -12,7 +12,7 @@ namespace IE_Project.Controllers
 {
     public class CategoriesController : Controller
     {
-        private SpeciesDBEntities db = new SpeciesDBEntities();
+        private SpeciesDbModel db = new SpeciesDbModel();
 
         // GET: Categories
         public ActionResult Index()

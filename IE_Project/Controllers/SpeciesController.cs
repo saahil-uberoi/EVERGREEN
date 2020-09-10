@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using IE_Project.Models;
 
 namespace IE_Project.Controllers
 {
     public class SpeciesController : Controller
     {
-        private SpeciesDBEntities db = new SpeciesDBEntities();
+        private SpeciesDbModel db = new SpeciesDbModel();
 
         // GET: Species
         public ActionResult Index()
@@ -124,7 +125,7 @@ namespace IE_Project.Controllers
         public ActionResult Index(string searchTxt)
         {
             var species = db.Species.ToList();
-            if(searchTxt != null)
+            if (searchTxt != null)
             {
                 species = db.Species.Where(x => x.name.Contains(searchTxt)).ToList();
             }

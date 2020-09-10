@@ -184,30 +184,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>SpeciesDB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Species.cs">
-      <DependentUpon>SpeciesDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpeciesDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpeciesDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpeciesDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpeciesDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpeciesDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpeciesDB.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Species.cs" />
+    <Compile Include="Models\SpeciesDbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -224,6 +207,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\flaticon.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\game-DandD.css" />
     <Content Include="css\gijgo.css" />
     <Content Include="css\hotspot2.css" />
     <Content Include="css\hotspot1.css" />
@@ -250,6 +234,7 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\grassland_logo.png" />
     <Content Include="img\Kawai.png" />
     <Content Include="img\Kun.png" />
     <Content Include="img\Saahil.png" />
@@ -316,7 +301,6 @@
     <Content Include="img\gallery\video.png" />
     <Content Include="img\goldenSunMoth.jpg" />
     <Content Include="img\goraeLeekOrchid.jpg" />
-    <Content Include="img\grassland_icon.png" />
     <Content Include="img\aboutBg.jpg" />
     <Content Include="img\grassy_woodlands.jpg" />
     <Content Include="img\growlingGrassFrog.jpg" />
@@ -381,6 +365,7 @@
     <Content Include="js\ajax-form.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.js" />
+    <Content Include="js\game-DandD.js" />
     <Content Include="js\gijgo.min.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\imgSlider.js" />
@@ -404,16 +389,6 @@
     <Content Include="js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\wow.min.js" />
-    <Content Include="Models\SpeciesDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SpeciesDB.edmx</DependentUpon>
-      <LastGenOutput>SpeciesDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\SpeciesDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SpeciesDB.edmx</DependentUpon>
-      <LastGenOutput>SpeciesDB.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="css\reset.map" />
@@ -446,13 +421,6 @@
     <Content Include="fonts\themify.eot" />
     <Content Include="fonts\themify.ttf" />
     <Content Include="fonts\themify.woff" />
-    <EntityDeploy Include="Models\SpeciesDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SpeciesDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\SpeciesDB.edmx.diagram">
-      <DependentUpon>SpeciesDB.edmx</DependentUpon>
-    </Content>
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -530,11 +498,6 @@
     <Content Include="scss\_varriable.scss" />
     <Content Include="Views\Home\Grasslands.cshtml" />
     <Content Include="Views\Home\Testing.cshtml" />
-    <Content Include="Views\Species\Create.cshtml" />
-    <Content Include="Views\Species\Delete.cshtml" />
-    <Content Include="Views\Species\Details.cshtml" />
-    <Content Include="Views\Species\Edit.cshtml" />
-    <Content Include="Views\Species\Index.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Categories\Delete.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
@@ -543,6 +506,12 @@
     <Content Include="Views\Home\Wetland.cshtml" />
     <Content Include="Views\Home\HeavierSoilsPlains.cshtml" />
     <Content Include="Views\Home\ViewGame.cshtml" />
+    <Content Include="Views\Species\Create.cshtml" />
+    <Content Include="Views\Species\Delete.cshtml" />
+    <Content Include="Views\Species\Details.cshtml" />
+    <Content Include="Views\Species\Edit.cshtml" />
+    <Content Include="Views\Species\Index.cshtml" />
+    <Content Include="scss\_puzzle.scss" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -560,7 +529,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
