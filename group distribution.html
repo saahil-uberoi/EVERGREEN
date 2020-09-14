@@ -1,0 +1,98 @@
+<div>Icons made by <a href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a></div>
+
+
+<!-- Styles -->
+<link rel="stylesheet" type="text/css" href="font/flaticon.css">
+<style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/material.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_material);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("chartdiv", am4charts.PieChart3D);
+chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+chart.legend = new am4charts.Legend();
+
+chart.data = [
+  {
+    groups: "Amphibians",
+    proportion: 5,
+    icon: "flaticon-frog",
+    color: "#1BA68D"
+  },
+  {
+    groups: "Bats",
+    proportion: 2,
+    icon: "flaticon-bat-1",
+    color: "#E7DA4F"
+  },
+  {
+    groups: "Birds",
+    proportion: 17,
+    icon:"flaticon-bird",
+    color: "#E77624"
+  },
+  {
+    groups: "Invertebrates",
+    proportion: 3,
+    icon: "flaticon-moth",
+    color: "#DF3520"
+  },
+  {
+    groups: "Mammals",
+    proportion: 10,
+    icon: "flaticon-rabbit",
+    color: "#64297B"
+  },
+  {
+    groups: "Reptiles",
+    proportion: 6,
+    icon: "flaticon-lizard",
+    color: "#232555"
+  },
+  {
+    groups: "Waders",
+    proportion: 4,
+    icon: "flaticon-heron",
+    color: "#3da9fc"
+  }
+];
+
+var series = chart.series.push(new am4charts.PieSeries3D());
+series.dataFields.value = "proportion";
+series.dataFields.category = "groups";
+series.ticks.template.disabled = true;
+series.alignLabels = false;
+series.labels.template.html = '<i class="{icon}"></i>';
+series.labels.template.radius = am4core.percent(-25);
+series.labels.template.fill = am4core.color("white");
+series.slices.template.propertyFields.fill = "color";
+
+
+    
+
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>

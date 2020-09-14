@@ -1,0 +1,55 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 10/09/2020 13:48
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-curved-lizard:before { content: "\f100"; }
+.flaticon-bat:before { content: "\f101"; }
+.flaticon-dove:before { content: "\f102"; }
+.flaticon-tropical-frop:before { content: "\f103"; }
+.flaticon-bandicoot-mammal-silhouette-side-view:before { content: "\f104"; }
+.flaticon-grass-leaves-silhouette:before { content: "\f105"; }
+.flaticon-fern:before { content: "\f106"; }
+.flaticon-frog:before { content: "\f107";font-size: 48px }
+.flaticon-fox:before { content: "\f108"; }
+.flaticon-bird:before { content: "\f109"; font-size: 50px}
+.flaticon-heron:before { content: "\f10a"; font-size: 48px}
+.flaticon-moth:before { content: "\f10b";font-size: 36px }
+.flaticon-lizard:before { content: "\f10c"; font-size: 60px}
+.flaticon-bat-1:before { content: "\f10d";font-size: 33px }
+.flaticon-cat:before { content: "\f10e"; }
+.flaticon-dog:before { content: "\f10f"; }
+.flaticon-rabbit:before { content: "\f110"; font-size: 48px}
+.flaticon-goat:before { content: "\f111"; }
+.flaticon-pig:before { content: "\f112"; }
+.flaticon-snake:before { content: "\f113"; }
+.flaticon-stork:before { content: "\f114"; }
+.flaticon-moth-insect-shape:before { content: "\f115"; }
+.flaticon-lavender:before { content: "\f116"; }
