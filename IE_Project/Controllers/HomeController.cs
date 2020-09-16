@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace IE_Project.Controllers
 {
+    
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -57,11 +64,17 @@ namespace IE_Project.Controllers
 
         public ActionResult ViewGame()
         {
-            ViewBag.Message = "Your Game page.";
+            ViewBag.Message = "Your Puzzle Game page.";
 
             return View();
         }
 
+        public ActionResult DragDrop()
+        {
+            ViewBag.Message = "Your Drag&Drop Game page.";
+
+            return View();
+        }
 
     }
 }

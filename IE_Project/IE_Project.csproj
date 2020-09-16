@@ -177,8 +177,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsertDataController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -205,6 +207,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\dragDrop.css" />
     <Content Include="css\flaticon.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\game-DandD.css" />
@@ -234,6 +237,12 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\games\Australian Painted-snipe.jpg" />
+    <Content Include="img\games\Booroolong Tree Frog.jpg" />
+    <Content Include="img\games\Corangamite Water Skink.jpg" />
+    <Content Include="img\games\Great Knot.jpg" />
+    <Content Include="img\games\Growling Grass Frog.jpg" />
+    <Content Include="img\games\Heath Mouse.jpg" />
     <Content Include="img\grassland_logo.png" />
     <Content Include="img\Kawai.png" />
     <Content Include="img\Kun.png" />
@@ -365,6 +374,7 @@
     <Content Include="js\ajax-form.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.js" />
+    <Content Include="js\dragdrop.js" />
     <Content Include="js\game-DandD.js" />
     <Content Include="js\gijgo.min.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
@@ -425,6 +435,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <None Include="Content\Fauna.json" />
     <None Include="Properties\PublishProfiles\melgrass - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -515,6 +526,9 @@
     <Content Include="Views\Home\SeeMore1.cshtml" />
     <Content Include="Views\Home\SeeMore2.cshtml" />
     <Content Include="Views\Home\SeeMore3.cshtml" />
+    <Content Include="Views\Home\InsertData.cshtml" />
+    <Content Include="Views\Home\DragDrop.cshtml" />
+    <Content Include="Views\Home\Dragdropgame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -531,6 +545,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="excelfolder\" />
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Views\InsertData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
