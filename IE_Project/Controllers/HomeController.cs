@@ -62,12 +62,6 @@ namespace IE_Project.Controllers
             return View();
         }
 
-        public ActionResult ViewGame()
-        {
-            ViewBag.Message = "Your Puzzle Game page.";
-
-            return View();
-        }
 
         public ActionResult DragDrop()
         {

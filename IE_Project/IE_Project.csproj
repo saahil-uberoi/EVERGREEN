@@ -243,6 +243,7 @@
     <Content Include="img\games\Great Knot.jpg" />
     <Content Include="img\games\Growling Grass Frog.jpg" />
     <Content Include="img\games\Heath Mouse.jpg" />
+    <Content Include="img\games\African feather grass.jpg" />
     <Content Include="img\grassland_logo.png" />
     <Content Include="img\Kawai.png" />
     <Content Include="img\Kun.png" />
@@ -390,6 +391,7 @@
     <Content Include="js\mail-script.js" />
     <Content Include="js\main.js" />
     <Content Include="js\nice-select.min.js" />
+    <Content Include="js\notify.min.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\popper.min.js" />
