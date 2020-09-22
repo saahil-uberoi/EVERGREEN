@@ -59,6 +59,9 @@
       <HintPath>packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -176,6 +179,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Bootstrap\Bundles_Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -201,10 +205,35 @@
     <Content Include="App_Data\SpeciesDB_log.ldf">
       <DependentUpon>SpeciesDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\core\forms.css" />
+    <Content Include="Content\core\globals.css" />
+    <Content Include="Content\core\grid.css" />
+    <Content Include="Content\core\orbit.css" />
+    <Content Include="Content\core\reveal.css" />
+    <Content Include="Content\core\typography.css" />
+    <Content Include="Content\core\ui.css" />
+    <Content Include="Content\ie.css" />
+    <Content Include="Content\mobile.css" />
+    <Content Include="Content\themes\foundation\misc\button-gloss.png" />
+    <Content Include="Content\themes\foundation\misc\button-overlay.png" />
+    <Content Include="Content\themes\foundation\misc\custom-form-sprites.png" />
+    <Content Include="Content\themes\foundation\misc\input-bg-outset.png" />
+    <Content Include="Content\themes\foundation\misc\input-bg.png" />
+    <Content Include="Content\themes\foundation\misc\modal-gloss.png" />
+    <Content Include="Content\themes\foundation\misc\table-sorter.png" />
+    <Content Include="Content\themes\foundation\orbit\bullets.jpg" />
+    <Content Include="Content\themes\foundation\orbit\left-arrow.png" />
+    <Content Include="Content\themes\foundation\orbit\loading.gif" />
+    <Content Include="Content\themes\foundation\orbit\mask-black.png" />
+    <Content Include="Content\themes\foundation\orbit\pause-black.png" />
+    <Content Include="Content\themes\foundation\orbit\right-arrow.png" />
+    <Content Include="Content\themes\foundation\orbit\rotator-black.png" />
+    <Content Include="Content\themes\foundation\orbit\timer-black.png" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\dragDrop.css" />
@@ -237,6 +266,7 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="humans.txt" />
     <Content Include="img\games\Australian Painted-snipe.jpg" />
     <Content Include="img\games\Booroolong Tree Frog.jpg" />
     <Content Include="img\games\Corangamite Water Skink.jpg" />
@@ -396,11 +426,16 @@
     <Content Include="js\plugins.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="js\myjs.js" />
+    <Content Include="js\pw.js" />
     <Content Include="js\scrollIt.js" />
     <Content Include="js\vendor\jquery-1.12.4.min.js" />
     <Content Include="js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\wow.min.js" />
+    <Content Include="MIT-LICENSE.txt" />
+    <Content Include="README.txt" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="css\reset.map" />
@@ -445,11 +480,18 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.customforms.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.orbit-1.4.0.js" />
+    <Content Include="Scripts\jquery.placeholder.min.js" />
+    <Content Include="Scripts\jquery.reveal.js" />
+    <Content Include="Scripts\jquery.tooltips.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\modernizr.foundation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -531,6 +573,8 @@
     <Content Include="Views\Home\InsertData.cshtml" />
     <Content Include="Views\Home\DragDrop.cshtml" />
     <Content Include="Views\Home\Dragdropgame.cshtml" />
+    <Content Include="Views\Shared\_Foundation.cshtml" />
+    <Content Include="Views\Home\Foundation_Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
