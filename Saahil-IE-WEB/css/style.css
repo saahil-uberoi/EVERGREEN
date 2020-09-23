@@ -743,13 +743,13 @@ ul.callbacks_tabs {
 .slide-banner {
     background: url(../images/g6.jpg) no-repeat center;
     background-size: cover;
-    min-height: 485px;
+    min-height: 400px;
 }
 
 .ab-banner {
-    background: url(../images/g1.jpg) no-repeat center;
+    background: url(../images/growlingGrassFrog.jpg) no-repeat center;
     background-size: cover;
-    min-height: 485px;
+    min-height: 335px;
 }
 
 .bg-abt {
