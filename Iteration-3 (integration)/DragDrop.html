@@ -27,11 +27,15 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- online-fonts -->
     <link
-        href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">-->
-    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type=""
+        href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/js/notify.min.js"></script>
@@ -39,122 +43,120 @@
 
     <!--<link rel="stylesheet" type="text/css" href="~/css/dragDrop.css"> 
     <script src="~/js/dragdrop.js"></script>-->
-    
-<style>
+
+    <style>
         /*@import url('https://fonts.googleapis.com/css?family=Montserrat');*/
-        *
-        {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box; }
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
         /*body
         {font-family:'Montserrat', sans-serif;
         background-color:#eee;
         color: #111; }*/
-        .dragelements
-        {
-        display: flex;
-        justify-content: center; }
-        .draggable1
-        {
-        height: 3rem;
-        width: 3rem;
-        display: flex;
-        align-items:center;
-        justify-content: center;
-        font-size: 4rem;
-        margin: 0rem 0.5rem;
-        cursor: move;
-        transition:opacity 0.2s; }
-        .draggable1:hover
-        {
-        opacity: 0.5;
+        .dragelements {
+            display: flex;
+            justify-content: center;
         }
-        .droppable1
-        {
-        height: 5.5rem;
-        width: 5.5rem;
-        margin-left: 50px;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        font-size: 2rem;
-        font-family:'Lucida Handwriting';
-        font-weight: bold;
-        background-color:#fff;
-        border: 3px dashed#111;
-        transition: border-width 0.2s,transform 0.2s, background-color 0.4s;}
-        .droppable1
-        span
-        {
-        font-size:
-        1.25rem;
-        pointer-events:
-        none;
-        /*The element is never the target of pointer events*/ }
+
+        .draggable1 {
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0rem 0.5rem;
+            cursor: move;
+            transition: opacity 0.2s;
+        }
+
+        .draggable1:hover {
+            opacity: 0.5;
+        }
+
+        .droppable1 {
+            height: 5.5rem;
+            width: 5.5rem;
+            margin-left: 50px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Lucida Handwriting';
+            font-weight: bold;
+            background-color: #fff;
+            border: 3px dashed#111;
+            transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+        }
+
+        .droppable1 span {
+            font-size:
+                1.25rem;
+            pointer-events:
+                none;
+            /*The element is never the target of pointer events*/
+        }
+
         /*Drag and Drop Related Styling */
-        .droppable1.droppable-hover
-        {
-        /*background-color:#bee3f0; */
-        border-width:
-        5px;
-        transform:
-        scale(1.1);
+        .droppable1.droppable-hover {
+            /*background-color:#bee3f0; */
+            border-width:
+                5px;
+            transform:
+                scale(1.1);
         }
-        .droppable1.dropped
-        {
-        border-style:
-        solid;
-        color:
-        #fff;
+
+        .droppable1.dropped {
+            border-style:
+                solid;
+            color:
+                #fff;
         }
-        .droppable1.dropped
-        span
-        {
-        font-size: 0.75rem;
-        margin-top:0.5rem;
+
+        .droppable1.dropped span {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
         }
-        .droppable1.dropped
-        i
-        {
-        pointer-events: none;
+
+        .droppable1.dropped i {
+            pointer-events: none;
         }
-        .draggable1.dragged
-        {
-        user-select: none;
-        opacity: 0.1;
-        cursor: default;
+
+        .draggable1.dragged {
+            user-select: none;
+            opacity: 0.1;
+            cursor: default;
         }
-        .draggable1.dragged:hover
-        {
-        opacity: 0.1;
+
+        .draggable1.dragged:hover {
+            opacity: 0.1;
         }
-        .box_header
-        {
-        display: inline-block;
-        width: 100%;
+
+        .box_header {
+            display: inline-block;
+            width: 100%;
         }
-        .box_area1
-        {
-        float: right;
+
+        .box_area1 {
+            float: right;
         }
-        .box_area2
-        {
-        float:
-        left;
+
+        .box_area2 {
+            float:
+                left;
         }
-        @media
-        (max-width:
-        600px)
-        {
-        .dragelements
-        {
-        margin:
-        1.5rem;
-        }
+
+        @media (max-width: 600px) {
+            .dragelements {
+                margin:
+                    1.5rem;
+            }
         }
     </style>
 
@@ -172,10 +174,11 @@
         <!-- header open -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
-                <h1>
-                    <a class="navbar-brand" href="index.html" data-blast="color"> Melgrass </a>
-                </h1>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                <h1> <a class="navbar-brand" href="index.html" data-blast="color"> Melgrass </a></h1>
+                    <h1> <a class="navbar-brand" href="index.html">Home</a></h1>
+                    <h1> <a class="navbar-brand" href="DragDrop.html">Game</a>
+                        <span class="sr-only">(current)</span></h1>
+               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -183,36 +186,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-lg-auto text-center">
                         <li class="nav-item mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html" >Home
-                            </a>
-                        </li>
-                        <li class="nav-item  mt-lg-0 mt-3">
-                            <a class="nav-link scroll" href="#about">About</a>
-                        </li>
-                        <li class="nav-item mt-lg-0 mt-3">
-                            <a class="nav-link scroll" href="#grassland">Grasslands</a>
-                            
+                            <a class="nav-link" href="index.html">Home </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="DragDrop.html"  data-blast="color">Game</a>
+                            <a class="nav-link" href="DragDrop.html" data-blast="color">Game</a>
                             <span class="sr-only">(current)</span>
                         </li>
-                        </li>
-                        <li class="nav-item  mt-lg-0 mt-3">
-                            <a class="nav-link scroll" href="#contact">Our Team</a>
-                        </li>
                     </ul>
-                </div>
+                </div>-->
             </nav>
         </header>
         <!-- Header Closed-->
 
-        <!--<body translate="no">-->
-
-
         <!-- slide -->
         <br><br><br><br>
-        <div class="abt_bottom py-lg-5 bg-theme" style="color: #0b9e1e;">
+        <div class="abt_bottom py-lg-5 bg-theme">
             <div class="container py-sm-4 py-3">
                 <h4 class="abt-text text-capitalize text-sm-center mb-0">Drag & Drop Game - WETLAND</h4>
                 <div class="text-white text-sm-center">Rules!<br>
@@ -225,54 +213,47 @@
             </div>
         </div>
         <!--//slide -->
-
         <!--Introduction Container-->
-
         <div class="container" style="height: relative; width: 90%;">
-            <div class="box_header">
-                <br>
+            <div class="box_header"> <br>
                 <div class="box_area2" style="font-size: 20px; font-family:'Lucida Handwriting'; margin-left:30px">
-                    Endangered
-                </div>
+                    Endangered </div>
                 <div class="box_areaq"
                     style="font-size: 20px; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">
-                    Invasive
-                </div>
+                    Invasive</div>
                 <br>
             </div>
-
+            <!--bg img-->
             <div
-                style="height: 50vw; background-image: url('images/info_wetland.jpg'); background-size: 70%; background-repeat: no-repeat; background-position: center;">
-                <!--bg img-->
-                <section class="dragelements" style="position:absolute; left: 30%; top: 110%;">
+                style="height: 50vh; background-image: url('images/info_wetland.jpg'); background-size: 72%; background-repeat: no-repeat; background-position: top;">
+                <section class="dragelements" style="position:absolute; left: 30%; top: 60%;">
                     <!--endangered-->
                     <i class="fas fa-frog draggable1 dtooltip" draggable="true"
-                        style="color: #0b9e1e; width: 50px; height: 300px;" id="grassfrog" data-toggle="dtooltip"
-                        data-html="true" data-placement="top" title="img src=&quot;https://live.staticflickr.com/6218/6343027574_6bb39f276b_b.jpg&quot; width=200 height=150>"></i>
+                        style="color: #0b9e1e; width: 70px; height:550px;" id="grassfrog" data-toggle="dtooltip" data-html="true" data-placement="top"
+                        title="img src=&quot;https://live.staticflickr.com/6218/6343027574_6bb39f276b_b.jpg&quot; width=200 height=150>"></i>
                     <i class="fas fa-frog draggable1 dtooltip" draggable="true"
-                        style="color: #726666; width: 70px; height: 400px;" id="treefrog" data-toggle="dtooltip"
+                        style="color: #726666; width: 96px; height: 340px;" id="treefrog" data-toggle="dtooltip"
                         data-html="true" data-placement="top"
-                        title="<img src=https://upload.wikimedia.org/wikipedia/commons/6/6f/Litoria_booroolongensis.jpg width=200 height=150>"></i>
+                        title="img src=https://upload.wikimedia.org/wikipedia/commons/6/6f/Litoria_booroolongensis.jpg width=200 height=150>"></i>
                     <i class="fas fa-crow draggable1 dtooltip" draggable="true"
-                        style="color: #11235a; width: 80px; height: 500px;" id="knot" data-toggle="dtooltip"
+                        style="color: #11235a; width: 80px; height: 250px;" id="knot" data-toggle="dtooltip"
                         data-html="true" data-placement="top"
-                        title="<img src=https://live.staticflickr.com/7063/6959877850_e48240bd92_b.jpg width=200 height=150>"></i>
+                        title="img src=https://live.staticflickr.com/7063/6959877850_e48240bd92_b.jpg width=200 height=150"></i>
                     <i class="fas fa-dove draggable1 dtooltip" draggable="true"
-                        style="color: #723333; width: 85px; height: 300px;" id="snipe" data-toggle="dtooltip"
+                        style="color: #723333; width: 85px; height: 5px;" id="snipe" data-toggle="dtooltip"
                         data-html="true" data-placement="top"
-                        title="<img src=https://live.staticflickr.com/8507/8470799026_6fe2e26e65_b.jpg width=200 height=150>"></i>
+                        title=" img src=https://live.staticflickr.com/8507/8470799026_6fe2e26e65_b.jpg width=200 height=150">
+                    </i>
                     <i class="fas fa-otter draggable1 dtooltip" draggable="true"
-                        style="color: #745b98; width: 150px; height: 450px;" id="hmouse" data-toggle="dtooltip"
+                        style="color: #745b98; width: 150px; height: 350px;" id="hmouse" data-toggle="dtooltip"
                         data-html="true" data-placement="top"
-                        title="<img src=https://live.staticflickr.com/812/40242103384_b1cb2cd6f5_b.jpg width=200 height=150>"></i>
+                        title="img src=https://live.staticflickr.com/812/40242103384_b1cb2cd6f5_b.jpg width=200 height=150"></i>
                     <!--endangered-->
-
                     <!--Invasive-->
                     <i class="fab fa-pagelines draggable1 dtooltip" draggable="true"
-                        style="color:#000000; width:70px; height:500px;" id="africanfeathergrass" data-toggle="dtooltip"
+                        style="color:#000000; width:75px; height:600px;" id="africanfeathergrass" data-toggle="dtooltip"
                         data-html="true" data-placement="top"
-                        title="<img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ornamental_Grass_%283052146417%29.jpg/1200px-Ornamental_Grass_%283052146417%29.jpg&quot; width=200 height=150>"></i>
-
+                        title="img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ornamental_Grass_%283052146417%29.jpg/1200px-Ornamental_Grass_%283052146417%29.jpg&quot; width=200 height=150"></i>
                 </section>
 
                 <div class="dropelements">
@@ -301,7 +282,7 @@
                 </div>
             </div>
         </div>
-
+        <br><br><br><br>
         <script>
             let correct = 0;
             let total = 0;
@@ -387,8 +368,6 @@
             }
         </script>
         <!--</body>-->
-
-
         <!-- footer -->
         <footer class="cpy-right bg-theme">
             <div class="container">
