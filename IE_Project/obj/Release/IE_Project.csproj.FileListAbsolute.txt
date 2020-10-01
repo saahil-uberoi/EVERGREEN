@@ -110,3 +110,4 @@ C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationB
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Web.Optimization.dll

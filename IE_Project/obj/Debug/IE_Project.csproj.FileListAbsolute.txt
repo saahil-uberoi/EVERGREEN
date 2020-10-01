@@ -109,4 +109,5 @@ C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csproj.CoreCompileInp
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csproj.CopyComplete
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.dll
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.pdb
+C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Web.Optimization.dll
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csprojAssemblyReference.cache
