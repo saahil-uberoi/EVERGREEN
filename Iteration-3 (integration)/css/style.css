@@ -793,14 +793,27 @@ h4.main-title-w3pvt {
 /* //about */
 
 /* stats */
-section.w3_stats {
+/*section.w3_stats {
     background: url(../images/banner1.jpg) no-repeat center;
     background-size: cover;
     position: relative;
     z-index: 0;
+}*/
+
+/*Blur Effect*/
+ .w3_stats {
+    background-image: url(../images/aboutBg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 615px;
+    z-index: 0;
+    filter: blur(0px);
+    -webkit-filter:blur(0px);
 }
 
-section.w3_stats:before {
+/*.w3_stats:before {
     position: absolute;
     content: '';
     background: rgba(0, 0, 0, 0.32);
@@ -809,12 +822,41 @@ section.w3_stats:before {
     width: 100%;
     height: 100%;
     z-index: -1;
+}*?
+*{
+    box-sizing: border-box;
 }
 
-h2.w3pvt-title {
-    font-size: 2.8em;
+ /*.w3pvt-title {
+    font-size: 40px;
     color: #fff;
     font-weight: 700;
+    background-color: rgb(0,0,0); /* Fallback color */
+    /*border: 3px solid #f1f1f1;
+    left: 50%;
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    /*position:absolute;
+    text-align: center;
+    transform:translate(-50%,-50%);
+    width:80%;
+    padding:20px;
+    z-index: 2;
+}*/
+
+.w3pvt-title {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: 700;
+  font-size:40px;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
 }
 
 .w3-stats p {

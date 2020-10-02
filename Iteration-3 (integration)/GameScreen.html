@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/counter.js"></script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- Style -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type=""
+        href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/js/notify.min.js"></script>
+    <script type="text/javascript" src="~/Content/Fauna.json"></script>
+
+    <!--<link rel="stylesheet" type="text/css" href="~/css/dragDrop.css"> 
+    <script src="~/js/dragdrop.js"></script>-->
+
+    <style>
+        /*@import url('https://fonts.googleapis.com/css?family=Montserrat');*/
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /*body
+        {font-family:'Montserrat', sans-serif;
+        background-color:#eee;
+        color: #111; }*/
+        .dragelements {
+            display: flex;
+            justify-content: center;
+        }
+
+        .draggable1 {
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0rem 0.5rem;
+            cursor: move;
+            transition: opacity 0.2s;
+        }
+
+        .draggable1:hover {
+            opacity: 0.5;
+        }
+
+        .droppable1 {
+            height: 5.5rem;
+            width: 5.5rem;
+            margin-left: 50px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Lucida Handwriting';
+            font-weight: bold;
+            background-color: #fff;
+            border: 3px dashed#111;
+            transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+        }
+
+        .droppable1 span {
+            font-size:
+                1.25rem;
+            pointer-events:
+                none;
+            /*The element is never the target of pointer events*/
+        }
+
+        /*Drag and Drop Related Styling */
+        .droppable1.droppable-hover {
+            /*background-color:#bee3f0; */
+            border-width:
+                5px;
+            transform:
+                scale(1.1);
+        }
+
+        .droppable1.dropped {
+            border-style:
+                solid;
+            color:
+                #fff;
+        }
+
+        .droppable1.dropped span {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .droppable1.dropped i {
+            pointer-events: none;
+        }
+
+        .draggable1.dragged {
+            user-select: none;
+            opacity: 0.1;
+            cursor: default;
+        }
+
+        .draggable1.dragged:hover {
+            opacity: 0.1;
+        }
+
+        .box_header {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .box_area1 {
+            float: right;
+        }
+
+        .box_area2 {
+            float:
+                left;
+        }
+
+        @media (max-width: 600px) {
+            .dragelements {
+                margin:
+                    1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('[data-toggle="dtooltip"]').tooltip()
+        })
+    </script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!--Navigation-->
+    <div id="home">
+        <!-- header open -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+                <h1> <a class="navbar-brand" href="index.html" data-blast="color"> Melgrass </a></h1>
+                <h1> <a class="navbar-brand" href="index.html">Home</a></h1>
+                <h1> <a class="navbar-brand" href="GameScreen.html">Game</a>
+                    <span class="sr-only">(current)</span></h1>
+            </nav>
+        </header>
+        <!-- Header Closed-->
+        <BR><BR><BR>
+        <!-- slide -->
+        <div class="abt_bottom py-lg-3 bg-theme">
+            <div class="container py-sm-4 py-3">
+                <h4 class="abt-text text-capitalize text-sm-center mb-0">Learn & Test your knowledge with some fun games!</h4>
+                <p class="text-white text-sm-center ">Choose from the following!</p>
+            </div>
+        </div>
+        <!--//slide -->
+
+        <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
+            <div class="container-fluid" style="width: 100%;height: auto;">
+                <ul class="demo row py-lg-5 py-sm-4 pb-4">
+                    <li class="col-lg-6 col-sm-6">
+                        <div class="gallery-grid1">
+                            <a href= "DragDrop.html"><img style="height:400px; width: 770px;" src="images/drag&drop.png.jpg" alt="Drag & Drop Game" class="img-fluid img-thumbnail" />
+                            </a>
+                        </div>
+                    </li>
+                    <li class="col-lg-6 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:400px; width: 770px;" src="images/MemoryGame.jpg" alt=" scalyButtons"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </section>
+    <!-- //Grasslands -->
+
+
+    <!-- footer -->
+    <footer class="cpy-right bg-theme">
+        <div class="container" style="position: bottom">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="wthree-social">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-facebook-f icon_facebook"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-twitter icon_twitter"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                    <p>© 2020 EVERGREEN | MelGrass. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    </div>
+</body>
+
+<!-- start-smooth-scrolling -->
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script>
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+        };
+        */
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+    });
+</script>
+<script src="js/SmoothScroll.min.js"></script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.js"></script>
+
+</html>
