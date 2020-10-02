@@ -41,23 +41,43 @@ namespace IE_Project.Controllers
             return View();
         }
 
-        public ActionResult Testing()
+        public ActionResult GrassyWoodland()
         {
-            ViewBag.Message = "Your testing page.";
+            ViewBag.Message = "Your grassy woodland page.";
 
             return View();
         }
 
         public ActionResult Wetland()
         {
-            ViewBag.Message = "Your Wetland page.";
+            ViewBag.Message = "Your wetland page.";
 
             return View();
         }
 
         public ActionResult HeavierSoilsPlains()
         {
-            ViewBag.Message = "Your Heavier-soils Plains page.";
+            ViewBag.Message = "Your heavier-soils plains page.";
+
+            return View();
+        }
+
+        public ActionResult SeeMore1()
+        {
+            ViewBag.Message = "Your SeeMore1 page.";
+
+            return View();
+        }
+        public ActionResult SeeMore2()
+        {
+            ViewBag.Message = "Your SeeMore2 page.";
+
+            return View();
+        }
+
+        public ActionResult SeeMore3()
+        {
+            ViewBag.Message = "Your SeeMore3 page.";
 
             return View();
         }
@@ -66,6 +86,13 @@ namespace IE_Project.Controllers
         public ActionResult DragDrop()
         {
             ViewBag.Message = "Your Drag&Drop Game page.";
+
+            return View();
+        }
+
+        public ActionResult MemoryCard()
+        {
+            ViewBag.Message = "Your Memory Card Game page.";
 
             return View();
         }

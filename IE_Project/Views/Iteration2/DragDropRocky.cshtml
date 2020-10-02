@@ -1,0 +1,643 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @*<script language="JavaScript" src="~/js/pw.js"></script>*@
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MelGrass</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/hotspot.css">
+    <link rel="stylesheet" href="~/css/hotspot1.css">
+    <link rel="stylesheet" href="~/css/hotspot2.css">
+    <link rel="stylesheet" href="~/css/imgSlider.css">
+    <link rel="stylesheet" href="~/css/info.css">
+    <!-- CSS end -->
+    @* Adjust the viewport width as per device width for mobile *@
+    @*<meta name=”viewport” content=”width = device-width, initial-scale=1.0” />*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <title>Drag and Drop Game</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Content/Fauna.json"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        @@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #eee;
+            color: #111;
+        }
+
+        .score {
+            font-family: monospace;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 0.25rem;
+            margin: 1rem;
+            position: relative;
+            transition: opacity 0.2s;
+        }
+
+        #play-again-btn {
+            position: absolute;
+            top: -0.5rem;
+            left: 50%;
+            margin-left: -50px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #111;
+            border: 5px double #fff;
+            border-radius: 14px;
+            padding: 8px 10px;
+            outline: none;
+            letter-spacing: .05em;
+            cursor: pointer;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+        }
+
+            #play-again-btn:hover {
+                background-color: #333;
+            }
+
+            #play-again-btn:active {
+                background-color: #555;
+            }
+
+            #play-again-btn.play-again-btn-entrance {
+                opacity: 1;
+                transform: translateX(6rem);
+            }
+
+        .dragelements {
+            display: flex;
+            justify-content: center;
+        }
+
+        .draggable1 {
+            position:relative;
+            height: 10%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            margin: 0rem 0.5rem;
+            cursor: move;
+            transition: opacity 0.2s;
+        }
+
+            .draggable1:hover {
+                opacity: 0.5;
+            }
+
+        .droppable1 {
+            height: 6.5vw;
+            width: 6.5vw;
+            margin-top: 2%;
+            margin-left: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1vw;
+            font-family: 'Lucida Handwriting';
+            font-weight: bold;
+            background-color: #fff;
+            border: 0.2vw dashed #111;
+            transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+        }
+
+            .droppable1 span {
+                font-size: 1.25rem;
+                pointer-events: none; /* The element is never the target of pointer events */
+            }
+
+            /* Drag and Drop Related Styling */
+
+            .droppable1.droppable1-hover {
+                /* background-color: #bee3f0; */
+                border-width: 5px;
+                transform: scale(1.1);
+            }
+
+            .droppable1.dropped {
+                border-style: solid;
+                color: #fff;
+            }
+
+                .droppable1.dropped span {
+                    font-size: 0.75rem;
+                    margin-top: 0.5rem;
+                }
+
+                .droppable1.dropped i {
+                    pointer-events: none;
+                }
+
+        .draggable1.dragged {
+            user-select: none;
+            opacity: 0.1;
+            cursor: default;
+        }
+
+            .draggable1.dragged:hover {
+                opacity: 0.1;
+            }
+
+        .matching-pairs {
+            transition: opacity 0.5s;
+        }
+
+        .matching-pair {
+            height: 6rem;
+            width: 22rem;
+            margin: 1rem auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .matching-pair span {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                user-select: none;
+            }
+
+        .label {
+            width: 15rem;
+            font-size: 2rem;
+        }
+
+        .box_header {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .box_area1 {
+            float: right;
+        }
+
+        .box_area2 {
+            float: left;
+        }
+
+        @@media (max-width: 600ox) {
+            html {
+                font-size: 12px;
+            }
+
+            .dragelements {
+                margin: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('[data-toggle="dtooltip"]').tooltip()
+        })
+    </script>
+</head>
+
+<body translate="no">
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img">
+                                <a href="~/Iteration2/Index">
+                                    <img src="~/img/grassland_logo.png" alt="" style="width:60%;" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a class="active" href="~/Iteration2/Index">Home</a></li>
+                                                <li><a href="~/Iteration2/Grasslands">Grassland</a></li>
+                                                <li>
+                                                    <a href="#">Search <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="~/Species/Index">Species</a></li>
+                                                        @*<li><a href="single-blog.html">single-blog</a></li>*@
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/About">about</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/DragDrop">Game</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/Contact">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="book_room">
+                                        <div class="book_btn">
+                                            @*<a class="popup-with-form" href="#test-form">Function</a>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!--Header Start Here-->
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Drag & Drop - Rocky Grassland</h3> <!--ref. https://html-css-js.com/html/character-codes/icons/-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Header End Here-->
+    <!--Game Instruction Section Start Here-->
+    <div>
+        <div style="text-align: center">
+            <br>
+            <h2 style="font-family:'Lucida Handwriting';">How to play:</h2>
+            <h4 style="font-family:'Lucida Handwriting';">
+                1. Move your mouse to the icons to see their full pictures.<br>
+                2. Find the correct name of each species<br>
+                3. Identify it as endangered or invasive. <br>
+                4. Drag them to their correct spot!<br>
+                5. Collect em’ all<br>
+                *Hint: <i class="fas fa-paw" style="color:red;"></i> = fauna, <i class="fab fa-pagelines" style="color:green;"></i> = flora
+            </h4>
+        </div>
+    </div>
+    <hr />
+    <!--Game Instruction Section End Here-->
+    <!--Score Section Start Here-->
+    <div class="score" style="font-family:'Lucida Handwriting'; font-size:80%">
+        <span style="color:green">✔:</span> <span class="correct">0</span> &nbsp;&nbsp;&nbsp; <span style="color:red">❌:</span> <span class="total">0</span>
+    </div>
+    <!--Score Section End Here-->
+    <!--Species classification Section Start Here-->
+    <div class="box_header">
+        <div class="box_area2" style="font-size: 125%; font-family:'Lucida Handwriting'; margin-left:30px">Endangered</div>
+        <div class="box_areaq" style="font-size: 125%; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">Invasive</div>
+    </div>
+    <!--Species classification Section End Here-->
+    <!--bg img start-->
+    <div style="width:auto; height: 40vw; background-image: url('../img/info_rocky.jpg'); background-size: 70%; background-repeat: no-repeat; background-position: center;">
+        <!--bg img end-->
+        <!--Draggable Species Section Start Here-->
+        <section class="dragelements" style="left: 30%; top: 130%;">
+            <!--endangered-->
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #0b9e1e; left: 20vw; top: 30vw;" id="wormLizard" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://live.staticflickr.com/7097/7314074824_55779e41a7_b.jpg&quot; width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #726666; left: 40vw; top: 20vw;" id="asSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://www.zoo.org.au/media/1690/1019_alpine_she-oak_skink_healesville_sanctuary.jpg width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #11235a; left: 20vw; top: 15vw;" id="slLizard" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://collections.museumsvictoria.com.au/content/media/24/360074-large.jpg width=200 height=150>"></i>
+            @*<i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #723333; width: 85%; height: 30%;" id="cwSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://grasslands.ecolinc.vic.edu.au/sites/default/files/styles/field_guide/public/species/Corangamite_Water_Skink_01.jpg width=200 height=150>"></i>
+        <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #745b98; width: 50%; height: 45%;" id="gSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://www.zoo.org.au/media/1724/10408_guthega_skink_healesville_sanctuary.jpg width=200 height=150>"></i>*@
+            <!--endangered-->
+            <!--Invasive-->
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#dfe433; left: -20vw; top: 12vw;" id="goldenthistle" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://godasagardener.files.wordpress.com/2012/05/sgt-21.jpg width=200 height=150>"></i>
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#d35bcb; left: -40vw; top: 25vw;" id="hardheads" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;data:image/jpeg;base64,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&quot; width=200 height=150>"></i>
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#63ff45; left: -5vw; top: 15vw;" id="wheelcactus" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://connectingcountry.s3.ap-southeast-2.amazonaws.com/press/wp-content/uploads/2019/09/10084735/A-large-fruiting-wheel-cactus-plant_scaled-1.jpg&quot; width=200 height=150>"></i>
+            <!--Invasive-->
+        </section>
+        <!--Draggable Species Section End Here-->
+        <!--Droppable Species Boxes Start Here-->
+        <div class="dropelements" style="position:initial">
+            <!--endangered-->
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="wormLizard"><span style="font-size: 70%;">Pink-tailed Worm-Lizard</span> </div>
+                <div class="droppable1 box_area1" data-draggable-id="goldenthistle" style="margin-right: 3%;"><span style="font-size: 70%;">Golden thistle</span></div>
+            </div>
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="asSkink"><span style="font-size: 70%;">Alpine She-oak Skink</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="hardheads" style="margin-right: 3%;"><span style="font-size: 70%;">Hardheads</span></div>
+            </div>
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="slLizard"><span style="font-size: 70%;">Striped Legless Lizard</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="wheelcactus" style="margin-right: 3%;"><span style="font-size: 70%;">Wheel Cactus</span></div>
+            </div>
+            @*<div class="droppable1" data-draggable-id="slLizard"><span style="font-size: 12px;">Striped Legless Lizard</span></div>
+                <div class="droppable1" data-draggable-id="cwSkink"><span style="font-size: 12px;">Corangamite Water Skink</span></div>
+                <div class="droppable1" data-draggable-id="gSkink"><span style="font-size: 12px;">Guthega Skink</span></div>*@
+            <!--endangered-->
+            <!--Invasive-->
+            <!--Invasive-->
+        </div>
+        <!--Droppable Species Boxes End Here-->
+    </div>
+    <!-- footer_start  -->
+    <div>
+        <hr />
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-6 col-lg-5 ">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <img src="~/img/grassland_logo.png" alt="">
+                                    </a>
+                                </div>
+                                <p class="address_text">
+                                    <br> <br> <br>
+                                </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Information
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="~/Iteration2/About">About</a></li>
+                                    <li><a href="~/Iteration2/Grasslands">Information</a></li>
+                                    <li><a href="~/Iteration2/Contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2  col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Follow Us
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="#">FaceBook</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                    <li><a href="#"> Twitter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer_start  -->
+
+
+    <style>
+        .home-act {
+            color: aquamarine
+        }
+    </style>
+    <!-- JS here -->
+    <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/js/ajax-form.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <script src="~/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/js/scrollIt.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/nice-select.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/gijgo.min.js"></script>
+
+    <!--my js-->
+    <script src="~/js/myjs.js"></script>
+    <!--my js-->
+    <!--contact js-->
+    <script src="~/js/contact.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.form.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+            //     icons: {
+            //      rightIcon: '<span class="fa fa-caret-down"></span>'
+            //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+            format: 'HH.MM'
+        });</script>
+
+
+
+    <script>
+        let correct = 0;
+        let total = 0;
+        const totalDraggableItems = 6;
+        const totalMatchingPairs = 6; // Should be <= totalDraggableItems
+
+        const scoreSection = document.querySelector(".score");
+        const correctSpan = scoreSection.querySelector(".correct");
+        const totalSpan = scoreSection.querySelector(".total");
+        const playAgainBtn = scoreSection.querySelector("#play-again-btn");
+
+        const draggableItems = document.querySelector(".draggable-items");
+        const matchingPairs = document.querySelector(".matching-pairs");
+
+
+        let draggableElements;
+        let droppableElements;
+        draggableElements = document.querySelectorAll(".draggable1");
+        droppableElements = document.querySelectorAll(".droppable1");
+
+
+        draggableElements.forEach(elem => {
+            elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
+            // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
+            // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
+        });
+
+        droppableElements.forEach(elem => {
+            elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
+            elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
+            elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
+            elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
+        });
+
+
+        // Drag and Drop Functions
+
+        //Events fired on the drag target
+
+        function dragStart(event) {
+            event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
+        }
+
+        //Events fired on the drop target
+
+        function dragEnter(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.add("droppable1-hover");
+            }
+        }
+
+        function dragOver(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.preventDefault();
+            }
+        }
+
+        function dragLeave(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.remove("droppable1-hover");
+            }
+        }
+
+        function drop(event) {
+            event.preventDefault(); // This is in order to prevent the browser default handling of the data
+            event.target.classList.remove("droppable1-hover");
+            const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
+            const droppableElementData = event.target.getAttribute("data-draggable-id");
+            const isCorrectMatching = draggableElementData === droppableElementData;
+            if (isCorrectMatching) {
+                const draggableElement = document.getElementById(draggableElementData);
+                event.target.classList.add("dropped");
+                // event.target.style.backgroundColor = draggableElement.style.color; // This approach works only for inline styles. A more general approach would be the following:
+                event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
+                draggableElement.classList.add("dragged");
+                draggableElement.setAttribute("draggable1", "false");
+                event.target.insertAdjacentHTML("afterbegin", `<i class="fas fa-${draggableElementData}"></i>`);
+                correct++;
+                swal({
+                    title: "👏 Correct! 👏",
+                    icon: "success",
+                });
+            }
+            else {
+                total++;
+                swal({
+                    title: "🤔 Um...Try again maybe? 🤔",
+                    icon: "error",
+                });
+            }
+            scoreSection.style.opacity = 0;
+            setTimeout(() => {
+                correctSpan.textContent = correct;
+                totalSpan.textContent = total;
+                scoreSection.style.opacity = 1;
+            }, 200);
+            if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+                swal("🎉Game over!🎉", {
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                    buttons: {
+                        cancel: "Go Back ↶",
+                        catch: {
+                            text: "Play again ↺",
+                            value: "again",
+                        },
+                    },
+                })
+                    .then((value) => {
+                        switch (value) {
+                            case "again":
+                                location.reload();
+                                break;
+
+                            default:
+                                window.history.back();
+                        }
+                    });
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

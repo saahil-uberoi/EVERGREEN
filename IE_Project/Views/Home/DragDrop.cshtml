@@ -12,10 +12,8 @@
         <title>Drag and Drop Game</title>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
         <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="~/js/notify.min.js"></script>
         <script type="text/javascript" src="~/Content/Fauna.json"></script>
-        @*<link rel="stylesheet" type="text/css" href="~/css/dragDrop.css">
-        <script src="~/js/dragdrop.js"></script>*@
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <style>
             @@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
@@ -31,16 +29,59 @@
                 color: #111;
             }
 
+            .score {
+                font-family: monospace;
+                text-align: center;
+                font-size: 2rem;
+                font-weight: bold;
+                letter-spacing: 0.25rem;
+                margin: 1rem;
+                position: relative;
+                transition: opacity 0.2s;
+            }
+
+            #play-again-btn {
+                position: absolute;
+                top: -0.5rem;
+                left: 50%;
+                margin-left: -50px;
+                font-size: 1rem;
+                font-weight: bold;
+                color: #fff;
+                background-color: #111;
+                border: 5px double #fff;
+                border-radius: 14px;
+                padding: 8px 10px;
+                outline: none;
+                letter-spacing: .05em;
+                cursor: pointer;
+                display: none;
+                opacity: 0;
+                transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+            }
+
+                #play-again-btn:hover {
+                    background-color: #333;
+                }
+
+                #play-again-btn:active {
+                    background-color: #555;
+                }
+
+                #play-again-btn.play-again-btn-entrance {
+                    opacity: 1;
+                    transform: translateX(6rem);
+                }
+
             .dragelements {
                 display: flex;
                 justify-content: center;
             }
 
             .draggable1 {
-                height: 3rem;
-                width: 3rem;
+                height: 10%;
+                width: 10%;
                 display: flex;
-                align-items: center;
                 justify-content: center;
                 font-size: 4rem;
                 margin: 0rem 0.5rem;
@@ -55,14 +96,13 @@
             .droppable1 {
                 height: 5.5rem;
                 width: 5.5rem;
-                margin-left: 50px;
-                margin-top: 20px;
+                margin-left: 5%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 text-align: center;
-                font-size: 2rem;
+                font-size: 200%;
                 font-family: 'Lucida Handwriting';
                 font-weight: bold;
                 background-color: #fff;
@@ -77,7 +117,7 @@
 
                 /* Drag and Drop Related Styling */
 
-                .droppable1.droppable-hover {
+                .droppable1.droppable1-hover {
                     /* background-color: #bee3f0; */
                     border-width: 5px;
                     transform: scale(1.1);
@@ -107,6 +147,32 @@
                     opacity: 0.1;
                 }
 
+            .matching-pairs {
+                transition: opacity 0.5s;
+            }
+
+            .matching-pair {
+                height: 6rem;
+                width: 22rem;
+                margin: 1rem auto;
+                display: flex;
+                justify-content: space-between;
+            }
+
+                .matching-pair span {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    user-select: none;
+                }
+
+            .label {
+                width: 15rem;
+                font-size: 2rem;
+            }
+
             .box_header {
                 display: inline-block;
                 width: 100%;
@@ -120,7 +186,7 @@
                 float: left;
             }
 
-            @@media (max-width: 600px) {
+            @@media (max-width: 37.5rem) {
                 html {
                     font-size: 12px;
                 }
@@ -136,167 +202,191 @@
                 $('[data-toggle="dtooltip"]').tooltip()
             })
         </script>
-
     </head>
 
-    <body translate="no">
-
-        <div class="bradcam_area breadcam_bg overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>Drag & Drop - Wetland</h3> <!--ref. https://html-css-js.com/html/character-codes/icons/-->
-                    </div>
+<body translate="no">
+    <!--Header Start Here-->
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Drag & Drop - Wetland</h3> <!--ref. https://html-css-js.com/html/character-codes/icons/-->
                 </div>
             </div>
         </div>
-
-        <div>
-            <div style="text-align: center">
-                <br>
-                <h2 style="font-family:'Lucida Handwriting';">How to play:</h2>
-                <h4 style="font-family:'Lucida Handwriting';">
-                    1. Click on the animals to see their full pictures.<br>
-                    2. Find the correct animal name <br>
-                    3. Identify it as endangered or invasive. <br>
-                    4. Drag them to their correct spot!<br>
-                    5. Collect em’ all
-                </h4>
-            </div>
-        </div>
-
-        @*<div class="score">
-            <span class="correct">0</span>/<span class="total">0</span>
-            <button id="play-again-btn">Play Again</button>
-        </div>*@
-
-        <div class="box_header">
+    </div>
+    <!--Header End Here-->
+    <!--Game Instruction Section Start Here-->
+    <div>
+        <div style="text-align: center">
             <br>
-            <div class="box_area2" style="font-size: 20px; font-family:'Lucida Handwriting'; margin-left:30px">Endangered</div>
-            <div class="box_areaq" style="font-size: 20px; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">Invasive</div>
-            <br>
+            <h2 style="font-family:'Lucida Handwriting';">How to play:</h2>
+            <h4 style="font-family:'Lucida Handwriting';">
+                1. Click on the animals to see their full pictures.<br>
+                2. Find the correct animal name <br>
+                3. Identify it as endangered or invasive. <br>
+                4. Drag them to their correct spot!<br>
+                5. Collect em’ all
+            </h4>
         </div>
-
-        <div style="height: 50vw; background-image: url('../img/info_wetland.jpg'); background-size: 70%; background-repeat: no-repeat; background-position: center;">
-            <!--bg img-->
-            <section class="dragelements" style="position:absolute; left: 30%; top: 110%;">
-                <!--endangered-->
-                <i class="fas fa-frog draggable1 dtooltip" draggable="true" style="color: #0b9e1e; width: 50px; height: 600px;" id="grassfrog" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://live.staticflickr.com/6218/6343027574_6bb39f276b_b.jpg&quot; width=200 height=150>"></i>
-                <i class="fas fa-frog draggable1 dtooltip" draggable="true" style="color: #726666; width: 70px; height: 400px;" id="treefrog" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://upload.wikimedia.org/wikipedia/commons/6/6f/Litoria_booroolongensis.jpg width=200 height=150>"></i>
-                <i class="fas fa-crow draggable1 dtooltip" draggable="true" style="color: #11235a; width: 80px; height: 500px;" id="knot" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/7063/6959877850_e48240bd92_b.jpg width=200 height=150>"></i>
-                <i class="fas fa-dove draggable1 dtooltip" draggable="true" style="color: #723333; width: 85px; height: 300px;" id="snipe" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/8507/8470799026_6fe2e26e65_b.jpg width=200 height=150>"></i>
-                <i class="fas fa-otter draggable1 dtooltip" draggable="true" style="color: #745b98; width: 150px; height: 450px;" id="hmouse" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/812/40242103384_b1cb2cd6f5_b.jpg width=200 height=150>"></i>
-                <!--endangered-->
-                <!--Invasive-->
-                <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#000000; width:70px; height:500px;" id="africanfeathergrass" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ornamental_Grass_%283052146417%29.jpg/1200px-Ornamental_Grass_%283052146417%29.jpg&quot; width=200 height=150>"></i>
-
-            </section>
-
-            <div class="dropelements">
-                <!--endangered-->
-                <div class="box_header">
-                    <div class="droppable1 box_area2" data-draggable-id="snipe"><span style="font-size: 12px;">Australian Painted-snipe</span> </div>
-                    <div class="droppable1 box_area1" data-draggable-id="africanfeathergrass" style="margin-right: 45px;"><span style="font-size: 12px;">African Feather Grass</span> </div>
-                </div>
-                <div class="droppable1" data-draggable-id="treefrog"><span style="font-size: 12px;">Booroolong Tree Frog</span></div>
-                <div class="droppable1" data-draggable-id="knot"><span style="font-size: 12px;">Great Knot</span></div>
-                <div class="droppable1" data-draggable-id="grassfrog"><span style="font-size: 12px;">Growling Grass Frog</span></div>
-                <div class="droppable1" data-draggable-id="hmouse"><span style="font-size: 12px;">Heath Mouse</span></div>
-                <!--endangered-->
-                <!--Invasive-->
-                @*<div class="droppable1" data-draggable-id="africanfeathergrass"><span style="font-size: 15px;">African Feather Grass</span> </div>*@
-                @*<div class="droppable1" data-draggable-id="some name"<span>Some species</span> </div>*@
-
-
-                <!--Invasive-->
+    </div>
+    <hr />
+    <!--Game Instruction Section End Here-->
+    <!--Score Section Start Here-->
+    <div class="score" style="font-family:'Lucida Handwriting'; font-size:80%">
+        <span style="color:green">✔:</span> <span class="correct">0</span> &nbsp;&nbsp;&nbsp; <span style="color:red">❌:</span> <span class="total">0</span>
+        <div><button id="play-again-btn">Play Again</button></div>
+    </div>
+    <!--Score Section End Here-->
+    <!--Species classification Section Start Here-->
+    <div class="box_header">
+        <div class="box_area2" style="font-size: 125%; font-family:'Lucida Handwriting'; margin-left:30px">Endangered</div>
+        <div class="box_areaq" style="font-size: 125%; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">Invasive</div>
+    </div>
+    <!--Species classification Section End Here-->
+    <!--Draggable Species Section Start Here-->
+    <div style="height: 50vw; background-image: url('../img/info_wetland.jpg'); background-size: 70%; background-repeat: no-repeat; background-position: center;">
+        <!--bg img-->
+        <section class="dragelements" style="background-position-x:center">
+            <!--endangered-->
+            <i class="fas fa-frog draggable1 dtooltip" draggable="true" style="color: #0b9e1e;" id="grassfrog" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://live.staticflickr.com/6218/6343027574_6bb39f276b_b.jpg&quot; width=200 height=150>"></i>
+            <i class="fas fa-frog draggable1 dtooltip" draggable="true" style="color: #726666; width: 70%; height: 40%;" id="treefrog" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://upload.wikimedia.org/wikipedia/commons/6/6f/Litoria_booroolongensis.jpg width=200 height=150>"></i>
+            <i class="fas fa-crow draggable1 dtooltip" draggable="true" style="color: #11235a; width: 80%; height: 30%;" id="knot" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/7063/6959877850_e48240bd92_b.jpg width=200 height=150>"></i>
+            <i class="fas fa-dove draggable1 dtooltip" draggable="true" style="color: #723333; width: 85%; height: 30%;" id="snipe" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/8507/8470799026_6fe2e26e65_b.jpg width=200 height=150>"></i>
+            <i class="fas fa-otter draggable1 dtooltip" draggable="true" style="color: #745b98; width: 50%; height: 45%;" id="hmouse" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/812/40242103384_b1cb2cd6f5_b.jpg width=200 height=150>"></i>
+            <!--endangered-->
+            <!--Invasive-->
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#000000; width:70%; height:500%;" id="africanfeathergrass" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ornamental_Grass_%283052146417%29.jpg/1200px-Ornamental_Grass_%283052146417%29.jpg&quot; width=200 height=150>"></i>
+        </section>
+        <!--Draggable Species Section End Here-->
+        <!--Droppable Species Boxes Start Here-->
+        <div class="dropelements" style="position:initial">
+            <!--endangered-->
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="snipe"><span style="font-size: 12px;">Australian Painted-snipe</span> </div>
+                <div class="droppable1 box_area1" data-draggable-id="africanfeathergrass" style="margin-right: 5%;"><span style="font-size: 12px;">African Feather Grass</span> </div>
             </div>
+            <div class="droppable1" data-draggable-id="treefrog"><span style="font-size: 12px;">Booroolong Tree Frog</span></div>
+            <div class="droppable1" data-draggable-id="knot"><span style="font-size: 12px;">Great Knot</span></div>
+            <div class="droppable1" data-draggable-id="grassfrog"><span style="font-size: 12px;">Growling Grass Frog</span></div>
+            <div class="droppable1" data-draggable-id="hmouse"><span style="font-size: 12px;">Heath Mouse</span></div>
+            <!--endangered-->
+            <!--Invasive-->
+            @*<div class="droppable1" data-draggable-id="africanfeathergrass"><span style="font-size: 15px;">African Feather Grass</span> </div>*@
+            @*<div class="droppable1" data-draggable-id="some name"<span>Some species</span> </div>*@
+            <!--Invasive-->
         </div>
+        <!--Droppable Species Boxes End Here-->
+    </div>
 
 
 
 
-        <script>
-            let correct = 0;
-            let total = 0;
-            const totalDraggableItems = 5;
-            const totalMatchingPairs = 5; // Should be <= totalDraggableItems
+    <script>
+        let correct = 0;
+        let total = 0;
+        const totalDraggableItems = 6;
+        const totalMatchingPairs = 6; // Should be <= totalDraggableItems
 
-            @*const scoreSection = document.querySelector(".score");
-            const correctSpan = scoreSection.querySelector(".correct");
-            const totalSpan = scoreSection.querySelector(".total");
-            const playAgainBtn = scoreSection.querySelector("#play-again-btn");*@
+        const scoreSection = document.querySelector(".score");
+        const correctSpan = scoreSection.querySelector(".correct");
+        const totalSpan = scoreSection.querySelector(".total");
+        const playAgainBtn = scoreSection.querySelector("#play-again-btn");
 
-
-            let draggableElements;
-            let droppableElements;
-
-            draggableElements = document.querySelectorAll(".draggable1");
-            droppableElements = document.querySelectorAll(".droppable1");
+        const draggableItems = document.querySelector(".draggable-items");
+        const matchingPairs = document.querySelector(".matching-pairs");
 
 
+        let draggableElements;
+        let droppableElements;
+        draggableElements = document.querySelectorAll(".draggable1");
+        droppableElements = document.querySelectorAll(".droppable1");
 
-            draggableElements.forEach(elem => {
-                elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
-                // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
-                // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
-            });
 
-            droppableElements.forEach(elem => {
-                elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
-                elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
-                elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
-                elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
-            });
+        draggableElements.forEach(elem => {
+            elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
+            // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
+            // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
+        });
 
-            // Drag and Drop Functions
+        droppableElements.forEach(elem => {
+            elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
+            elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
+            elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
+            elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
+        });
 
-            //Events fired on the drag target
 
-            function dragStart(event) {
-                event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
+        // Drag and Drop Functions
+
+        //Events fired on the drag target
+
+        function dragStart(event) {
+            event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
+        }
+
+        //Events fired on the drop target
+
+        function dragEnter(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.add("droppable1-hover");
+            }
+        }
+
+        function dragOver(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.preventDefault();
+            }
+        }
+
+        function dragLeave(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.remove("droppable1-hover");
+            }
+        }
+
+        function drop(event) {
+            event.preventDefault(); // This is in order to prevent the browser default handling of the data
+            event.target.classList.remove("droppable1-hover");
+            const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
+            const droppableElementData = event.target.getAttribute("data-draggable-id");
+            const isCorrectMatching = draggableElementData === droppableElementData;
+            if (isCorrectMatching) {
+                const draggableElement = document.getElementById(draggableElementData);
+                event.target.classList.add("dropped");
+                // event.target.style.backgroundColor = draggableElement.style.color; // This approach works only for inline styles. A more general approach would be the following:
+                event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
+                draggableElement.classList.add("dragged");
+                draggableElement.setAttribute("draggable1", "false");
+                event.target.insertAdjacentHTML("afterbegin", `<i class="fas fa-${draggableElementData}"></i>`);
+                correct++;
+                swal({
+                    title: "👏 Correct! 👏",
+                    icon: "success",
+                });
+            }
+            else {
+                total++;
+                swal({
+                    title: "🤔 Um...Try again maybe? 🤔",
+                    icon: "error",
+                });
+            }
+            scoreSection.style.opacity = 0;
+            setTimeout(() => {
+                correctSpan.textContent = correct;
+                totalSpan.textContent = total;
+                scoreSection.style.opacity = 1;
+            }, 200);
+            if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+                playAgainBtn.style.display = "block";
+                setTimeout(() => {
+                    playAgainBtn.classList.add("play-again-btn-entrance");
+                }, 200);
             }
 
-            //Events fired on the drop target
+        }
 
-            function dragEnter(event) {
-                if (!event.target.classList.contains("dropped")) {
-                    event.target.classList.add("droppable1-hover");
-                }
-            }
 
-            function dragOver(event) {
-                if (!event.target.classList.contains("dropped")) {
-                    event.preventDefault(); // Prevent default to allow drop
-                }
-            }
-
-            function dragLeave(event) {
-                if (!event.target.classList.contains("dropped")) {
-                    event.target.classList.remove("droppable-hover");
-                }
-            }
-
-            function drop(event) {
-                event.preventDefault(); // This is in order to prevent the browser default handling of the data
-                event.target.classList.remove("droppable-hover");
-                const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
-                const droppableElementData = event.target.getAttribute("data-draggable-id");
-                const isCorrectMatching = draggableElementData === droppableElementData;
-                if (isCorrectMatching) {
-                    const draggableElement = document.getElementById(draggableElementData);
-                    event.target.classList.add("dropped");
-                    // event.target.style.backgroundColor = draggableElement.style.color; // This approach works only for inline styles. A more general approach would be the following:
-                    event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
-                    draggableElement.classList.add("dragged");
-                    draggableElement.setAttribute("draggable", "false");
-                    event.target.insertAdjacentHTML("afterbegin", `<i class="fas fa-${draggableElementData}"></i>`);
-                    correct++;
-                    alert("👏 Correct! 👏");
-                }
-                else {
-                    total++;
-                    alert("🤔 Um...Try again maybe? 🤔");
-                }
-            }
-        </script>
-    </body>
+    </script>
+</body>

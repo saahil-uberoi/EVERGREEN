@@ -22,6 +22,18 @@ namespace IE_Project.Controllers
             return View(species.ToList());
         }
 
+        public ActionResult Index2()
+        {
+            var species = db.Species.Include(s => s.Category1);
+            return View(species.ToList());
+        }
+
+        public ActionResult Index1()
+        {
+            var species = db.Species.Include(s => s.Category1);
+            return View(species.ToList());
+        }
+
         // GET: Species/Details/5
         public ActionResult Details(int? id)
         {
@@ -123,6 +135,28 @@ namespace IE_Project.Controllers
 
         [HttpPost]
         public ActionResult Index(string searchTxt)
+        {
+            var species = db.Species.ToList();
+            if (searchTxt != null)
+            {
+                species = db.Species.Where(x => x.name.Contains(searchTxt)).ToList();
+            }
+            return View(species);
+        }
+
+        [HttpPost]
+        public ActionResult Index1(string searchTxt)
+        {
+            var species = db.Species.ToList();
+            if (searchTxt != null)
+            {
+                species = db.Species.Where(x => x.name.Contains(searchTxt)).ToList();
+            }
+            return View(species);
+        }
+
+        [HttpPost]
+        public ActionResult Index2(string searchTxt)
         {
             var species = db.Species.ToList();
             if (searchTxt != null)
