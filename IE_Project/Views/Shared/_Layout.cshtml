@@ -1,240 +1,221 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zxx">
 <head>
-    @*<script language="JavaScript" src="~/js/pw.js"></script>*@
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>MelGrass</title>
-    <meta name="description" content="">
+    <title>EVERGREEN | Melgrass</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
-    <!-- Place favicon.ico in the root directory -->
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="~/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- color switch -->
+    <link href="~/css/blast.min.css" rel="stylesheet" />
+    <!-- portfolio -->
+    <link href="~/css/portfolio.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- CSS here -->
-    <link rel="stylesheet" href="~/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/themify-icons.css">
     <link rel="stylesheet" href="~/css/nice-select.css">
     <link rel="stylesheet" href="~/css/flaticon.css">
     <link rel="stylesheet" href="~/css/gijgo.css">
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/slicknav.css">
-    <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/hotspot.css">
     <link rel="stylesheet" href="~/css/hotspot1.css">
     <link rel="stylesheet" href="~/css/hotspot2.css">
     <link rel="stylesheet" href="~/css/imgSlider.css">
     <link rel="stylesheet" href="~/css/info.css">
+
     <!-- CSS end -->
+    <!-- JS here -->
+    <!-- JS end -->
 </head>
 
-<body>
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- main banner -->
+    <div id="home">
+        <!-- header open -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+                <h1>
+                    <a class="navbar-brand" href="~/Home/Index"> Melgrass </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="~/Home/Index" data-blast="color">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link" href="~/Home/#about">About</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link" href="~/Home/#grassland">Grasslands</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link " href="#">Search (comming soon)</a>
+                        </li>
+                        <li class="nav-item dropdown mt-lg-0 mt-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Game
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item nav-link" href="~/Home/GameSelect">Drag & Drop</a>
+                                <a class="dropdown-item nav-link" href="#">Memory Card (Coming soon)</a>
+                                @*<a class="dropdown-item scroll nav-link" href="#portfolio">portfolio</a>
+                                <a class="dropdown-item scroll nav-link" href="#posts">latest posts</a>*@
+                            </div>
+                        </li>
+                        @*<li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#contact">Our Team</a>
+                        </li>*@
+                    </ul>
+                    <!--<button type="button" class="btn  wthree-link-bnr bg-theme rounded-circle text-center mt-lg-0 mt-3"
+                    data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
+                        class="fa fa-user text-white"></span>
+                </button>-->
+                </div>
+            </nav>
+        </header>
+        <!-- Header Closed-->
+
+        <div>
+            @RenderBody()
+            <hr />
+            <!-- footer -->
+            <footer class="cpy-right bg-theme" data-blast="bgColor">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo-img">
-                                <a href="~/Home/Index">
-                                    <img src="~/img/grassland_logo.png" alt="" style="width:60%;" />
-                                </a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wthree-social">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fa fa-facebook-f icon_facebook"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fa fa-twitter icon_twitter"></span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="menu_wrap d-none d-lg-block">
-                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
-                                    <div class="main-menu">
-                                        <nav>
-                                            <ul id="navigation">
-                                                <li><a class="active" href="~/Home/Index">home</a></li>
-                                                <li><a href="~/Home/Grasslands">Grassland</a></li>
-                                                <li>
-                                                    <a href="#">Search <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="~/Species/Index">Species</a></li>
-                                                        @*<li><a href="single-blog.html">single-blog</a></li>*@
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Home/About">about</a>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Home/DragDrop">Game</a>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Home/Contact">Contact</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                    <div class="book_room">
-                                        <div class="book_btn">
-                                            @*<a class="popup-with-form" href="#test-form">Function</a>*@
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
+                        <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                            <p>
+                                © 2020 EVERGREEN | MelGrass. All rights reserved
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </footer>
+            <!-- //footer -->
+            @*<footer>
+                <p>&copy; @DateTime.Now.Year - Evergreen Victoria</p>
+            </footer>*@
         </div>
-    </header>
-    <!-- header-end -->
-
-    
-
-    <div>
-        @RenderBody()
-        <hr />
-        <!-- footer_start  -->
-        <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-md-6 col-lg-5 ">
-                            <div class="footer_widget">
-                                <div class="footer_logo">
-                                    <a href="#">
-                                        <img src="~/img/grassland_logo.png" alt="">
-                                    </a>
-                                </div>
-                                <p class="address_text">
-                                    <br> <br> <br>
-                                </p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-dribbble"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Information
-                                </h3>
-                                <ul class="links">
-                                    <li><a href="~/Home/About">About</a></li>
-                                    <li><a href="~/Home/Grasslands">Information</a></li>
-                                    <li><a href="~/Home/Contact">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2  col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Follow Us
-                                </h3>
-                                <ul class="links">
-                                    <li><a href="#">FaceBook</a></li>
-                                    <li><a href="#">Instagram</a></li>
-                                    <li><a href="#"> Twitter</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- footer_end  -->
-        @*<footer>
-            <p>&copy; @DateTime.Now.Year - Evergreen Victoria</p>
-        </footer>*@
-    </div>
-    <style>
-        .home-act {
-            color: aquamarine
-        }
-    </style>
-    <!-- JS here -->
-    <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="~/js/popper.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/owl.carousel.min.js"></script>
-    <script src="~/js/isotope.pkgd.min.js"></script>
-    <script src="~/js/ajax-form.js"></script>
-    <script src="~/js/waypoints.min.js"></script>
-    <script src="~/js/jquery.counterup.min.js"></script>
-    <script src="~/js/imagesloaded.pkgd.min.js"></script>
-    <script src="~/js/scrollIt.js"></script>
-    <script src="~/js/jquery.scrollUp.min.js"></script>
-    <script src="~/js/wow.min.js"></script>
-    <script src="~/js/nice-select.min.js"></script>
-    <script src="~/js/jquery.slicknav.min.js"></script>
-    <script src="~/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/js/plugins.js"></script>
-    <script src="~/js/gijgo.min.js"></script>
-
-    <!--my js-->
-    <script src="~/js/myjs.js"></script>
-    <!--my js-->
-
-    <!--contact js-->
-    <script src="~/js/contact.js"></script>
-    <script src="~/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/js/jquery.form.js"></script>
-    <script src="~/js/jquery.validate.min.js"></script>
-    <script src="~/js/mail-script.js"></script>
-    <script src="~/js/main.js"></script>
-    <script>
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            disableDaysOfWeek: [0, 0],
-            //     icons: {
-            //      rightIcon: '<span class="fa fa-caret-down"></span>'
-            //  }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-caret-down"></span>'
+        <style>
+            .home-act {
+                color: aquamarine
             }
+        </style>
+        <!-- Banner  Responsiveslides -->
+        <script src="~/js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use"$(window).load(function() {"
+            $(function () {
+                // Slideshow 4
+                $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager: true,
+                    nav: false,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                        $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                        $('.events').append("<li>after event fired.</li>");
+                    }
+                });
 
-        });
-        var timepicker = $('#timepicker').timepicker({
-            format: 'HH.MM'
-        });</script>
-    @RenderSection("scripts", required: false)
+            });
+        </script>
+        <!-- //Banner  Responsiveslides -->
+        <!-- Scrolling Nav JavaScript -->
+        <script src="~/js/scrolling-nav.js"></script>
+        <script src="~/js/counter.js"></script>
+        <!-- portfolio -->
+        <script src="~/js/jquery.picEyes.js"></script>
+        <script>
+            $(function () {
+                //picturesEyes($('.demo li'));
+                $('.demo li').picEyes();
+            });
+        </script>
+        <!-- //portfolio -->
+        <!-- start-smooth-scrolling -->
+        <script src="~/js/move-top.js"></script>
+        <script src="~/js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
+            });
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script>
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                };
+                */
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+            });
+        </script>
+        <script src="~/js/SmoothScroll.min.js"></script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="~/js/bootstrap.js"></script>
+        @RenderSection("scripts", required: false)
+
 </body>
 </html>
-// 
-find the endangered animals in this wetland
-and drag them to the 

@@ -82,17 +82,41 @@ namespace IE_Project.Controllers
             return View();
         }
 
+        public ActionResult MemoryCard()
+        {
+            ViewBag.Message = "Your Memory Card Game page.";
 
-        public ActionResult DragDrop()
+            return View();
+        }
+
+        public ActionResult GameSelect()
+        {
+            ViewBag.Message = "Your Game Selection page.";
+
+            return View();
+        }
+
+        public ActionResult DragDropWetland()
         {
             ViewBag.Message = "Your Drag&Drop Game page.";
 
             return View();
         }
-
-        public ActionResult MemoryCard()
+        public ActionResult DragDropRocky()
         {
-            ViewBag.Message = "Your Memory Card Game page.";
+            ViewBag.Message = "Your Drag&Drop Game page.";
+
+            return View();
+        }
+        public ActionResult DragDropGrassland()
+        {
+            ViewBag.Message = "Your Drag&Drop Game page.";
+
+            return View();
+        }
+        public ActionResult DragDropWoodland()
+        {
+            ViewBag.Message = "Your Drag&Drop Game page.";
 
             return View();
         }

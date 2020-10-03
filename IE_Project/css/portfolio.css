@@ -24,7 +24,7 @@
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	background: url(../images/close.png) no-repeat;
+	background: url(../img/close.png) no-repeat;
 	z-index: 100;
 	display: none;
 }
@@ -59,12 +59,12 @@
 
 .pictures_eyes_in .prev {
 	left: 35px;
-	background: url(../images/prev.png) no-repeat;
+	background: url(../img/prev.png) no-repeat;
 }
 
 .pictures_eyes_in .next {
 	right: 35px;
-	background: url(../images/next.png) no-repeat;
+	background: url(../img/next.png) no-repeat;
 }
 
 .pictures_eyes_indicators {

@@ -46,11 +46,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
@@ -62,11 +77,38 @@
     <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RequireJsNet, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RequireJsNet.3.1.0\lib\net45\RequireJsNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +162,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -127,6 +172,9 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +231,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\dargdropsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsertDataController.cs" />
     <Compile Include="Controllers\Iteration1Controller.cs" />
@@ -195,6 +244,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\dargdrop.cs" />
+    <Compile Include="Models\Dgame.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Species.cs" />
@@ -203,6 +254,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Dgame.mdf" />
+    <Content Include="App_Data\Dgame_log.ldf">
+      <DependentUpon>Dgame.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\SpeciesDB.mdf" />
     <Content Include="App_Data\SpeciesDB_log.ldf">
       <DependentUpon>SpeciesDB.mdf</DependentUpon>
@@ -240,6 +295,8 @@
     <Content Include="css\blast.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\imgDiff.css" />
+    <Content Include="css\imgSelect.css" />
     <Content Include="css\memorycard.css" />
     <Content Include="css\flaticon.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -256,6 +313,7 @@
     <Content Include="css\portfolio.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\slicknav.css" />
+    <Content Include="css\style.css" />
     <Content Include="css\theme-default.css" />
     <Content Include="css\themify-icons.css" />
     <Content Include="favicon.ico" />
@@ -276,6 +334,7 @@
     <Content Include="img\banner3.jpg" />
     <Content Include="img\close.png" />
     <Content Include="img\cloverGlycine.jpg" />
+    <Content Include="img\drag&amp;drop.png.jpg" />
     <Content Include="img\g1.jpg" />
     <Content Include="img\g2.jpg" />
     <Content Include="img\g3.jpg" />
@@ -283,14 +342,17 @@
     <Content Include="img\g5.jpg" />
     <Content Include="img\g6.jpg" />
     <Content Include="img\grassland_logo.png" />
+    <Content Include="img\GrowlingGrassFrog.jpg" />
     <Content Include="img\info_rocky.jpg" />
     <Content Include="img\Kawai.png" />
     <Content Include="img\Kun.png" />
+    <Content Include="img\MemoryGame.jpg" />
     <Content Include="img\move-top.png" />
     <Content Include="img\next.png" />
     <Content Include="img\prev.png" />
     <Content Include="img\Saahil.png" />
     <Content Include="img\swampEverlasting.jpg" />
+    <Content Include="img\wallabyGrass.jpg" />
     <Content Include="img\Yu.jpg" />
     <Content Include="img\adamsonsBlowngrass.jpg" />
     <Content Include="img\banyule.jpg" />
@@ -302,7 +364,6 @@
     <Content Include="img\goraeLeekOrchid.jpg" />
     <Content Include="img\aboutBg.jpg" />
     <Content Include="img\grassy_woodlands.jpg" />
-    <Content Include="img\growlingGrassFrog.jpg" />
     <Content Include="img\hoarySunray.jpg" />
     <Content Include="img\info_grasslands.jpg" />
     <Content Include="img\info_rabbits.jpg" />
@@ -333,8 +394,11 @@
     <Content Include="js\blast.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\browserify.js" />
     <Content Include="js\contact.js" />
     <Content Include="js\counter.js" />
+    <Content Include="js\imgDiff.js" />
+    <Content Include="js\logic.js" />
     <Content Include="js\memorycard.js" />
     <Content Include="js\easing.js" />
     <Content Include="js\game-DandD.js" />
@@ -405,11 +469,13 @@
     <Content Include="fonts\themify.eot" />
     <Content Include="fonts\themify.ttf" />
     <Content Include="fonts\themify.woff" />
+    <None Include=".bin\node.cmd" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="Content\Fauna.json" />
+    <Content Include="data\dotenv.env" />
     <None Include="Properties\PublishProfiles\melgrass1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\findSpecies.js" />
@@ -430,6 +496,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\modernizr.foundation.js" />
+    <Content Include="Views\Home\DragDropGrassland.cshtml" />
+    <Content Include="Views\Home\DragDropRocky.cshtml" />
+    <Content Include="Views\Home\DragDropWetland.cshtml" />
+    <Content Include="Views\Home\DragDropWoodland.cshtml" />
+    <None Include="Views\Home\GameSelect.cshtml" />
     <Content Include="Views\Species\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -540,6 +611,11 @@
     <Content Include="Views\Iteration2\DragDropRocky.cshtml" />
     <Content Include="Views\Iteration2\DragDropGrassland.cshtml" />
     <Content Include="Views\Iteration2\DragDropWoodland.cshtml" />
+    <Content Include="Views\dargdrops\Create.cshtml" />
+    <Content Include="Views\dargdrops\Delete.cshtml" />
+    <Content Include="Views\dargdrops\Details.cshtml" />
+    <Content Include="Views\dargdrops\Edit.cshtml" />
+    <Content Include="Views\dargdrops\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -559,6 +635,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\Connection\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

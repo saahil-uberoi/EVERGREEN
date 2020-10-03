@@ -40,8 +40,9 @@
     <title>Drag and Drop Game</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="~/Content/Fauna.json"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @*<script type="text/javascript" src="~/js/dist/bundle.js"></script>*@
+
     <style>
         @@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
@@ -107,7 +108,7 @@
         }
 
         .draggable1 {
-            position:relative;
+            position: relative;
             height: 10%;
             width: 10%;
             display: flex;
@@ -320,6 +321,7 @@
         </div>
     </div>
     <hr />
+    <asp:HiddenField ID="hdnfldVariable" runat="server" />
     <!--Game Instruction Section End Here-->
     <!--Score Section Start Here-->
     <div class="score" style="font-family:'Lucida Handwriting'; font-size:80%">
@@ -342,7 +344,7 @@
             <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #726666; left: 40vw; top: 20vw;" id="asSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://www.zoo.org.au/media/1690/1019_alpine_she-oak_skink_healesville_sanctuary.jpg width=200 height=150>"></i>
             <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #11235a; left: 20vw; top: 15vw;" id="slLizard" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://collections.museumsvictoria.com.au/content/media/24/360074-large.jpg width=200 height=150>"></i>
             @*<i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #723333; width: 85%; height: 30%;" id="cwSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://grasslands.ecolinc.vic.edu.au/sites/default/files/styles/field_guide/public/species/Corangamite_Water_Skink_01.jpg width=200 height=150>"></i>
-        <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #745b98; width: 50%; height: 45%;" id="gSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://www.zoo.org.au/media/1724/10408_guthega_skink_healesville_sanctuary.jpg width=200 height=150>"></i>*@
+                <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #745b98; width: 50%; height: 45%;" id="gSkink" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://www.zoo.org.au/media/1724/10408_guthega_skink_healesville_sanctuary.jpg width=200 height=150>"></i>*@
             <!--endangered-->
             <!--Invasive-->
             <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#dfe433; left: -20vw; top: 12vw;" id="goldenthistle" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://godasagardener.files.wordpress.com/2012/05/sgt-21.jpg width=200 height=150>"></i>
@@ -483,7 +485,6 @@
     <script src="~/js/jquery.magnific-popup.min.js"></script>
     <script src="~/js/plugins.js"></script>
     <script src="~/js/gijgo.min.js"></script>
-
     <!--my js-->
     <script src="~/js/myjs.js"></script>
     <!--my js-->
@@ -516,6 +517,8 @@
 
 
     <script>
+        let playerName = "name";
+        var player = {};
         let correct = 0;
         let total = 0;
         const totalDraggableItems = 6;
@@ -529,12 +532,22 @@
         const draggableItems = document.querySelector(".draggable-items");
         const matchingPairs = document.querySelector(".matching-pairs");
 
-
         let draggableElements;
         let droppableElements;
         draggableElements = document.querySelectorAll(".draggable1");
         droppableElements = document.querySelectorAll(".droppable1");
-
+        @*playerName = prompt("Please enter your name", "default name");*@
+        //create connection
+        @*var mysql = require('mysql');
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "A@14762b7"
+        });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+        });*@
 
         draggableElements.forEach(elem => {
             elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
@@ -612,6 +625,10 @@
                 scoreSection.style.opacity = 1;
             }, 200);
             if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+                var score = correct - total;
+                var hdnfldVariable = document.getElementById('hdnfldVariable');
+                hdnfldVariable.value = playerName;
+                console.log(hdnfldVariable);
                 swal("🎉Game over!🎉", {
                     closeOnClickOutside: false,
                     closeOnEsc: false,
@@ -619,7 +636,7 @@
                         cancel: "Go Back ↶",
                         catch: {
                             text: "Play again ↺",
-                            value: "again",
+                            value: "again"
                         },
                     },
                 })

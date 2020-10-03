@@ -1,61 +1,200 @@
 ﻿<head>
-    <title>Home</title>
+    <!-- JS here -->
+    <script src="~/js/imgDiff.js"></script>
+    <!-- JS end -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/css/imgDiff.css">
+    <!-- CSS end -->
 </head>
-<body>
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="slider_active owl-carousel">
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>
-                                    Welcome to MelGrass
-                                </h3>
-                                <p>Let's explore Victoria Grasslands and find out more species through games</p>
-                                @*<a href="#" class="boxed-btn3">Appointment</a>*@
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- main banner -->
+    <div id="home">
+        <!-- header open -->
+        <!--<header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+                <h1>
+                    <a class="navbar-brand" href="index.html"> Melgrass </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html" data-blast="color">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#grassland">Grasslands</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link " href="GameScreen.html">Game</a>
+                        </li>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#contact">Our Team</a>
+                        </li>
+                    </ul>-->
+        <!--<button type="button" class="btn  wthree-link-bnr bg-theme rounded-circle text-center mt-lg-0 mt-3"
+            data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
+                class="fa fa-user text-white"></span>
+        </button>-->
+        <!--</div>
+            </nav>
+        </header>-->
+        <!-- Header Closed-->
+        <!--banner-->
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li class="banner banner1">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3>Protect the Victoria Volcanic Plains</h3>
+                                <span class="line"></span>
+                                <p>We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#about"
+                                   role="button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner banner2">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3>EVERGREEN | Melgrass</h3>
+                                <span class="line"></span>
+                                <p>We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#about"
+                                   role="button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner banner3">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3>Discover the Invasive Species</h3>
+                                <span class="line"></span>
+                                <p>We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#about"
+                                   role="button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <!-- banner ends-->
+    <!--  About Us-->
+    <section class="wthree-slide-btm pt-lg-5" id="about">
+        <div class="container pt-sm-5 pt-4">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <div class="slide-banner">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="bg-abt light-bg">
+                        <div class="container">
+                            <div class="title-desc  pb-sm-3">
+                                <h4 class="main-title-w3pvt">About Melgrass</h4>
+                                <p>Helping the Victoria Voclanic Plains to regrow.</p>
+                            </div>
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="abt-grid">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="abt-icon" data-blast="bgColor">
+                                                <span class="fa fa-ravelry"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-9 pl-sm-0">
+                                            <div class="abt-txt ml-sm-0">
+                                                <p>
+                                                    Here you can learn more about the Victorian Volcanic Plain (VVP) and
+                                                    the importance of biodiversity to the grassland ecosystem while
+                                                    playing games. We hope to raise children's awareness of protecting
+                                                    the grassland ecosystem from the perspective of protecting
+                                                    biodiversity.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<div class="single_slider d-flex align-items-center justify-content-center slider_bg_2 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>
-                                    Discover knowledge through play-based programs
-                                </h3>
-                                <p>Challenge youself with out interractive play-based programs.</p>-->
-            @*<a href="#" class="boxed-btn3">Appointment</a>*@
-            <!--</div>
+        </div>
+    </section>
+    <!-- //about -->
+    <!-- stats --
+    <section class="w3_stats py-sm-5 py-4" id="stats">
+        <div class="container">
+            <div class="py-lg-5 w3-stats">
+                <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
+                <figure class="highcharts-figure">
+                    <div id="container">
+                        <script src='js/BarChart.js'></script>
+                        <!--description--
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <!-- stats ends-->
+    <!-- Grasslands -->
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">
+        <div class="container-fluid" style="width: 85%; height:relative;">
+
+            <!--text_slider_start-->
+            <div class="title-desc text-center pb-3">
+                <h2 class="main-title-w3pvt">Grasslands</h2>
+                <hr>
+                <h4 class="main-title-w3pvt" style="text-align: center;">
+                    Victorian Volcanic Plain Comparison (Slide to
+                    Explore)
+                </h4>
+                <p>Satellite images taken by Google</p>
+            </div>
+            <!--img_slider_start-->
+            <div class="row justify-content-center">
+                <!--row justify-content-center-->
+                <div class="col-lg-6 col-md-9">
+                    <!--col-lg-4 col-md-10-->
+                    <div class="section_title text-center mb-55">
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img src="~/img/vvp2016.jpeg" width="675" height="auto">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay">
+                                <img src="~/img/vvp1984.jpeg" width="675" height="auto">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_3 overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="slider_text">
-                                <h3>
-                                    Discover species in grasslands
-                                </h3>
-                                <p>Find out more information about different species in Victorian Volcanic Plains.</p>-->
-            @*<a href="#" class="boxed-btn3">Appointment</a>*@
-            <!--</div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
         </div>
-    </div>
-    <!-- slider_area_end -->
-
-    
-
+        <script>
+            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+            initComparisons();
+        </script>
+        <!--img_slider_end-->
+    </section>
+    <br><br><br><Br><br><br><br><br><br><br><Br><br>
     <!--habitat_container_start-->
     <div align="center">
         <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
@@ -66,14 +205,14 @@
         </div>
         <div>
             <div class="habitatContainer">
-                <a href='@Url.Action("Wetland", "Home")'/>
+                <a href='@Url.Action("Wetland", "Home")' />
                 <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
                 <div class="habitatOverlay habitatOverlayLeft">
                     <div class="habitatText">Wetland</div>
                 </div>
             </div>
             <div class="habitatContainer">
-                <a href='@Url.Action("Testing", "Home")'/>
+                <a href='@Url.Action("Testing", "Home")' />
                 <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
                 <div class="habitatOverlay habitatOverlayFade">
                     <div class="habitatText">Woodland</div>
@@ -81,7 +220,7 @@
             </div>
             <div class="habitatContainer">
                 <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
-                   <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                    <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
                     <div class="habitatOverlay habitatOverlayRight">
                         <div class="habitatText">Heavier-soils Plains</div>
                     </div>
@@ -89,6 +228,358 @@
         </div>
     </div>
     <!--habitat_container_end-->
+    <br>
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
+        <div class="title-desc text-center pb-3">
+            <p>Deep dive into the V.V.P. </p>
+        </div>
+        <div class="container-fluid" style="width: 100%;height: auto;">
+            <ul class="demo row py-lg-5 py-sm-4 pb-4">
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/swiftParrot.jpg" alt="Swift Parrot "
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/scalyButtons.jpg" alt=" scalyButtons"
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: 600px;" src="~/img/swampEverlasting.jpg"
+                             alt=" swampEverlasting" class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/info_grasslands.jpg" alt="Grasslands "
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-4 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/grassy_woodlands.jpg" alt="grassyWoodlands "
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-4 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/hoarySunray.jpg" alt="hoarySunray"
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-4 col-sm-6 mx-auto">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/laughingKookaburra.jpg"
+                             alt="laughingKookaburra" class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/lizard.jpg" alt="lizard"
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: 450px;" src="~/img/rushes.jpg" alt=" rushes"
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: 450px;" src="~/img/wallabyGrass.jpg" alt="wallabyGrass"
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="~/img/g5.jpg" alt=" "
+                             class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </section>
+    <!-- //Grasslands -->
+    <!-- slide -->
+    <div class="abt_bottom py-lg-5 bg-theme">
+        <div class="container py-sm-4 py-3">
+            <h4 class="abt-text text-capitalize text-sm-center mb-0">Join the Mission to help Victoria</h4>
+            <p class="text-white text-sm-center ">We Move The World To Protect VVP</p>
+            <div class="d-sm-flex justify-content-center">
+                <a href="DragDrop.html" role="button" class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                    Play The Game
+                </a>
+                <a href="#" role="button" data-toggle="modal" data-target="#grassland"
+                   class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                    Read more about Grasslands
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--//slide -->
+    <!--TEXT FOR GRASSLANDS-->
+    <!-- blog-->
+    <section class="blog_w3ls pb-lg-5 pb-4" id="posts">
+        <div class="container py-sm-5 py-4">
+            <div class="title-desc text-center pb-sm-3 mb-lg-5">
+                <h3 class="main-title-w3pvt">Let's Explore the V.V.P</h3>
+                <p>Helping animals & working on environmental issues.</p>
+            </div>
+            <div class="row mt-4">
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal2" role="button">
+                                <img class="card-img-bottom" src="~/img/info_grasslands.jpg" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"></span>
+
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal2" role="button">About Grasslands</a>
+                            </h5>
+                            <p>Grassland is an important kind of environment in Australia mother nature.</p>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal2">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal3" role="button">
+                                <img class="card-img-bottom" src="~/img/vicBioregions.png" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
+                                      data-blast="bgColor"></span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal3" role="button">
+                                    Grassland Ecosystem of Victoria Volcanic
+                                    Plain
+                                </a>
+                            </h5>
+                            <p>
+                                Victorian must know about the grassland ecosystem to be able to understand more about the
+                                natural environment.
+                            </p>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal3">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header p-0  position-relative">
+                            <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal4" role="button">
+                                <img class="card-img-bottom" src="~/img/info_rabbits.jpg" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
+                                      data-blast="bgColor"></span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal4" role="button">
+                                    Threats to biodiversity in Victorian
+                                    Grassland
+                                </a>
+                            </h5>
+                            <p>
+                                Understanding the threats to biodiversity is the first step to protecting Australian
+                                grassland.
+                            </p>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal4">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+            </div>
+        </div>
+    </section>
+    <!-- //blog -->
+    <!-- blog modal1 -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel2">About Grasslands</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/info_grasslands.jpg" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        Grassland is a vegetation area dominated by almost continuously covered
+                        grass, and it is also one of the most widely distributed main vegetation types in the world.
+                        Usually, natural grassland can be considered as the middle part of the environmental gradient,
+                        with the forest at one end and desert at the other end. The grassland plays an important
+                        balancing role for the earth's environment.
+                        When Europeans first arrived in western Victoria, much of the extensive undulating plains they
+                        saw were covered with native grasslands. However, starting from the 1830s, the local grasslands
+                        were quickly occupied because grazing there did not require much effort. Soon after, large areas
+                        of native grassland in Victoria were completely replaced by introduced pastures, crops and
+                        weeds.
+                        The Victoria Volcanic Plain (VVP), located from the west of Melbourne to the border of South
+                        Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial
+                        era, it has only 5% of the area left.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //blog modal1 -->
+    <!-- blog modal2-->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel3">Grassland Ecosystem of Victoria Volcanic Plain</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/vicBioregions.png" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        The natural temperate grassland of the Victoria Volcanic Plain is a highly
+                        fragmented and critically endangered ecological community. It is well known that the largest
+                        native animal on the Australian grassland is the kangaroo, the biggest of which is the red
+                        kangaroo, characteristic of the natural grassland in the dry inland areas. But because of the
+                        arrival of European immigrants, mammals introduced from other continents have become equally
+                        common. These animals include domestic animals, especially cattle and sheep, as well as a series
+                        of wild animals such as camels, horses, donkeys and goats. The biggest natural enemy to the
+                        grassland is the European rabbit, they are widely distributed, have strong reproductive ability,
+                        and their destructive power is also amazing. However, Australia does not have large predators,
+                        so the main predator is a dingo. There are very diverse reptiles, especially lizards, and
+                        various birds including large flightless emu, and various parrots.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //blog modal2 -->
+    <!-- blog modal3 -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel4">
+                        Threats to biodiversity in Victorian
+                        Grassland
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/info_rabbits.jpg" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        The interactions between native species are altered or destroyed by these
+                        invasive species, and climate change, Pollution, Overexploitation, and deforestation are also
+                        the major cause of extinction and can result in the loss of native biodiversity. The fewer
+                        species we have on the earth, the fewer humans we will have.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //blog modal3-->
+    <!-- Team Introduction -->
+    <!--<section class="contact-wthree py-sm-5 py-4" id="contact">-->
+        @*<section class="team py-4 py-lg-5" id="team">*@
+        <!--<div class="container py-lg-5 py-sm-4">
+            <div class="title-desc text-center pb-sm-3">
+                <h3 class="main-title-w3pvt">our team</h3>
+                <p>Helping animals & working on environmental issues.</p>
+            </div>
+            <div class="row py-4 mt-lg-5  team-grid">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="box13">
+                        <img src="~/img/Saahil.png" class="img-fluid img-thumbnail" alt="" />
+                        <div class="box-content">
+                            <h3 class="title" data-blast="color">Saahil Uberoi</h3>
+                            <span class="post">Business Intelligence Analyst</span>
+                            <ul class="social">
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mt-sm-0 mt-4">
+                    <div class="box13">
+                        <img src="~/img/Kawai.png" class="img-fluid img-thumbnail" alt="" />
+                        <div class="box-content">
+                            <h3 class="title" data-blast="color">KaWai Lai</h3>
+                            <span class="post">IT Developer</span>
+                            <ul class="social">
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mt-lg-0 mt-4">
+                    <div class="box13">
+                        <img src="~/img/Yu.jpg" class="img-fluid img-thumbnail" alt="" />
+                        <div class="box-content">
+                            <h3 class="title" data-blast="color">Yu Wang</h3>
+                            <span class="post">Business Analyst</span>
+                            <ul class="social">
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mt-4">
+                    <div class="box13">
+                        <img src="~/img/Kun.png" class="img-fluid img-thumbnail" alt="" />
+                        <div class="box-content">
+                            <h3 class="title" data-blast="color">Kun Liang</h3>
+                            <span class="post">Data Scientist</span>
+                            <ul class="social">
+                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- //team -->
 
 </body>
 
