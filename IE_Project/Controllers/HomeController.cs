@@ -89,7 +89,7 @@ namespace IE_Project.Controllers
             return View();
         }
 
-        public ActionResult GameSelect()
+        public ActionResult Select()
         {
             ViewBag.Message = "Your Game Selection page.";
 

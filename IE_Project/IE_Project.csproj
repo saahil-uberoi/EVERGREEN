@@ -472,7 +472,7 @@
     </None>
     <None Include="Content\Fauna.json" />
     <Content Include="data\dotenv.env" />
-    <None Include="Properties\PublishProfiles\melgrass1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\evergreen - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\findSpecies.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -612,6 +612,7 @@
     <Content Include="Views\dargdrops\Details.cshtml" />
     <Content Include="Views\dargdrops\Edit.cshtml" />
     <Content Include="Views\dargdrops\Index.cshtml" />
+    <Content Include="Views\Home\Select.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

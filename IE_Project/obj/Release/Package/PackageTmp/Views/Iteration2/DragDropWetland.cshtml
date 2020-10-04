@@ -1,0 +1,644 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @*<script language="JavaScript" src="~/js/pw.js"></script>*@
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MelGrass</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="~/css/style1.css">
+    <link rel="stylesheet" href="~/css/hotspot.css">
+    <link rel="stylesheet" href="~/css/hotspot1.css">
+    <link rel="stylesheet" href="~/css/hotspot2.css">
+    <link rel="stylesheet" href="~/css/imgSlider.css">
+    <link rel="stylesheet" href="~/css/info.css">
+    <!-- CSS end -->
+    @* Adjust the viewport width as per device width for mobile *@
+    @*<meta name=”viewport” content=”width = device-width, initial-scale=1.0” />*@
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <title>Drag and Drop Game</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Content/Fauna.json"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        @@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #eee;
+            color: #111;
+        }
+
+        .score {
+            font-family: monospace;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 0.25rem;
+            margin: 1rem;
+            position: relative;
+            transition: opacity 0.2s;
+        }
+
+        #play-again-btn {
+            position: absolute;
+            top: -0.5rem;
+            left: 50%;
+            margin-left: -50px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #111;
+            border: 5px double #fff;
+            border-radius: 14px;
+            padding: 8px 10px;
+            outline: none;
+            letter-spacing: .05em;
+            cursor: pointer;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+        }
+
+            #play-again-btn:hover {
+                background-color: #333;
+            }
+
+            #play-again-btn:active {
+                background-color: #555;
+            }
+
+            #play-again-btn.play-again-btn-entrance {
+                opacity: 1;
+                transform: translateX(6rem);
+            }
+
+        .dragelements {
+            display: flex;
+            justify-content: center;
+        }
+
+        .draggable1 {
+            position: relative;
+            height: 10%;
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            margin: 0rem 0.5rem;
+            cursor: move;
+            transition: opacity 0.2s;
+        }
+
+            .draggable1:hover {
+                opacity: 0.5;
+            }
+
+        .droppable1 {
+            height: 6.5vw;
+            width: 6.5vw;
+            margin-top: 2%;
+            margin-left: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1vw;
+            font-family: 'Lucida Handwriting';
+            font-weight: bold;
+            background-color: #fff;
+            border: 0.2vw dashed #111;
+            transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+        }
+
+            .droppable1 span {
+                font-size: 1.25rem;
+                pointer-events: none; /* The element is never the target of pointer events */
+            }
+
+            /* Drag and Drop Related Styling */
+
+            .droppable1.droppable1-hover {
+                /* background-color: #bee3f0; */
+                border-width: 5px;
+                transform: scale(1.1);
+            }
+
+            .droppable1.dropped {
+                border-style: solid;
+                color: #fff;
+            }
+
+                .droppable1.dropped span {
+                    font-size: 0.75rem;
+                    margin-top: 0.5rem;
+                }
+
+                .droppable1.dropped i {
+                    pointer-events: none;
+                }
+
+        .draggable1.dragged {
+            user-select: none;
+            opacity: 0.1;
+            cursor: default;
+        }
+
+            .draggable1.dragged:hover {
+                opacity: 0.1;
+            }
+
+        .matching-pairs {
+            transition: opacity 0.5s;
+        }
+
+        .matching-pair {
+            height: 6rem;
+            width: 22rem;
+            margin: 1rem auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .matching-pair span {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                user-select: none;
+            }
+
+        .label {
+            width: 15rem;
+            font-size: 2rem;
+        }
+
+        .box_header {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .box_area1 {
+            float: right;
+        }
+
+        .box_area2 {
+            float: left;
+        }
+
+        @@media (max-width: 37.5rem) {
+            html {
+                font-size: 12px;
+            }
+
+            .dragelements {
+                margin: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('[data-toggle="dtooltip"]').tooltip()
+        })
+    </script>
+</head>
+
+<body translate="no">
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img">
+                                <a href="~/Iteration2/Index">
+                                    <img src="~/img/grassland_logo.png" alt="" style="width:60%;" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a class="active" href="~/Iteration2/Index">Home</a></li>
+                                                <li><a href="~/Iteration2/Grasslands">Grassland</a></li>
+                                                <li>
+                                                    <a href="#">Search <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="~/Species/Index">Species</a></li>
+                                                        @*<li><a href="single-blog.html">single-blog</a></li>*@
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/About">about</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/DragDrop">Game</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/Iteration2/Contact">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="book_room">
+                                        <div class="book_btn">
+                                            @*<a class="popup-with-form" href="#test-form">Function</a>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!--Header Start Here-->
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Drag & Drop - Wetland</h3> <!--ref. https://html-css-js.com/html/character-codes/icons/-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Header End Here-->
+    <!--Game Instruction Section Start Here-->
+    <div>
+        <div style="text-align: center">
+            <br>
+            <h2 style="font-family:'Lucida Handwriting';">How to play:</h2>
+            <h4 style="font-family:'Lucida Handwriting';">
+                1. Move your mouse to the icons to see their full pictures.<br>
+                2. Find the correct name of each species<br>
+                3. Identify it as endangered or invasive. <br>
+                4. Drag them to their correct spot!<br>
+                5. Collect em’ all<br>
+                *Hint: <i class="fas fa-paw" style="color:red;"></i> = animals, <i class="fab fa-pagelines" style="color:green;"></i> = plants
+            </h4>
+        </div>
+    </div>
+    <hr />
+    <!--Game Instruction Section End Here-->
+    <!--Score Section Start Here-->
+    <div class="score" style="font-family:'Lucida Handwriting'; font-size:80%">
+        <span style="color:green">✔:</span> <span class="correct">0</span> &nbsp;&nbsp;&nbsp; <span style="color:red">❌:</span> <span class="total">0</span>
+        <div><button id="play-again-btn">Play Again</button></div>
+    </div>
+    <!--Score Section End Here-->
+    <!--Species classification Section Start Here-->
+    <div class="box_header">
+        <div class="box_area2" style="font-size: 125%; font-family:'Lucida Handwriting'; margin-left:30px">Endangered</div>
+        <div class="box_areaq" style="font-size: 125%; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">Invasive</div>
+    </div>
+    <!--Species classification Section End Here-->
+    <!--Draggable Species Section Start Here-->
+    <div style="height: 40vw; background-image: url('../img/info_wetland.jpg'); background-size: 70%; background-repeat: no-repeat; background-position: center;">
+        <!--bg img-->
+        <section class="dragelements" style="left: 30%; top: 130%;">
+            <!--endangered-->
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #0b9e1e; left: 10vw; top: 27vw;" id="grassfrog" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://live.staticflickr.com/6218/6343027574_6bb39f276b_b.jpg&quot; width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #11235a; left: 20vw; top: 15vw;" id="knot" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/7063/6959877850_e48240bd92_b.jpg width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #723333; left: -15vw; top: 20vw;" id="snipe" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/8507/8470799026_6fe2e26e65_b.jpg width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #1d1313; left: 15vw; top: 20vw;" id="eCurlew" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://live.staticflickr.com/8704/17005544741_91039ece93_b.jpg width=200 height=150>"></i>
+            <!--endangered-->
+            <!--Invasive-->
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color:#f2ff54;left: -20vw; top: 30vw;" id="africanfeathergrass" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ornamental_Grass_%283052146417%29.jpg/1200px-Ornamental_Grass_%283052146417%29.jpg&quot; width=200 height=150>"></i>
+            <i class="fas fa-paw draggable1 dtooltip" draggable="true" style="color: #726666; left: -10vw; top: 10vw;" id="cToad" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=&quot;https://agriculture.vic.gov.au/__data/assets/image/0006/579138/Toad-3.jpg&quot; width=200 height=150>"></i>
+            <i class="fab fa-pagelines draggable1 dtooltip" draggable="true" style="color: #105e22; left: -5vw; top: 10vw;" id="tApple" data-toggle="dtooltip" data-html="true" data-placement="top" title="<img src=https://lh3.googleusercontent.com/proxy/xU3exKR6yGUN0O0rlxefuL5DD89cF94mxXA1zev9nvDqxNHDS355HSq9VpzHN0cKLmLr2N3MfXOHyTqGH6XcKehORVN8KtjzrXv2I3bzOVyYkuuc4hIx9jGtFZ2_TT1pxYCrvZMBgyd9I07xRVSjKv8hbV1vaJGC7fGxRFlodVORTvXh4rZieA width=200 height=150>"></i>
+        </section>
+        <!--Draggable Species Section End Here-->
+        <!--Droppable Species Boxes Start Here-->
+        <div class="dropelements" style="position:initial">
+            <!--endangered-->
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="snipe"><span style="font-size:0.9vw;">Australian Painted-snipe</span> </div>
+                <div class="droppable1 box_area1" data-draggable-id="africanfeathergrass" style="margin-right: 3%;"><span style="font-size: 0.9vw;">African Feather Grass</span> </div>
+            </div>
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="knot"><span style="font-size: 0.9vw;">Great Knot</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="cToad" style="margin-right: 3%;"><span style="font-size: 0.9vw;">Cane Toad</span> </div>
+            </div>
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="grassfrog"><span style="font-size: 0.9vw;">Growling Grass Frog</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="tApple" style="margin-right: 3%;"><span style="font-size: 0.9vw;">Thorn Apple</span> </div>
+            </div>
+            <div class="box_header">
+                <div class="droppable1 box_area2" data-draggable-id="eCurlew"><span style="font-size: 0.9vw;">Eastern Curlew</span></div>
+            </div>
+            
+            <!--endangered-->
+            <!--Invasive-->
+            @*<div class="droppable1" data-draggable-id="africanfeathergrass"><span style="font-size: 15px;">African Feather Grass</span> </div>*@
+            @*<div class="droppable1" data-draggable-id="some name"<span>Some species</span> </div>*@
+            <!--Invasive-->
+        </div>
+        <!--Droppable Species Boxes End Here-->
+    </div>
+    <!-- footer_start  -->
+    <div>
+        <hr />
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-md-6 col-lg-5 ">
+                            <div class="footer_widget">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <img src="~/img/grassland_logo.png" alt="">
+                                    </a>
+                                </div>
+                                <p class="address_text">
+                                    <br> <br> <br>
+                                </p>
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-lg-3">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Information
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="~/Iteration2/About">About</a></li>
+                                    <li><a href="~/Iteration2/Grasslands">Information</a></li>
+                                    <li><a href="~/Iteration2/Contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2  col-md-6 col-lg-2">
+                            <div class="footer_widget">
+                                <h3 class="footer_title">
+                                    Follow Us
+                                </h3>
+                                <ul class="links">
+                                    <li><a href="#">FaceBook</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                    <li><a href="#"> Twitter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer_start  -->
+
+
+    <style>
+        .home-act {
+            color: aquamarine
+        }
+    </style>
+    <!-- JS here -->
+    <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/js/ajax-form.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <script src="~/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/js/scrollIt.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/nice-select.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/gijgo.min.js"></script>
+
+    <!--my js-->
+    <script src="~/js/myjs.js"></script>
+    <!--my js-->
+    <!--contact js-->
+    <script src="~/js/contact.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.form.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+            //     icons: {
+            //      rightIcon: '<span class="fa fa-caret-down"></span>'
+            //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+            format: 'HH.MM'
+        });</script>
+
+
+
+    <script>
+        let correct = 0;
+        let total = 0;
+        const totalDraggableItems = 7;
+        const totalMatchingPairs = 7; // Should be <= totalDraggableItems
+
+        const scoreSection = document.querySelector(".score");
+        const correctSpan = scoreSection.querySelector(".correct");
+        const totalSpan = scoreSection.querySelector(".total");
+        const playAgainBtn = scoreSection.querySelector("#play-again-btn");
+
+        const draggableItems = document.querySelector(".draggable-items");
+        const matchingPairs = document.querySelector(".matching-pairs");
+
+
+        let draggableElements;
+        let droppableElements;
+        draggableElements = document.querySelectorAll(".draggable1");
+        droppableElements = document.querySelectorAll(".droppable1");
+
+
+        draggableElements.forEach(elem => {
+            elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
+            // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
+            // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
+        });
+
+        droppableElements.forEach(elem => {
+            elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
+            elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
+            elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
+            elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
+        });
+
+
+        // Drag and Drop Functions
+
+        //Events fired on the drag target
+
+        function dragStart(event) {
+            event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
+        }
+
+        //Events fired on the drop target
+
+        function dragEnter(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.add("droppable1-hover");
+            }
+        }
+
+        function dragOver(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.preventDefault();
+            }
+        }
+
+        function dragLeave(event) {
+            if (event.target.classList && event.target.classList.contains("droppable1") && !event.target.classList.contains("dropped")) {
+                event.target.classList.remove("droppable1-hover");
+            }
+        }
+
+        function drop(event) {
+            event.preventDefault(); // This is in order to prevent the browser default handling of the data
+            event.target.classList.remove("droppable1-hover");
+            const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
+            const droppableElementData = event.target.getAttribute("data-draggable-id");
+            const isCorrectMatching = draggableElementData === droppableElementData;
+            if (isCorrectMatching) {
+                const draggableElement = document.getElementById(draggableElementData);
+                event.target.classList.add("dropped");
+                // event.target.style.backgroundColor = draggableElement.style.color; // This approach works only for inline styles. A more general approach would be the following:
+                event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
+                draggableElement.classList.add("dragged");
+                draggableElement.setAttribute("draggable1", "false");
+                event.target.insertAdjacentHTML("afterbegin", `<i class="fas fa-${draggableElementData}"></i>`);
+                correct++;
+                swal({
+                    title: "👏 Correct! 👏",
+                    icon: "success",
+                });
+            }
+            else {
+                total++;
+                swal({
+                    title: "🤔 Um...Try again maybe? 🤔",
+                    icon: "error",
+                });
+            }
+            scoreSection.style.opacity = 0;
+            setTimeout(() => {
+                correctSpan.textContent = correct;
+                totalSpan.textContent = total;
+                scoreSection.style.opacity = 1;
+            }, 200);
+            if (correct === Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+                swal("🎉Game over!🎉", {
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                    buttons: {
+                        cancel: "Go Back ↶",
+                        catch: {
+                            text: "Play again ↺",
+                            value: "again",
+                        },
+                    },
+                })
+                    .then((value) => {
+                        switch (value) {
+                            case "again":
+                                location.reload();
+                                break;
+
+                            default:
+                                window.history.back();
+                        }
+                    });
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "FindSpecies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .candidate {
+            width: 120px;
+            height: 120px;
+        }
+
+        #vis {
+            background-color: #fff;
+        }
+
+        text {
+            font: 10px sans-serif;
+            pointer-events: none;
+        }
+
+        circle {
+            stroke: #565352;
+            stroke-width: 1;
+        }
+
+        rect {
+            border: 1px solid black;
+            outline-color: red;
+        }
+
+        div.tooltip {
+            position: absolute;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            padding: 10px 0 10px 5px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,1);
+            pointer-events: none;
+        }
+
+        .tooltiptext {
+            padding: 10px 0 0 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Find Species</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+    <div class="container-fluid">
+        <h1 class="h1-responsive">
+            2016 presidential campaigns<br><small class="text-muted">
+                Interactive visualization of most spoken words
+            </small>
+    </div><div class="container-fluid" id="vis"></div>
+</body>
+</html>
+    

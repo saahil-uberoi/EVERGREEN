@@ -341,11 +341,11 @@ $(document).ready(function() {
 
 
 
-//------- Mailchimp js --------//  
+/*//------- Mailchimp js --------//  
 function mailChimp() {
   $('#mc_embed_signup').find('form').ajaxChimp();
 }
-mailChimp();
+mailChimp();*/
 
 
 
