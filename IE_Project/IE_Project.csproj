@@ -314,6 +314,7 @@
     <Content Include="css\reset.css" />
     <Content Include="css\slicknav.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\style1.css" />
     <Content Include="css\theme-default.css" />
     <Content Include="css\themify-icons.css" />
     <Content Include="favicon.ico" />
@@ -344,8 +345,7 @@
     <Content Include="img\grassland_logo.png" />
     <Content Include="img\GrowlingGrassFrog.jpg" />
     <Content Include="img\info_rocky.jpg" />
-    <Content Include="img\Kawai.png" />
-    <Content Include="img\Kun.png" />
+    <Content Include="img\mainBr3.jpg" />
     <Content Include="img\MemoryGame.jpg" />
     <Content Include="img\move-top.png" />
     <Content Include="img\next.png" />
@@ -357,9 +357,6 @@
     <Content Include="img\adamsonsBlowngrass.jpg" />
     <Content Include="img\banyule.jpg" />
     <Content Include="img\fatTailedDunnart.jpg" />
-    <Content Include="img\favicon.ico" />
-    <Content Include="img\favicon.png" />
-    <Content Include="img\footer-logo.png" />
     <Content Include="img\goldenSunMoth.jpg" />
     <Content Include="img\goraeLeekOrchid.jpg" />
     <Content Include="img\aboutBg.jpg" />
@@ -379,7 +376,6 @@
     <Content Include="img\mainBr1.jpg" />
     <Content Include="img\pexels_text_slider.jpg" />
     <Content Include="img\plumeGrass.jpg" />
-    <Content Include="img\mainBr3.jpg" />
     <Content Include="img\riceFlower.jpg" />
     <Content Include="img\rushes.jpg" />
     <Content Include="img\scalyButtons.jpg" />

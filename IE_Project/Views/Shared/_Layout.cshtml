@@ -13,6 +13,7 @@
             window.scrollTo(0, 1);
         }
     </script>
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
     <script src="~/js/jquery-2.2.3.min.js"></script>
     <!-- Custom Theme files -->
     <link href="~/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
@@ -115,12 +116,12 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <span class="fa fa-facebook-f icon_facebook"></span>
+                                            @*<span class="fa fa-facebook-f icon_facebook"></span>*@
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <span class="fa fa-twitter icon_twitter"></span>
+                                            @*<span class="fa fa-twitter icon_twitter"></span>*@
                                         </a>
                                     </li>
                                 </ul>
@@ -128,16 +129,14 @@
                         </div>
                         <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
                             <p>
-                                © 2020 EVERGREEN | MelGrass. All rights reserved
+                                © @DateTime.Now.Year EVERGREEN | MelGrass. All rights reserved
                             </p>
                         </div>
                     </div>
                 </div>
             </footer>
             <!-- //footer -->
-            @*<footer>
-                <p>&copy; @DateTime.Now.Year - Evergreen Victoria</p>
-            </footer>*@
+
         </div>
         <style>
             .home-act {
