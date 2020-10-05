@@ -1,0 +1,106 @@
+﻿/** {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.box-container {
+    background: #ccc;
+    padding: 1em;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 0.30vw;
+}
+
+#thing {
+    width: 10px;
+    height: 10px;
+    background: red;
+    display: inline-block;
+}
+
+.box {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+    padding-top: 0.3em;
+}
+
+    .box.correct {
+        background: green;
+    }
+
+    .box.incorrect {
+        background: red;
+    }
+
+    .box.ui-draggable-dragging {
+        box-shadow: 10px 20px 30px rgba(0,0,0,0.5);
+        transform: scale(2);
+    }
+
+
+.droparea {
+    background: yellow;
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 0.30vw;
+}
+
+.score-container {
+    display: inline-block;
+    vertical-align: top;
+    border: 3px solid #000;
+    font-size: 2em;
+    padding: 1em;
+    border-radius: 0.30vw;
+}*/
+
+/*.skink {
+    content: url('../img/games/Corangamite Water Skink.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.paintedsnipe {
+    content: url('../img/games/Australian Painted-snipe.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.treefrog {
+    content: url('../img/games/Booroolong Tree Frog.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.knot {
+    content: url('../img/games/Great Knot.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.grassfrog {
+    content: url('../img/games/Growling Grass Frog.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.heathmouse {
+    content: url('../img/games/Heath Mouse.jpg');
+    height: 6.5rem;
+    width: 6.5rem;
+}*/
+
