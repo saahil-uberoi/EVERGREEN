@@ -472,7 +472,6 @@
     </None>
     <None Include="Content\Fauna.json" />
     <Content Include="data\dotenv.env" />
-    <Content Include="js\Cisco AnyConnect Secure Mobility Client.lnk" />
     <None Include="Properties\PublishProfiles\evergreen - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\findSpecies.js" />
