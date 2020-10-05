@@ -1,0 +1,157 @@
+﻿
+<!--@{
+    ViewBag.Title = "Dragdropgame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <head>
+        <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/latest_version_number/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/latest_version_number/jquery-ui.min.js"></script>
+        <style>
+            .draggables-container {
+                background: #eee;
+                padding: 1em;
+                display: inline-block;
+            }
+
+            .draggables {
+                display: inline-block;
+                background: #ea6733;
+                color: #fff;
+                width: 60px;
+                height: 60px;
+                font-size: 3em;
+                text-align: center;
+            }
+
+                .draggables.correct {
+                    background: #41b0e0;
+                }
+
+                .draggables.incorrect {
+                    background: #e04141;
+                }
+
+                .draggables.ui-draggable-dragging {
+                    box-shadow: 0 3px 20px rgba(0,0,0,0.7);
+                }
+
+            .droppers {
+                background: #57e5cb;
+                display: inline-block;
+                vertical-align: top;
+                width: 300px;
+                height: 300px;
+                margin-left: 2em;
+            }
+
+            .score-container {
+                display: inline-block;
+                vertical-align: top;
+                border: 3px solid #000;
+                padding: 1em;
+                font-size: 2em;
+                margin-left: 2em;
+            }
+        </style>
+
+    </head>
+    <body>-->
+        <!-- bradcam_area_start -->
+        <!--<div class="bradcam_area breadcam_bg overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>🧩Drag & Drop Game🧩</h3>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- bradcam_area_end -->
+
+        <!--<div class='draggables-container'>
+            <div class='draggables' draggable="true" data-numtype1='odd'> 1 </div>
+            <div class='draggables' draggable="true" data-numtype1='even'> 2 </div>
+            <div class='draggables' draggable="true" data-numtype1='odd'> 3 </div>
+            <div class='draggables' draggable="true" data-numtype1='even'> 4 </div>
+        </div>
+
+        <div class='droppers' data-area-numtype1='even'>
+            <h2> Evens </h2>
+        </div>
+
+        <div class='droppers' data-area-numtype1='odd'>
+            <h2> Odds </h2>
+        </div>
+
+        <div class='score-container'>
+            score: <span id='game-score'> 0 </span>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                //variables
+                var score = 0;
+                var numBoxesDropped = 0;
+                var numBoxes = $('.draggables').length;
+                // make boxes draggable
+                $('.draggables').draggable();
+
+                // make drop area droppable
+                $('.droppers').droppable({
+                    accept: '.draggables',
+                    drop: handleBoxDrop
+                });
+
+                //creating the function that handles drop event
+                function handleBoxDrop(event, ui) {
+                    var draggables = ui.draggable;
+                    var boxNumType = draggables.attr('data-numtype1');
+
+                    var droppers = $(this);
+                    var dropAreaNumType = droppers.attr('data-area-numtype1');
+                    //check box num type matchs drop area type
+                    if (boxNumType == dropAreaNumType) {
+                        //correct
+                        draggables.addClass('correct');
+                        score++;
+                    } else {
+                        //incorect
+                        draggables.addClass('incorrect');
+                    }
+                    //prevent box from being dragged
+                    draggables.draggable('disable');
+
+                    $('#game-score').text(score);
+                    numBoxesDropped++;
+
+                    if (numBoxesDropped == numBoxes) {
+                        alert('game finished');
+                    }
+                }
+            });
+        </script>-->
+
+        <!--<section class="draggable-elements">
+    <i class="skink draggable" draggable="true" id="Corangamite-Water-Skink"></i>
+    <i class="grassfrog draggable" draggable="true" id="Growling-Grass-Frog"></i>
+    <i class="treefrog draggable" draggable="true" id="Booroolong-Tree-Frog"></i>
+    <i class="knot draggable" draggable="true" id="Great-Knot"></i>
+    <i class="paintedsnipe draggable" draggable="true" id="Australian-Painted-snipe"></i>
+    <i class="heathmouse draggable" draggable="true" id="Heath-Mouse"></i>-->
+        <!-- <i class="fas fa-horse draggable" draggable="true" style="color: #333333;" id="horse"></i>
+    <i class="fas fa-hippo draggable" draggable="true" style="color: #ff9f40;" id="hippo"></i>
+    <i class="fas fa-spider draggable" draggable="true" style="color: #ff99cc;" id="spider"></i> -->
+        <!--</section>
+    <section class="droppable-elements">
+        <div class="droppable" data-draggable-id="Australian-Painted-snipe"><span>Australian Painted-snipe</span></div>
+        <div class="droppable" data-draggable-id="Booroolong-Tree-Frog"><span>Booroolong Tree Frog</span></div>
+        <div class="droppable" data-draggable-id="Corangamite-Water-Skink"><span>Corangamite Water Skink</span></div>
+        <div class="droppable" data-draggable-id="Great-Knot"><span>Great Knot</span></div>
+        <div class="droppable" data-draggable-id="Growling-Grass-Frog"><span>Growling Grass Frog</span></div>
+        <div class="droppable" data-draggable-id="Heath-Mouse"><span>Heath Mouse</span></div>-->
+        <!-- <div class="droppable" data-draggable-id="spider"><span>Spider</span></div>
+    <div class="droppable" data-draggable-id="horse"><span>Horse</span></div>
+    <div class="droppable" data-draggable-id="hippo"><span>Hippo</span></div> -->
+        <!--</section>-->
+    </body>
