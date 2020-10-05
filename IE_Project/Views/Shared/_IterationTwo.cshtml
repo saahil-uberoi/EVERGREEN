@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>EVERGREEN | Melgrass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="~/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- color switch -->
+    <link href="~/css/blast.min.css" rel="stylesheet" />
+    <!-- portfolio -->
+    <link href="~/css/portfolio.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="~/css/hotspot.css">
+    <link rel="stylesheet" href="~/css/hotspot1.css">
+    <link rel="stylesheet" href="~/css/hotspot2.css">
+    <link rel="stylesheet" href="~/css/imgSlider.css">
+    <link rel="stylesheet" href="~/css/info.css">
+
+    <!-- CSS end -->
+    <!-- JS here -->
+    <!-- JS end -->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- main banner -->
+    <div id="home">
+        <!-- header open -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+                <h1>
+                    <a class="navbar-brand" href="~/Iteration2/Index"> Melgrass </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="~/Iteration2/Index" data-blast="color">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link" href="~/Iteration2/#about">About</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link" href="~/Iteration2/#grassland">Grasslands</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link " href="#">Search</a>
+                        </li>
+                        <li class="nav-item dropdown mt-lg-0 mt-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Game
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item nav-link" href="~/Iteration2/Select">Drag & Drop</a>
+                                @*<a class="dropdown-item nav-link" href="~/Iteration2/DragDropWetland">Drag & Drop - Wetland</a>
+                                    <a class="dropdown-item nav-link" href="~/Iteration2/DragDropGrassland">Drag & Drop - Grassland</a>
+                                    <a class="dropdown-item nav-link" href="~/Iteration2/DragDropRocky">Drag & Drop - Rocky Grassland</a>
+                                    <a class="dropdown-item nav-link" href="~/Iteration2/DragDropWoodland">Drag & Drop - Grassy Woodland</a>*@
+                                @*<a class="dropdown-item nav-link" href="#">Memory Card (Coming soon)</a>*@
+                                @*<a class="dropdown-item scroll nav-link" href="#portfolio">portfolio</a>
+                                    <a class="dropdown-item scroll nav-link" href="#posts">latest posts</a>*@
+                            </div>
+                        </li>
+                        @*<li class="nav-item  mt-lg-0 mt-3">
+                                <a class="nav-link scroll" href="#contact">Our Team</a>
+                            </li>*@
+                    </ul>
+                    <!--<button type="button" class="btn  wthree-link-bnr bg-theme rounded-circle text-center mt-lg-0 mt-3"
+                        data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
+                            class="fa fa-user text-white"></span>
+                    </button>-->
+                </div>
+            </nav>
+        </header>
+        <!-- Header Closed-->
+
+        <div>
+            @RenderBody()
+            <hr />
+            <!-- footer -->
+            <footer class="cpy-right bg-theme" data-blast="bgColor">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wthree-social">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            @*<span class="fa fa-facebook-f icon_facebook"></span>*@
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            @*<span class="fa fa-twitter icon_twitter"></span>*@
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                            <p>
+                                © @DateTime.Now.Year EVERGREEN | MelGrass. All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer -->
+
+        </div>
+        <style>
+            .home-act {
+                color: aquamarine
+            }
+        </style>
+        <!-- Banner  Responsiveslides -->
+        <script src="~/js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use"$(window).load(function() {"
+            $(function () {
+                // Slideshow 4
+                $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager: true,
+                    nav: false,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                        $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                        $('.events').append("<li>after event fired.</li>");
+                    }
+                });
+
+            });
+        </script>
+        <!-- //Banner  Responsiveslides -->
+        <!-- Scrolling Nav JavaScript -->
+        <script src="~/js/scrolling-nav.js"></script>
+        <script src="~/js/counter.js"></script>
+        <!-- portfolio -->
+        <script src="~/js/jquery.picEyes.js"></script>
+        <script>
+            $(function () {
+                //picturesEyes($('.demo li'));
+                $('.demo li').picEyes();
+            });
+        </script>
+        <!-- //portfolio -->
+        <!-- start-smooth-scrolling -->
+        <script src="~/js/move-top.js"></script>
+        <script src="~/js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
+            });
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script>
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                };
+                */
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+            });
+        </script>
+        <script src="~/js/SmoothScroll.min.js"></script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="~/js/bootstrap.js"></script>
+        @RenderSection("scripts", required: false)
+
+</body>
+</html>

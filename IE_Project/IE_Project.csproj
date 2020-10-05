@@ -295,6 +295,7 @@
     <Content Include="css\blast.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\hotspot3.css" />
     <Content Include="css\imgDiff.css" />
     <Content Include="css\imgSelect.css" />
     <Content Include="css\memorycard.css" />
@@ -330,17 +331,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="humans.txt" />
-    <Content Include="img\banner1.jpg" />
-    <Content Include="img\banner2.jpg" />
-    <Content Include="img\banner3.jpg" />
     <Content Include="img\close.png" />
     <Content Include="img\cloverGlycine.jpg" />
     <Content Include="img\drag&amp;drop.png.jpg" />
-    <Content Include="img\g1.jpg" />
-    <Content Include="img\g2.jpg" />
-    <Content Include="img\g3.jpg" />
-    <Content Include="img\g4.jpg" />
-    <Content Include="img\g5.jpg" />
     <Content Include="img\g6.jpg" />
     <Content Include="img\grassland_logo.png" />
     <Content Include="img\GrowlingGrassFrog.jpg" />
@@ -350,10 +343,8 @@
     <Content Include="img\move-top.png" />
     <Content Include="img\next.png" />
     <Content Include="img\prev.png" />
-    <Content Include="img\Saahil.png" />
     <Content Include="img\swampEverlasting.jpg" />
     <Content Include="img\wallabyGrass.jpg" />
-    <Content Include="img\Yu.jpg" />
     <Content Include="img\adamsonsBlowngrass.jpg" />
     <Content Include="img\banyule.jpg" />
     <Content Include="img\fatTailedDunnart.jpg" />
@@ -372,7 +363,6 @@
     <Content Include="img\lemonBeautyHeads.jpg" />
     <Content Include="img\lizard.jpg" />
     <Content Include="img\mainBr2.jpg" />
-    <Content Include="img\logo.png" />
     <Content Include="img\mainBr1.jpg" />
     <Content Include="img\pexels_text_slider.jpg" />
     <Content Include="img\plumeGrass.jpg" />
@@ -590,29 +580,27 @@
     <Content Include="Views\Iteration1\SeeMore1.cshtml" />
     <Content Include="Views\Iteration1\SeeMore2.cshtml" />
     <Content Include="Views\Iteration1\SeeMore3.cshtml" />
-    <Content Include="Views\Iteration2\About.cshtml" />
-    <Content Include="Views\Iteration2\Contact.cshtml" />
-    <Content Include="Views\Iteration2\DragDropWetland.cshtml" />
-    <Content Include="Views\Iteration2\HeavierSoilsPlains.cshtml" />
-    <Content Include="Views\Iteration2\Grasslands.cshtml" />
-    <Content Include="Views\Iteration2\Index.cshtml" />
-    <Content Include="Views\Iteration2\SeeMore1.cshtml" />
-    <Content Include="Views\Iteration2\SeeMore2.cshtml" />
-    <Content Include="Views\Iteration2\SeeMore3.cshtml" />
-    <Content Include="Views\Iteration2\GrassyWoodland.cshtml" />
-    <Content Include="Views\Iteration2\Wetland.cshtml" />
     <Content Include="Views\Species\Index1.cshtml" />
     <Content Include="Views\Species\Index2.cshtml" />
     <Content Include="Views\Home\FindSpecies.cshtml" />
-    <Content Include="Views\Iteration2\DragDropRocky.cshtml" />
-    <Content Include="Views\Iteration2\DragDropGrassland.cshtml" />
-    <Content Include="Views\Iteration2\DragDropWoodland.cshtml" />
     <Content Include="Views\dargdrops\Create.cshtml" />
     <Content Include="Views\dargdrops\Delete.cshtml" />
     <Content Include="Views\dargdrops\Details.cshtml" />
     <Content Include="Views\dargdrops\Edit.cshtml" />
     <Content Include="Views\dargdrops\Index.cshtml" />
     <Content Include="Views\Home\Select.cshtml" />
+    <Content Include="Views\Home\RockyGrassland.cshtml" />
+    <Content Include="Views\Iteration2\DragDropGrassland.cshtml" />
+    <Content Include="Views\Iteration2\DragDropRocky.cshtml" />
+    <Content Include="Views\Iteration2\DragDropWetland.cshtml" />
+    <Content Include="Views\Iteration2\DragDropWoodland.cshtml" />
+    <Content Include="Views\Iteration2\Index.cshtml" />
+    <Content Include="Views\Iteration2\Select.cshtml" />
+    <Content Include="Views\Iteration2\GrassyWoodland.cshtml" />
+    <Content Include="Views\Iteration2\HeavierSoilsPlains.cshtml" />
+    <Content Include="Views\Iteration2\Wetland.cshtml" />
+    <Content Include="Views\Iteration2\RockyGrassland.cshtml" />
+    <Content Include="Views\Shared\_IterationTwo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -631,6 +619,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="img\grassland\" />
+    <Folder Include="img\rockland\" />
+    <Folder Include="img\wetland\" />
+    <Folder Include="img\woodland\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Connection\" />
   </ItemGroup>

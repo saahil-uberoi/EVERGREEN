@@ -62,6 +62,13 @@ namespace IE_Project.Controllers
             return View();
         }
 
+        public ActionResult RockyGrassland()
+        {
+            ViewBag.Message = "Your Rocky Grassland page.";
+
+            return View();
+        }
+
         public ActionResult SeeMore1()
         {
             ViewBag.Message = "Your SeeMore1 page.";
