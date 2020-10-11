@@ -603,21 +603,27 @@ ul.callbacks_tabs {
 }
 
 .banner1 {
-    background: url(../images/banner8.jpg) bottom no-repeat;
+    background: url(../images/banner10.jpeg) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .banner2 {
-    background: url(../images/banner6.jpg) bottom no-repeat;
+    background: url(../images/banner11.jpg) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .banner3 {
@@ -627,6 +633,9 @@ ul.callbacks_tabs {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .banner:before {
