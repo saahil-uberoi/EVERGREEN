@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>HomePage Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- portfolio -->
+    <link href="css/portfolio.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link REL="STYLESHEET" type="text/css"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link REL="STYLESHEET" type="text/css" href="BarChart.css" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!--Slider Style-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .img-comp-container {
+            position: relative;
+            height: 270px;
+            /*should be the same height as the images*/
+        }
+
+        .img-comp-img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .img-comp-img img {
+            display: block;
+            vertical-align: middle;
+        }
+
+        .img-comp-slider {
+            position: absolute;
+            z-index: 9;
+            cursor: ew-resize;
+            /*set the appearance of the slider:*/
+            width: 40px;
+            height: 40px;
+            background-color: #2196F3;
+            opacity: 0.6;
+            border-radius: 45%;
+        }
+    </style>
+    <style>
+        #loading {
+            background: url('images/hey_bear.gif') no-repeat center center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 9999999;
+        }
+
+        footer {
+            width: 100%;
+            height: 230px;
+            background-image: url(images/pngfuel.com\ copy.png);
+            background-size: 100% 100%;
+        }
+    </style>
+    <!--Slider Script-->
+    <script>
+        function initComparisons() {
+            var x, i;
+            /*find all elements with an "overlay" class:*/
+            x = document.getElementsByClassName("img-comp-overlay");
+            for (i = 0; i < x.length; i++) {
+                /*once for each "overlay" element:
+                pass the "overlay" element as a parameter when executing the compareImages function:*/
+                compareImages(x[i]);
+            }
+            function compareImages(img) {
+                var slider, img, clicked = 0, w, h;
+                /*get the width and height of the img element*/
+                w = img.offsetWidth;
+                h = img.offsetHeight;
+                /*set the width of the img element to 50%:*/
+                img.style.width = (w / 2) + "px";
+                /*create slider:*/
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "img-comp-slider");
+                /*insert slider*/
+                img.parentElement.insertBefore(slider, img);
+                /*position the slider in the middle:*/
+                slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                /*execute a function when the mouse button is pressed:*/
+                slider.addEventListener("mousedown", slideReady);
+                /*and another function when the mouse button is released:*/
+                window.addEventListener("mouseup", slideFinish);
+                /*or touched (for touch screens:*/
+                slider.addEventListener("touchstart", slideReady);
+                /*and released (for touch screens:*/
+                window.addEventListener("touchend", slideFinish);
+                function slideReady(e) {
+                    /*prevent any other actions that may occur when moving over the image:*/
+                    e.preventDefault();
+                    /*the slider is now clicked and ready to move:*/
+                    clicked = 1;
+                    /*execute a function when the slider is moved:*/
+                    window.addEventListener("mousemove", slideMove);
+                    window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                    /*the slider is no longer clicked:*/
+                    clicked = 0;
+                }
+                function slideMove(e) {
+                    var pos;
+                    /*if the slider is no longer clicked, exit this function:*/
+                    if (clicked == 0) return false;
+                    /*get the cursor's x position:*/
+                    pos = getCursorPos(e)
+                    /*prevent the slider from being positioned outside the image:*/
+                    if (pos < 0) pos = 0;
+                    if (pos > w) pos = w;
+                    /*execute a function that will resize the overlay image according to the cursor:*/
+                    slide(pos);
+                }
+                function getCursorPos(e) {
+                    var a, x = 0;
+                    e = e || window.event;
+                    /*get the x positions of the image:*/
+                    a = img.getBoundingClientRect();
+                    /*calculate the cursor's x coordinate, relative to the image:*/
+                    x = e.pageX - a.left;
+                    /*consider any page scrolling:*/
+                    x = x - window.pageXOffset;
+                    return x;
+                }
+                function slide(x) {
+                    /*resize the image:*/
+                    img.style.width = x + "px";
+                    /*position the slider:*/
+                    slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                }
+            }
+        }
+    </script>
+    <!--Loader-->
+    <script>
+        window.onload = function () {
+            //display loader on page load 
+            $('.loader').fadeOut();
+            setTimeout(hideLoader, 20 * 1000);
+        }
+
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- <div id="loading"></div>-->
+
+    <!-- main banner -->
+    <div id="home">
+        <!-- header open -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
+                <h1>
+                    <a class="navbar-brand" style="font-family:fantasy;" href="index.html">Melgrass </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-lg-auto text-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html" data-blast="color">
+                                <img src="https://img.icons8.com/dusk/64/000000/home.png" />
+                                <!--<a href="https://icons8.com/icon/42814/home">Home</a>-->
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <!--<img src="https://img.icons8.com/plasticine/100/000000/about.png"/>-->
+                            <!--<img src="https://img.icons8.com/dusk/64/000000/about.png"/>-->
+                            <img src="https://img.icons8.com/bubbles/64/000000/question-mark.png" />
+                            <a class="nav-link scroll" style="font-family:fantasy;" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/color/64/000000/nature.png" />
+                            <a class="nav-link scroll" style="font-family:fantasy;" href="#grassland">Grasslands</a>
+                        </li>
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/bubbles/64/000000/search.png" />
+                            <a class="nav-link " style="font-family:fantasy;" href="GameScreen.html">Search</a>
+                        </li>
+
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/dusk/64/000000/controller.png" />
+                            <a class="nav-link " style="font-family:fantasy;" href="GameScreen.html">Game</a>
+                        </li>
+                        </li>
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <!--<img src="https://img.icons8.com/clouds/64/000000/user-group-man-woman.png"/>-->
+                            <img src="https://img.icons8.com/bubbles/64/000000/email.png" />
+                            <a class="nav-link scroll" style="font-family:fantasy;" href="#contact">Our Team</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Header Closed-->
+
+        <!--banner-->
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li class="banner banner1">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3 style="font-family:fantasy;">Protect the Victoria Volcanic Plains</h3>
+                                <span class="line"></span>
+                                <p style="font-family:fantasy;">We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" style="font-family:fantasy;"
+                                    href="#about" role="button">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner banner2">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3 style="font-family:fantasy;">EVERGREEN | Melgrass</h3>
+                                <span class="line"></span>
+                                <p style="font-family:fantasy;">We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" style="font-family:fantasy;"
+                                    href="#about" role="button">View
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner banner3">
+                    <div class="container">
+                        <div class="banner-text">
+                            <div class="slider-info">
+                                <h3 style="font-family:fantasy;">Discover the Invasive Species</h3>
+                                <span class="line"></span>
+                                <p style="font-family:fantasy;">We move the world to protect the grasslands</p>
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" style="font-family:fantasy;"
+                                    href="#about" role="button">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <!-- banner ends-->
+
+    <!--Map Section-->
+    <section class="wthree-row w3-gallery pt-lg-5" id="grassland">
+        <div class="container-fluid" style="width:80%; height:auto;">
+            <!--text_slider_start-->
+
+            <!--img_slider_start-->
+            <!--<div class="row justify-content-center">-->
+                <div class="title-desc text-center pb-3">
+                    <h1 class="main-title-w3pvt" style="font-family:fantasy;">Grasslands</h1>
+                    <h3 style="text-align: center; font-family:fantasy;">Victorian Volcanic Plain Comparison (Slide to
+                        Explore)
+                        <!--class="main-title-w3pvt"-->
+                    </h3>
+                    <h4 style="font-family:fantasy;">Unlock the Mystry, Spot the Difference</h4>
+                    <h5 style="font-family:fantasy;">Satellite images taken by Google</h5>
+                </div>
+                <!--col-lg-4 col-md-10-->
+                <div class="section_title text-center mb-55"><!--mb-55-->
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                            <img src="images/vvp2016.jpeg" width="670vh" height="auto"
+                                style="margin-left: auto; margin-right: auto;">
+                        </div>
+                        <div class="img-comp-img img-comp-overlay">
+                            <img src="images/vvp1984.jpeg" width="670vh" height="auto"
+                                style="margin-left: auto; margin-right: auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!--</div>-->
+            <script>
+                /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+                initComparisons();
+            </script>
+            <!--img_slider_end-->
+    
+    <!--Map Section Ends-->
+    <br><br><br><Br><br><br><br><br><br><br><br>
+
+
+    <!--Grasslands-->
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
+        <div class="title-desc text-center pb-3">
+            <h3 style="font-family: fantasy;">Deep dive into the V.V.P. </h3>
+        </div>
+        <div class="container-fluid" style="width: 100%;height: auto;">
+            <ul class="demo row py-lg-5 py-sm-4 pb-4">
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/swiftParrot.jpg" alt="Swift Parrot "
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: 645px;" src="images/scalyButtons.jpg" alt=" scalyButtons"
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: 640px; margin-left: -1%" src="images/swampEverlasting.jpg"
+                            alt=" swampEverlasting" class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/info_grasslands.jpg" alt="Grasslands "
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/grassy_woodlands.jpg" alt="grassyWoodlands "
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/hoarySunray.jpg" alt="hoarySunray"
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/laughingKookaburra.jpg"
+                            alt="laughingKookaburra" class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+                <li class="col-lg-3 col-sm-6">
+                    <div class="gallery-grid1">
+                        <img style="height:350px; width: auto;" src="images/lizard.jpg" alt="lizard"
+                            class="img-fluid img-thumbnail" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- //Grasslands -->
+
+    <!-- footer -->
+
+    <footer>
+        <!--class="cpy-right bg-theme">-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-lg-right mt-lg-0 mt-4">
+                    <h4 style="font-family: fantasy;">© 2020 EVERGREEN | MelGrass. All rights reserved
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- Banner  Responsiveslides -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use"$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+    <!-- //Banner  Responsiveslides -->
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/counter.js"></script>
+    <!-- portfolio -->
+    <script src="js/jquery.picEyes.js"></script>
+    <script>
+        $(function () {
+            //picturesEyes($('.demo li'));
+            $('.demo li').picEyes();
+        });
+    </script>
+    <!-- //portfolio -->
+    <!-- start-smooth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

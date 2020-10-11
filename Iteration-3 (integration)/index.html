@@ -23,12 +23,6 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!-- online-fonts -->
-    <!--<link
-        href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link REL="STYLESHEET" type="text/css"
@@ -40,6 +34,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 
     <style>
         * {
@@ -123,6 +118,19 @@
 
         .highcharts-data-table tr:hover {
             background: #f1f7ff;
+        }
+
+        footer {
+            width: 100%;
+            height: 230px;
+            background-image: url(images/team-bg.jpg);
+            background-size: 100% 100%;
+        }
+
+        h1 {
+            font-family: '3dumbregular';
+            font-weight: normal;
+            font-style: normal;
         }
     </style>
     <!--Viz CSS ends-->
@@ -214,7 +222,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
                 <h1>
-                    <a class="navbar-brand" href="index.html" > Melgrass </a>
+                    <a class="navbar-brand" href="index.html"> Melgrass </a>
                 </h1>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -224,28 +232,38 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-lg-auto text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html" data-blast="color">Home
+                            <a class="nav-link" href="index.html" data-blast="color">
+                                <img src="https://img.icons8.com/dusk/64/000000/home.png" />
+                                <!--<a href="https://icons8.com/icon/42814/home">Home</a>-->
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item  mt-lg-0 mt-3">
+                            <!--<img src="https://img.icons8.com/plasticine/100/000000/about.png"/>-->
+                            <!--<img src="https://img.icons8.com/dusk/64/000000/about.png"/>-->
+                            <img src="https://img.icons8.com/bubbles/64/000000/question-mark.png" />
                             <a class="nav-link scroll" href="#about">About</a>
                         </li>
                         <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/color/64/000000/nature.png" />
                             <a class="nav-link scroll" href="#grassland">Grasslands</a>
                         </li>
                         <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/bubbles/64/000000/search.png" />
+                            <a class="nav-link " href="GameScreen.html">Search</a>
+                        </li>
+
+                        <li class="nav-item mt-lg-0 mt-3">
+                            <img src="https://img.icons8.com/dusk/64/000000/controller.png" />
                             <a class="nav-link " href="GameScreen.html">Game</a>
                         </li>
                         </li>
                         <li class="nav-item  mt-lg-0 mt-3">
+                            <!--<img src="https://img.icons8.com/clouds/64/000000/user-group-man-woman.png"/>-->
+                            <img src="https://img.icons8.com/bubbles/64/000000/email.png" />
                             <a class="nav-link scroll" href="#contact">Our Team</a>
                         </li>
                     </ul>
-                    <!--<button type="button" class="btn  wthree-link-bnr bg-theme rounded-circle text-center mt-lg-0 mt-3"
-                        data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
-                            class="fa fa-user text-white"></span>
-                    </button>-->
                 </div>
             </nav>
         </header>
@@ -317,11 +335,11 @@
                             <div class="row flex-column mt-lg-4 mt-3">
                                 <div class="abt-grid">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <!--<div class="col-sm-3">
                                             <div class="abt-icon" data-blast="bgColor">
                                                 <span class="fa fa-ravelry"></span>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class="col-sm-9 pl-sm-0">
                                             <div class="abt-txt ml-sm-0">
                                                 <p>Here you can learn more about the Victorian Volcanic Plain (VVP) and
@@ -359,46 +377,106 @@
     </section>
     <!-- stats ends-->
 
+    <hr>
     <!-- Grasslands -->
+    <!--try grasslands map--
     <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">
-        <div class="container-fluid" style="width: 85%; height:relative;">
-
-            <!--text_slider_start-->
-            <div class="title-desc text-center pb-3">
-                <h2 class="main-title-w3pvt">Grasslands</h2>
-                <h4 class="main-title-w3pvt" style="text-align: center;">Victorian Volcanic Plain Comparison (Slide to
-                    Explore)</h4>
-                <p>Satellite images taken by Google</p>
-            </div>
-            <!--img_slider_start-->
-            <div class="row justify-content-center">
-                <!--row justify-content-center-->
-                <div class="col-lg-6 col-md-9">
-                    <!--col-lg-4 col-md-10-->
-                    <div class="section_title text-center mb-55">
-                        <div class="img-comp-container">
-                            <div class="img-comp-img">
-                                <img src="images/vvp2016.jpeg" width="675" height="auto">
-                            </div>
-                            <div class="img-comp-img img-comp-overlay">
-                                <img src="images/vvp1984.jpeg" width="675" height="auto">
+        <h1 class="main-title-w3pvt" style="text-align: center;">Grasslands</h1>
+        <div class="container pt-sm-5 pt-4">
+            <div class="row no-gutters">
+                <div class="col-lg-4">
+                    <!--text_slider_start--
+                    <div class="title-desc text-center pb-3">
+                        <h3 class="main-title-w3pvt" style="text-align: center;">Victorian Volcanic Plain Comparison
+                            (Slide to Explore)
+                        </h3>
+                        <h4>Satellite images taken by Google</h4>
+                    </div>
+                    <!--img_slider_start--
+                    <div class="col-lg-10">
+                        <div class="container">
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="row">
+                                    <div class="col-sm-9 pl-sm-0">
+                                    <div class="img-comp-container">
+                                        
+                                        <div class="img-comp-img">
+                                            <img src="images/vvp2016.jpeg" width="670vh" height="auto">
+                                        </div>
+                                        <div class="img-comp-img img-comp-overlay">
+                                            <img src="images/vvp1984.jpeg" width="670vh" height="auto">
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!--img slider ends--
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-            initComparisons();
-        </script>
-        <!--img_slider_end-->
+
+        <!--img_slider_end--
+    <br><br><br><Br><br><br><br><br><br><br><br>
+
+    </section>
+    <section class="wthree-row" id="grassland">
+        <div class="container" style="-webkit-column-rule-width: 0px;" align = "center">
+            <div class="img-comp-container">
+
+                <div class="img-comp-img">
+                    <img src="images/vvp2016.jpeg" width="670vh" height="auto">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                    <img src="images/vvp1984.jpeg" width="670vh" height="auto">
+                </div>
+            </div>
+        </div>
     </section>
 
-    <br><br><br><Br><br><br><br><br>
+    <!--try grasslands map end-->
+
+
+
+    <!--<section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">-->
+    <!--<div class="container-fluid" style="width:50%; height:auto;">-->
+    <!--text_slider_start--
+    <div class="title-desc text-center pb-3">
+        <h1 class="main-title-w3pvt">Grasslands</h1>
+        <h2 class="main-title-w3pvt" style="text-align: center; ">Victorian Volcanic Plain Comparison (Slide to Explore)
+        </h2>
+        <h3>Satellite images taken by Google</h3>
+
+    </div>
+    <!--img_slider_start--
+    <div class="row justify-content-center">
+        <!--row justify-content-center--
+        <div class="col-lg-4 col-md-10">
+            <!--col-lg-4 col-md-10--
+            <div class="section_title text-center mb-55">
+                <div class="img-comp-container">
+                    <div class="img-comp-img">
+                        <img src="images/vvp2016.jpeg" width="800vh" height="auto">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                        <img src="images/vvp1984.jpeg" width="800vh" height="auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+    <script>
+        /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+        initComparisons();
+    </script>
+    <!--img_slider_end-->
+    <br><br><br><Br><br><br><br><br><br><br><br>
+
     <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
         <div class="title-desc text-center pb-3">
-            <p>Deep dive into the V.V.P. </p>
+            <h3>Deep dive into the V.V.P. </h3>
         </div>
         <div class="container-fluid" style="width: 100%;height: auto;">
             <ul class="demo row py-lg-5 py-sm-4 pb-4">
@@ -410,13 +488,13 @@
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/scalyButtons.jpg" alt=" scalyButtons"
+                        <img style="height:350px; width: 645px;" src="images/scalyButtons.jpg" alt=" scalyButtons"
                             class="img-fluid img-thumbnail" />
                     </div>
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
-                        <img style="height:350px; width: 600px;" src="images/swampEverlasting.jpg"
+                        <img style="height:350px; width: 640px; margin-left: -1%" src="images/swampEverlasting.jpg"
                             alt=" swampEverlasting" class="img-fluid img-thumbnail" />
                     </div>
                 </li>
@@ -426,19 +504,19 @@
                             class="img-fluid img-thumbnail" />
                     </div>
                 </li>
-                <li class="col-lg-4 col-sm-6">
+                <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
                         <img style="height:350px; width: auto;" src="images/grassy_woodlands.jpg" alt="grassyWoodlands "
                             class="img-fluid img-thumbnail" />
                     </div>
                 </li>
-                <li class="col-lg-4 col-sm-6">
+                <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
                         <img style="height:350px; width: auto;" src="images/hoarySunray.jpg" alt="hoarySunray"
                             class="img-fluid img-thumbnail" />
                     </div>
                 </li>
-                <li class="col-lg-4 col-sm-6 mx-auto">
+                <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
                         <img style="height:350px; width: auto;" src="images/laughingKookaburra.jpg"
                             alt="laughingKookaburra" class="img-fluid img-thumbnail" />
@@ -450,26 +528,7 @@
                             class="img-fluid img-thumbnail" />
                     </div>
                 </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 450px;" src="images/rushes.jpg" alt=" rushes"
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 450px;" src="images/wallabyGrass.jpg" alt="wallabyGrass"
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/g5.jpg" alt=" "
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
             </ul>
-        </div>
         </div>
     </section>
     <!-- //Grasslands -->
@@ -675,9 +734,9 @@
     </div>
     <!-- //blog modal3-->
 
-    <!-- Team Introduction -->
+    <!-- Team Introduction --
     <section class="contact-wthree py-sm-5 py-4" id="contact">
-        <!--<section class="team py-4 py-lg-5" id="team">-->
+        <!--<section class="team py-4 py-lg-5" id="team">--
         <div class="container py-lg-5 py-sm-4">
             <div class="title-desc text-center pb-sm-3">
                 <h3 class="main-title-w3pvt">our team</h3>
@@ -742,26 +801,11 @@
     <!-- //team -->
 
     <!-- footer -->
-    <footer class="cpy-right bg-theme">
+    <footer>
+        <!--class="cpy-right bg-theme">-->
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="wthree-social">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-facebook-f icon_facebook"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-twitter icon_twitter"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                <div class="col-lg-8 text-lg-right mt-lg-0 mt-4">
                     <p>© 2020 EVERGREEN | MelGrass. All rights reserved
                     </p>
                 </div>
@@ -845,4 +889,5 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
 </body>
+
 </html>
