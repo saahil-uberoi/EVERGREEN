@@ -20,12 +20,14 @@
     <link href="css/portfolio.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
+    <link href="css/barchart.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/01fb327b42.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link REL="STYLESHEET" type="text/css"
         src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-    <link REL="STYLESHEET" type="text/css" href="BarChart.css" />
+    <!--<link REL="STYLESHEET" type="text/css" href="BarChart.css" />-->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/drilldown.js"></script>
@@ -68,17 +70,8 @@
             border-radius: 45%;
         }
     </style>
+    <!--Footer-->
     <style>
-        #loading {
-            background: url('images/hey_bear.gif') no-repeat center center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            z-index: 9999999;
-        }
-
         footer {
             width: 100%;
             height: 330px;
@@ -86,6 +79,7 @@
             background-size: 100% 100%;
         }
     </style>
+
     <!--Slider Script-->
     <script>
         function initComparisons() {
@@ -165,20 +159,9 @@
             }
         }
     </script>
-    <!--Loader-->
-    <script>
-        window.onload = function () {
-            //display loader on page load 
-            $('.loader').fadeOut();
-            setTimeout(hideLoader, 20 * 1000);
-        }
-
-    </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-    <!-- <div id="loading"></div>-->
 
     <!-- main banner -->
     <div id="home">
@@ -282,198 +265,279 @@
     </div>
     <hr>
     <!-- banner ends-->
+    <!--  About Us-->
+    <section class="wthree-slide-btm pt-lg-5" id="about">
+        <div class="container pt-sm-5 pt-4">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <div class="slide-banner">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-abt light-bg">
+                        <div class="container">
+                            <div class="title-desc  pb-sm-3">
+                                <h4 class="main-title-w3pvt" style="font-family: fantasy; ">About Melgrass</h4>
+                                <p style="font-family: fantasy; font-size: large;">Helping the Victoria Voclanic Plains
+                                    to regrow.</p>
+                            </div>
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="abt-grid">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="abt-icon" data-blast="bgColor">
+                                                <span class="fas fa-info"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-9 pl-sm-0">
+                                            <div class="abt-txt ml-sm-0">
+                                                <p style="font-family: fantasy; font-size: medium;">Here you can learn
+                                                    more about the Victorian Volcanic Plain (VVP) and
+                                                    the importance of biodiversity to the grassland ecosystem while
+                                                    playing games. We hope to raise children's awareness of protecting
+                                                    the grassland ecosystem from the perspective of protecting
+                                                    biodiversity.<br><br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about -->
 
     <!--Map Section-->
-    <section class="wthree-row w3-gallery pt-lg-5" id="grassland">
-        <div class="container-fluid" style="width:80%; height:auto;">
-            <!--text_slider_start-->
-
-            <!--img_slider_start-->
-            <!--<div class="row justify-content-center">-->
-                <div class="title-desc text-center pb-3">
-                    <h1 class="main-title-w3pvt" style="font-family:fantasy;">Grasslands</h1>
-                    <h3 style="text-align: center; font-family:fantasy;">Victorian Volcanic Plain Comparison (Slide to
-                        Explore)
-                        <!--class="main-title-w3pvt"-->
-                    </h3>
-                    <h4 style="font-family:fantasy;">Unlock the Mystry, Spot the Difference</h4>
-                    <h5 style="font-family:fantasy;">Satellite images taken by Google</h5>
+    <section class="wthree-slide-btm pt-lg-5" id="grassland">
+        <h1 class="main-title-w3pvt" style="text-align: center; font-family: fantasy;">Grasslands</h1>
+        <h4 style="font-family:fantasy; text-align: center;">Victorian Volcanic Plain Comparison (Slide to Explore)</h4>
+        <div class="container pt-sm-5 pt-4">
+            <div class="row no-gutters">
+                <div class="col-lg-4">
+                    <div class="bg-abt light-bg">
+                        <div class="container">
+                            <div class="title-desc pb-sm-3">
+                                <h4 style="font-family:fantasy; text-align: center;">Spot the Difference between the Two Images.</h4>
+                                <h6 style="font-family:fantasy;">Satellite images taken by GoogleEarth.</h6>
+                            </div>
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="abt-grid">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="abt-icon">
+                                                <span class="fas fa-not-equal"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-9 pl-sm-0">
+                                            <div class="abt-txt ml-sm-0">
+                                                <p style="font-family:fantasy;">Victoria Volcanic Plains in 1984 and Victoria Volcanic Plains in 2016. See the difference with your own eyes.
+                                                    Identify the reasons for this change with us further.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--col-lg-4 col-md-10-->
-                <div class="section_title text-center mb-55"><!--mb-55-->
+                <div class="col-lg-6">
                     <div class="img-comp-container">
                         <div class="img-comp-img">
-                            <img src="images/vvp2016.jpeg" width="670vh" height="auto"
+                            <img src="images/vvp2016.jpeg" width="650vh" height="auto"
                                 style="margin-left: auto; margin-right: auto;">
                         </div>
                         <div class="img-comp-img img-comp-overlay">
-                            <img src="images/vvp1984.jpeg" width="670vh" height="auto"
+                            <img src="images/vvp1984.jpeg" width="650vh" height="auto"
                                 style="margin-left: auto; margin-right: auto;">
                         </div>
                     </div>
                 </div>
+
             </div>
-        </section>
-            <!--</div>-->
-            <script>
-                /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-                initComparisons();
-            </script>
-            <!--img_slider_end-->
-    
-    <!--Map Section Ends-->
-    <br><br><br><Br><br><br><br><br><br><br><br>
-
-
-    <!--Grasslands-->
-    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
-        <div class="title-desc text-center pb-3">
-            <h3 style="font-family: fantasy;">Have a closer look to the Victoria Volcanic Plains! </h3>
-        </div>
-        <div class="container-fluid" style="width: 100%;height: auto;">
-            <ul class="demo row py-lg-5 py-sm-4 pb-4">
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/swiftParrot.jpg" alt="Swift Parrot "
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 645px;" src="images/scalyButtons.jpg" alt=" scalyButtons"
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 640px; margin-left: -1%" src="images/swampEverlasting.jpg"
-                            alt=" swampEverlasting" class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/info_grasslands.jpg" alt="Grasslands "
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/grassy_woodlands.jpg" alt="grassyWoodlands "
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/hoarySunray.jpg" alt="hoarySunray"
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/laughingKookaburra.jpg"
-                            alt="laughingKookaburra" class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="images/lizard.jpg" alt="lizard"
-                            class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-            </ul>
         </div>
     </section>
-    <!-- //Grasslands -->
+    
+    <section class="wthree-row w3-gallery pt-lg-5" id="grassland">
+        <script>
+            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+            initComparisons();
+        </script>
+        <!--img_slider_end-->
+        <br><br><br><Br><br><br><br>
+<!--Map Section Ends-->
 
-    <!-- footer -->
+        <!--Grasslands-->
+        <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
+            <div class="title-desc text-center pb-3">
+                <h3 style="font-family: fantasy;">Have a closer look to the Victoria Volcanic Plains! </h3>
+                <h5 style="font-family: fantasy;">Glimpse of the beauty of Victoria Volcanic Plains</h5>
+            </div>
+            <div class="container-fluid" style="width: 100%;height: auto;">
+                <ul class="demo row py-lg-5 py-sm-4 pb-4">
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/swiftParrot.jpg" alt="Swift Parrot "
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: 645px;" src="images/scalyButtons.jpg" alt=" scalyButtons"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: 640px; margin-left: -1%" src="images/swampEverlasting.jpg"
+                                alt=" swampEverlasting" class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/info_grasslands.jpg" alt="Grasslands "
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/grassy_woodlands.jpg"
+                                alt="grassyWoodlands " class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/hoarySunray.jpg" alt="hoarySunray"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/laughingKookaburra.jpg"
+                                alt="laughingKookaburra" class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                    <li class="col-lg-3 col-sm-6">
+                        <div class="gallery-grid1">
+                            <img style="height:350px; width: auto;" src="images/lizard.jpg" alt="lizard"
+                                class="img-fluid img-thumbnail" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //Grasslands -->
 
-    <footer>
-        <!--class="cpy-right bg-theme">-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 text-lg-right mt-lg-0 mt-4">
-                    <h4 style="font-family: fantasy;">© 2020 EVERGREEN | MelGrass. All rights reserved
-                    </h4>
+        <!-- stats -->
+<section class="w3_stats py-sm-5 py-4" id="stats">
+    <div class="container">
+        <div class="py-lg-5 w3-stats">
+            <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
+            <figure class="highcharts-figure">
+                <div id="container">
+                    <script src='js/BarChart.js'></script>
+                    <!--description-->
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+<!-- stats ends-->
+
+<hr>
+
+<!-- footer -->
+        <footer>
+            <!--class="cpy-right bg-theme">-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 text-lg-right mt-lg-0 mt-4">
+                        <h4 style="font-family: fantasy;">© 2020 EVERGREEN | MelGrass. All rights reserved
+                        </h4>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- //footer -->
+        </footer>
+        <!-- //footer -->
 
-    <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- Banner  Responsiveslides -->
-    <script src="js/responsiveslides.min.js"></script>
-    <script>
-        // You can also use"$(window).load(function() {"
-        $(function () {
-            // Slideshow 4
-            $("#slider3").responsiveSlides({
-                auto: true,
-                pager: true,
-                nav: false,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
+        <!-- js -->
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <!-- //js -->
+        <!-- Banner  Responsiveslides -->
+        <script src="js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use"$(window).load(function() {"
+            $(function () {
+                // Slideshow 4
+                $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager: true,
+                    nav: false,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                        $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                        $('.events').append("<li>after event fired.</li>");
+                    }
+                });
             });
-        });
-    </script>
-    <!-- //Banner  Responsiveslides -->
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/scrolling-nav.js"></script>
-    <script src="js/counter.js"></script>
-    <!-- portfolio -->
-    <script src="js/jquery.picEyes.js"></script>
-    <script>
-        $(function () {
-            //picturesEyes($('.demo li'));
-            $('.demo li').picEyes();
-        });
-    </script>
-    <!-- //portfolio -->
-    <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
+        </script>
+        <!-- //Banner  Responsiveslides -->
+        <!-- Scrolling Nav JavaScript -->
+        <script src="js/scrolling-nav.js"></script>
+        <script src="js/counter.js"></script>
+        <!-- portfolio --
+        <script src="js/jquery.picEyes.js"></script>
+        <script>
+            $(function () {
+                //picturesEyes($('.demo li'));
+                $('.demo li').picEyes();
+            });
+        </script>
+        <!-- //portfolio -->
+        <!-- start-smooth-scrolling -->
+        <script src="js/move-top.js"></script>
+        <script src="js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
 
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
             });
-        });
-    </script>
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <script>
-        $(document).ready(function () {
-            /*
-            var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear' 
-            };
-            */
-            $().UItoTop({
-                easingType: 'easeOutQuart'
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script>
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear' 
+                };
+                */
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
             });
-        });
-    </script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <!-- //smooth-scrolling-of-move-up -->
+        </script>
+        <script src="js/SmoothScroll.min.js"></script>
+        <!-- //smooth-scrolling-of-move-up -->
 
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/bootstrap.js"></script>
 </body>
 
 </html>

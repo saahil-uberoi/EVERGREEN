@@ -627,7 +627,7 @@ ul.callbacks_tabs {
 }
 
 .banner3 {
-    background: url(../images/banner7.jpg) bottom no-repeat;
+    background: url(../images/banner13.png) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -811,7 +811,7 @@ h4.main-title-w3pvt {
 
 /*Blur Effect*/
  .w3_stats {
-    background-image: url(../images/aboutBg.jpg);
+    background-image: url(../images/banner12.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
