@@ -603,7 +603,7 @@ ul.callbacks_tabs {
 }
 
 .banner1 {
-    background: url(../images/banner10.jpeg) bottom no-repeat;
+    background: url(../images/vvp3.jpg) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -615,7 +615,7 @@ ul.callbacks_tabs {
 }
 
 .banner2 {
-    background: url(../images/banner11.jpg) bottom no-repeat;
+    background: url(../images/vvp4.jpg) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -627,7 +627,7 @@ ul.callbacks_tabs {
 }
 
 .banner3 {
-    background: url(../images/banner13.png) bottom no-repeat;
+    background: url(../images/vvp2.jpg) bottom no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -750,7 +750,7 @@ ul.callbacks_tabs {
 }
 
 .slide-banner {
-    background: url(../images/g6.jpg) no-repeat center;
+    background: url(../images/kangaroo.jpeg) no-repeat center;
     background-size: cover;
     min-height: 400px;
 }
