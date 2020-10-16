@@ -1,17 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
-
-@*@{
-        ViewBag.Title = "Testing";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }*@
-
 <head>
     <link rel='stylesheet' href='~/css/hotspot.css'>
     
 </head>
 
-<body>
+<body style="font-family:fantasy !important;">
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
@@ -23,10 +17,16 @@
         </div>
     </div>
     <!-- bradcam_area_end -->
-    <div class="container" style="padding-top:30px">
+    <div class="container" style="padding-top:1%; padding-bottom:1%">
         <div class="section_title text-center">
-            <h3>Let's explore this grassland</h3>
-            <h1>Click the hotsposts and discover species</h1>
+            <h3>Let's see what species you can find in this grassland first</h3>
+            <p>Click the hotsposts and discover species</p>
+        </div>
+        <div>
+            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:4vw; " href='@Url.Action("Select", "Home")'
+               role="button">Back</a>
+            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:58vw; " href='@Url.Action("DragDropWoodland", "Home")'
+               role="button">Play</a>
         </div>
     </div>
     <div class="container1">
@@ -59,56 +59,55 @@
                 <div style="text-align: right;">
                     <label for="input1" class="cross">X</label>
                 </div>
-                <h1>Striped Legless Lizard</h1>
-                <img src="~/img/lizard.jpg" alt="Striped Legless Lizard" style="width:50%;">
-                <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<h1>Southern Brown Bandicoot</h1>*@
+                <img src="~/img/woodland/Plains-wanderer.png" alt="Southern Brown Bandicoot" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                <h4>Find out more</h4>*@
             </div>
             <div id="content2" class="content">
                 <div style="text-align: right;">
                     <label for="input2" class="cross">X</label>
                 </div>
-                <h1>Golden Sun Moth</h1>
-                <img src="~/img/goldenSunMoth.jpg" alt="Golden Sun Moth" style="width:50%;">
+                @*<h1>Golden Sun Moth</h1>*@
+                <img src="~/img/woodland/Regent Honeyeater.png" alt="Regent Honeyeater" style="width: 30vw; height: auto; margin-left:4vw">
                 <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<a href="#" class="cta">Find out more</a>*@
             </div>
             <div id="content3" class="content">
                 <div style="text-align: right;">
                     <label for="input3" class="cross">X</label>
                 </div>
-                <h1>Fat Tailed Dunnart</h1>
-                <img src="~/img/fatTailedDunnart.jpg" alt="Fat Tailed Dunnart" style="width:50%;">
-                <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<h1>Fat Tailed Dunnart</h1>*@
+                <img src="~/img/woodland/African Daisy.png" alt="Giant Gippsland Earthworm" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>*@
+                @*<a href="#" class="cta">Find out more</a>*@
             </div>
-
             <div id="content4" class="content">
                 <div style="text-align: right;">
-                    <label for="input4" class="cross" style="resize:both">X</label>
+                    <label for="input4" class="cross">X</label>
                 </div>
-                <h1>Growling Grass Frog</h1>
-                <img src="~/img/growlingGrassFrog.jpg" alt="Growling Grass Frog" style="width:50%;">
-                <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<h1>Growling Grass Frog</h1>*@
+                <img src="~/img/woodland/African Daisy.png" alt="African Daisy" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                <a href="#" class="cta">Find out more</a>*@
             </div>
             <div id="content5" class="content">
                 <div style="text-align: right;">
                     <label for="input5" class="cross">X</label>
                 </div>
-                <h1>Laughing Kookaburra</h1>
-                <img src="~/img/laughingKookaburra.jpg" alt="Laughing Kookaburra" style="width:50%;">
-                <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<h1>Laughing Kookaburra</h1>*@
+                <img src="~/img/woodland/Red-tailed Black-Cockatoo.png" alt="Red-tailed Black-Cockatoo" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                <a href="#" class="cta">Find out more</a>*@
             </div>
             <div id="content6" class="content">
                 <div style="text-align: right;">
                     <label for="input6" class="cross">X</label>
                 </div>
-                <h1>Swift Parrot</h1>
-                <img src="~/img/swiftParrot.jpg" alt="Swift Parrot" style="width:50%;">
-                <br>
-                <a href="#" class="cta">Find out more</a>
+                @*<h1>Swift Parrot</h1>*@
+                <img src="~/img/woodland/Grey-headed Flying-fox.png" alt="Grey-headed Flying-fox" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                <a href="#" class="cta">Find out more</a>*@
             </div>
 
 

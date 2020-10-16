@@ -1,4 +1,4 @@
-﻿/*@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
 
 body {
     font-family: "Montserrat Alternates", sans-serif;
@@ -76,7 +76,7 @@ h2 {
 }
 
 .flipped-cell {
-    background-image: url("https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fcard-back.svg?v=1596107405041") !important;
+    background-image: url("../img/card_back.jpg") !important;
     animation: flip-out 500ms forwards;
     transition: 300ms ease-out;
 }
@@ -423,4 +423,4 @@ strong {
         bottom: 0;
         transform: translateX(-62%) translateY(26%);
     }
-}*/
+}

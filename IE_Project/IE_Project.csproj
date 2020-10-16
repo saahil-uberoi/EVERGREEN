@@ -262,6 +262,7 @@
     <Content Include="App_Data\SpeciesDB_log.ldf">
       <DependentUpon>SpeciesDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\aboutVVP.mp4" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -295,6 +296,7 @@
     <Content Include="css\blast.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\button.css" />
     <Content Include="css\hotspot3.css" />
     <Content Include="css\imgDiff.css" />
     <Content Include="css\imgSelect.css" />
@@ -318,6 +320,7 @@
     <Content Include="css\style1.css" />
     <Content Include="css\theme-default.css" />
     <Content Include="css\themify-icons.css" />
+    <Content Include="css\video.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fa-brands-400.svg" />
     <Content Include="fonts\fa-regular-400.svg" />
@@ -331,19 +334,50 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="humans.txt" />
+    <Content Include="img\card_back.jpg" />
     <Content Include="img\close.png" />
+    <Content Include="img\clouds.png" />
     <Content Include="img\cloverGlycine.jpg" />
     <Content Include="img\drag&amp;drop.png.jpg" />
-    <Content Include="img\g6.jpg" />
+    <Content Include="img\footer-bg.jpg" />
+    <Content Include="img\grassland.png" />
+    <Content Include="img\grassland\Eltham Copper Butterfly.png" />
+    <Content Include="img\grassland\European-rabbit.png" />
+    <Content Include="img\grassland\Giant Gippsland Earthworm.png" />
+    <Content Include="img\grassland\Golden-Sun-Moth.png" />
+    <Content Include="img\grassland\Serrated Tussock.png" />
+    <Content Include="img\grassland\Southern Brown Bandicoot.png" />
     <Content Include="img\grassland_logo.png" />
     <Content Include="img\GrowlingGrassFrog.jpg" />
     <Content Include="img\info_rocky.jpg" />
+    <Content Include="img\kangaroo.jpeg" />
     <Content Include="img\mainBr3.jpg" />
+    <Content Include="img\matching\Australian_Painted_snipe.jpg" />
+    <Content Include="img\matching\Blackberry.jpg" />
+    <Content Include="img\matching\EU_rabbit.jpg" />
+    <Content Include="img\matching\Golden_Sun_Moth.jpg" />
+    <Content Include="img\matching\Growling_Grass_Frog.jpg" />
+    <Content Include="img\matching\Hardhends.jpg" />
+    <Content Include="img\matching\Plains_wanderer.jpg" />
+    <Content Include="img\matching\Striped_Legless_Lizard.jpg" />
     <Content Include="img\MemoryGame.jpg" />
     <Content Include="img\move-top.png" />
     <Content Include="img\next.png" />
+    <Content Include="img\footer.png" />
     <Content Include="img\prev.png" />
+    <Content Include="img\rockland\Alpine She-oak Skink.png" />
+    <Content Include="img\rockland\Golden Thistle.png" />
+    <Content Include="img\rockland\Hardheads.png" />
+    <Content Include="img\rockland\Pink-tailed Worm-Lizard.png" />
+    <Content Include="img\rockland\Striped-Legless-Lizard.png" />
+    <Content Include="img\rockland\Wheel Cactus.png" />
+    <Content Include="img\thornApple.jpg" />
+    <Content Include="img\videoPoster.png" />
     <Content Include="img\swampEverlasting.jpg" />
+    <Content Include="img\team-bg.jpg" />
+    <Content Include="img\vvp2.jpg" />
+    <Content Include="img\vvp3.jpg" />
+    <Content Include="img\vvp4.jpg" />
     <Content Include="img\wallabyGrass.jpg" />
     <Content Include="img\adamsonsBlowngrass.jpg" />
     <Content Include="img\banyule.jpg" />
@@ -364,7 +398,6 @@
     <Content Include="img\lizard.jpg" />
     <Content Include="img\mainBr2.jpg" />
     <Content Include="img\mainBr1.jpg" />
-    <Content Include="img\pexels_text_slider.jpg" />
     <Content Include="img\plumeGrass.jpg" />
     <Content Include="img\riceFlower.jpg" />
     <Content Include="img\rushes.jpg" />
@@ -376,11 +409,28 @@
     <Content Include="img\vicBioregions.png" />
     <Content Include="img\vvp1984.jpeg" />
     <Content Include="img\vvp2016.jpeg" />
+    <Content Include="img\wetland\African Feather Grass.png" />
+    <Content Include="img\wetland\Australian-Painted-snipe.png" />
+    <Content Include="img\wetland\Cane Toad.png" />
+    <Content Include="img\wetland\Eastern Curlew.png" />
+    <Content Include="img\wetland\Great Knot.png" />
+    <Content Include="img\wetland\Growling-Grass-Frog.png" />
+    <Content Include="img\wetland\Thorn Apple.png" />
+    <Content Include="img\woodland\African Daisy.png" />
+    <Content Include="img\banner12.png" />
+    <Content Include="img\woodland\Blackberry.png" />
+    <Content Include="img\woodland\Grey-headed Flying-fox.png" />
+    <Content Include="img\woodland\Plains-wanderer.png" />
+    <Content Include="img\woodland\Red Fox.png" />
+    <Content Include="img\woodland\Red-tailed Black-Cockatoo.png" />
+    <Content Include="img\woodland\Regent Honeyeater.png" />
     <Content Include="js\ajax-form.js" />
+    <Content Include="js\BarChart.js" />
     <Content Include="js\blast.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\browserify.js" />
+    <Content Include="js\button.js" />
     <Content Include="js\contact.js" />
     <Content Include="js\counter.js" />
     <Content Include="js\imgDiff.js" />
@@ -415,6 +465,7 @@
     <Content Include="js\scrolling-nav.js" />
     <Content Include="js\scrollIt.js" />
     <Content Include="js\SmoothScroll.min.js" />
+    <Content Include="js\vedio.js" />
     <Content Include="js\vendor\jquery-1.12.4.min.js" />
     <Content Include="js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="js\waypoints.min.js" />
@@ -486,7 +537,6 @@
     <Content Include="Views\Home\DragDropRocky.cshtml" />
     <Content Include="Views\Home\DragDropWetland.cshtml" />
     <Content Include="Views\Home\DragDropWoodland.cshtml" />
-    <None Include="Views\Home\GameSelect.cshtml" />
     <Content Include="Views\Species\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -547,7 +597,6 @@
     <Content Include="scss\_team.scss" />
     <Content Include="scss\_testmonial.scss" />
     <Content Include="scss\_varriable.scss" />
-    <Content Include="Views\Home\Grasslands.cshtml" />
     <Content Include="Views\Home\GrassyWoodland.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Categories\Delete.cshtml" />
@@ -562,14 +611,9 @@
     <Content Include="Views\Species\Details.cshtml" />
     <Content Include="Views\Species\Edit.cshtml" />
     <Content Include="scss\_puzzle.scss" />
-    <Content Include="Views\Home\SeeMore1.cshtml" />
-    <Content Include="Views\Home\SeeMore2.cshtml" />
-    <Content Include="Views\Home\SeeMore3.cshtml" />
     <Content Include="Views\Home\InsertData.cshtml" />
     <Content Include="Views\Home\DragDrop.cshtml" />
-    <Content Include="Views\Home\MemoryCard.cshtml" />
     <Content Include="Views\Shared\_Foundation.cshtml" />
-    <Content Include="Views\Home\Foundation_Index.cshtml" />
     <Content Include="Views\Iteration1\About.cshtml" />
     <Content Include="Views\Iteration1\Contact.cshtml" />
     <Content Include="Views\Iteration1\Grasslands.cshtml" />
@@ -601,6 +645,7 @@
     <Content Include="Views\Iteration2\Wetland.cshtml" />
     <Content Include="Views\Iteration2\RockyGrassland.cshtml" />
     <Content Include="Views\Shared\_IterationTwo.cshtml" />
+    <Content Include="Views\Home\MatchingView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -619,10 +664,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\grassland\" />
-    <Folder Include="img\rockland\" />
-    <Folder Include="img\wetland\" />
-    <Folder Include="img\woodland\" />
     <Folder Include="Views\Auth\" />
     <Folder Include="Views\Connection\" />
   </ItemGroup>

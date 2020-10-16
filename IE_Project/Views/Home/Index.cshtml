@@ -1,10 +1,22 @@
 ﻿<head>
-    <script language="JavaScript" src="~/js/pw.js"></script>
+    @*<script language="JavaScript" src="~/js/pw.js"></script>*@
     <!-- JS here -->
     <script src="~/js/imgDiff.js"></script>
+    @*<script src="~/js/SmoothScroll.min.js"></script>*@
+    @*<script src="~/js/bootstrap.js"></script>*@
+    <!--<link REL="STYLESHEET" type="text/css" href="BarChart.css" />-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script type="text/javascript" src="~/js/vedio.js"></script>
     <!-- JS end -->
     <!-- CSS here -->
     <link rel="stylesheet" href="~/css/imgDiff.css">
+    <link rel="stylesheet" href="~/css/video.css">
+    @*<link href="css/font-awesome.min.css" rel="stylesheet">*@
     <!-- CSS end -->
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -92,7 +104,7 @@
                                                     the grassland ecosystem from the perspective of protecting
                                                     biodiversity.
                                                 </p>
-                                                <br><br><br><br>
+                                                <br><br><br><br><br>
                                             </div>
                                         </div>
                                     </div>
@@ -105,254 +117,331 @@
         </div>
     </section>
     <!-- //about -->
-    <!-- stats --
-    <section class="w3_stats py-sm-5 py-4" id="stats">
-        <div class="container">
-            <div class="py-lg-5 w3-stats">
-                <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
-                <figure class="highcharts-figure">
-                    <div id="container">
-                        <script src='js/BarChart.js'></script>
-                        <!--description--
-                    </div>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <!-- stats ends-->
+    <!-- Scrolling Nav JavaScript -->
+    <!--<script src="js/counter.js"></script>-->
+    <!-- start-smooth-scrolling -->
+    <!--<script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
 
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>-->
+    <!-- //end-smooth-scrolling -->
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- stats ends-->
     <!-- Grasslands -->
     <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">
         <div class="container-fluid" style="width: 85%; height:relative;">
             <!--text_slider_start-->
             <div class="title-desc text-center pb-3">
-                <h2 class="main-title-w3pvt">Grasslands</h2>
                 <hr>
-                <!--TEXT FOR GRASSLANDS-->
-                <!-- blog-->
-                <section class="blog_w3ls pb-lg-5 pb-4" id="posts">
-                    <div class="container py-sm-5 py-4">
-                        <div class="title-desc text-center pb-sm-3 mb-lg-5">
-                            <h3 class="main-title-w3pvt">Let's Explore the V.V.P</h3>
-                            <p>Helping animals & working on environmental issues.</p>
+                @*<h2 class="main-title-w3pvt">Grasslands</h2>*@
+
+                <!-- //blog modal3-->
+                <!--Map Section-->
+            <section class="wthree-slide-btm pt-lg-5" id="grassland">
+                <h1 class="main-title-w3pvt" style="text-align: center; font-family: fantasy;">Grasslands</h1>
+
+                <!--vedio-->
+                @*<div>
+                    <h4 style="text-align: center;">Victoria Volcanic Plains?</h4>
+                    <br>
+                    <video style="width:700px; height:500px" id="video" controls="" preload="none" poster="~/img/videoPoster.png">
+                        <source id="mp4" src="~/Content/aboutVVP.mp4" type="video/mp4">
+                        <p>Your user agent does not support the HTML5 Video element.</p>
+                    </video>*@
+                    <iframe width="1045" height="514" src="https://www.youtube.com/embed/CbAVF_MNn1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+            </iframe>
+                </div>
+                <br><br><br>
+                <!--vedio-->
+
+                <h4 style="font-family:fantasy; text-align: center;">Victorian Volcanic Plain Comparison (Slide to Explore)</h4>
+                <div class="container pt-sm-5 pt-4">
+                    <div class="row no-gutters">
+                        <div class="col-lg-4">
+                            <div class="bg-abt light-bg">
+                                <div class="container">
+                                    <div class="title-desc pb-sm-3">
+                                        <h4 style="font-family:fantasy; text-align: center;">Spot the Difference between the Two Images.</h4>
+                                        <br>
+                                        <h6 style="font-family:fantasy;">Satellite images taken by GoogleEarth.</h6>
+                                    </div>
+                                    <div class="row flex-column mt-lg-4 mt-3">
+                                        <div class="abt-grid">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="abt-icon">
+                                                        <span class="fas fa-not-equal"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-9 pl-sm-0">
+                                                    <div class="abt-txt ml-sm-0">
+                                                        <p style="font-family:fantasy;">
+                                                            Victoria Volcanic Plains in 1984 and Victoria Volcanic Plains in 2016. See the difference with your own eyes.
+                                                            Identify the reasons for this change with us further.
+                                                        </p>
+                                                        <br><br><br><br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row mt-4">
-                            <!-- blog grid -->
-                            <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
-                                <div class="card">
-                                    <div class="card-header p-0 position-relative">
-                                        <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
-                                           data-target="#exampleModal2" role="button">
-                                            <img class="card-img-bottom" src="~/img/info_grasslands.jpg" alt="Card image cap">
-                                            <span class="fa fa-user post-icon bg-theme" aria-hidden="true"></span>
-
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="blog-title card-title font-weight-bold">
-                                            <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
-                                               data-target="#exampleModal2" role="button">About Grasslands</a>
-                                        </h5>
-                                        <p>Grassland is an important kind of environment in Australia mother nature.</p>
-                                        <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                                aria-pressed="false" data-target="#exampleModal2">
-                                            Read more
-                                        </button>
-                                        <br><br>
-                                    </div>
+                        <div class="col-lg-6">
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img src="~/img/vvp2016.jpeg" width="650vh" height="auto"
+                                         style="margin-left: auto; margin-right: auto;">
                                 </div>
-                            </div>
-                            <!-- //blog grid -->
-                            <!-- blog grid -->
-                            <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
-                                <div class="card">
-                                    <div class="card-header p-0 position-relative">
-                                        <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
-                                           data-target="#exampleModal3" role="button">
-                                            <img class="card-img-bottom" src="~/img/vicBioregions.png" alt="Card image cap">
-                                            <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
-                                                  data-blast="bgColor"></span>
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="blog-title card-title font-weight-bold">
-                                            <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
-                                               data-target="#exampleModal3" role="button">
-                                                Grassland Ecosystem of Victoria Volcanic
-                                                Plain
-                                            </a>
-                                        </h5>
-                                        <p>
-                                            Victorian must know about the grassland ecosystem to be able to understand more about the
-                                            natural environment.
-                                        </p>
-                                        <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                                aria-pressed="false" data-target="#exampleModal3">
-                                            Read more
-                                        </button>
-                                    </div>
+                                <div class="img-comp-img img-comp-overlay">
+                                    <img src="~/img/vvp1984.jpeg" width="650vh" height="auto"
+                                         style="margin-left: auto; margin-right: auto;">
                                 </div>
-                            </div>
-                            <!-- //blog grid -->
-                            <!-- blog grid -->
-                            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto">
-                                <div class="card">
-                                    <div class="card-header p-0  position-relative">
-                                        <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
-                                           data-target="#exampleModal4" role="button">
-                                            <img class="card-img-bottom" src="~/img/info_rabbits.jpg" alt="Card image cap">
-                                            <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
-                                                  data-blast="bgColor"></span>
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="blog-title card-title font-weight-bold">
-                                            <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
-                                               data-target="#exampleModal4" role="button">
-                                                Threats to biodiversity in Victorian
-                                                Grassland
-                                            </a>
-                                        </h5>
-                                        <p>
-                                            Understanding the threats to biodiversity is the first step to protecting Australian
-                                            grassland.
-                                        </p>
-                                        <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                                aria-pressed="false" data-target="#exampleModal4">
-                                            Read more
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //blog grid -->
-                        </div>
-                    </div>
-                </section>
-                <!-- //blog -->
-                <!-- blog modal1 -->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-theme">
-                                <h5 class="modal-title" id="exampleModalLabel2">About Grasslands</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body text-center">
-                                <img src="~/img/info_grasslands.jpg" class="img-fluid" alt="" />
-                                <p class="text-left my-4">
-                                    Grassland is a vegetation area dominated by almost continuously covered
-                                    grass, and it is also one of the most widely distributed main vegetation types in the world.
-                                    Usually, natural grassland can be considered as the middle part of the environmental gradient,
-                                    with the forest at one end and desert at the other end. The grassland plays an important
-                                    balancing role for the earth's environment.
-                                    When Europeans first arrived in western Victoria, much of the extensive undulating plains they
-                                    saw were covered with native grasslands. However, starting from the 1830s, the local grasslands
-                                    were quickly occupied because grazing there did not require much effort. Soon after, large areas
-                                    of native grassland in Victoria were completely replaced by introduced pastures, crops and
-                                    weeds.
-                                    The Victoria Volcanic Plain (VVP), located from the west of Melbourne to the border of South
-                                    Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial
-                                    era, it has only 5% of the area left.
-
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- //blog modal1 -->
-                <!-- blog modal2-->
-                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-theme">
-                                <h5 class="modal-title" id="exampleModalLabel3">Grassland Ecosystem of Victoria Volcanic Plain</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+            </section>
+            </div>
+            <script>
+                /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+                initComparisons();
+            </script>
+            <!--img_slider_end-->
+    </section>
+    <br><br><br>
+    
+
+    <br><br><br>
+    <!-- stats -->
+            <section class="w3_stats py-sm-5 py-4" id="stats">
+                <div class="container">
+                    <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
+                    <div class="py-lg-5 w3-stats">
+                        <figure class="highcharts-figure">
+                            <div id="container">
+                                <script src='~/js/BarChart.js'></script>
+                                <!--description-->
                             </div>
-                            <div class="modal-body text-center">
-                                <img src="~/img/vicBioregions.png" class="img-fluid" alt="" />
-                                <p class="text-left my-4">
-                                    The natural temperate grassland of the Victoria Volcanic Plain is a highly
-                                    fragmented and critically endangered ecological community. It is well known that the largest
-                                    native animal on the Australian grassland is the kangaroo, the biggest of which is the red
-                                    kangaroo, characteristic of the natural grassland in the dry inland areas. But because of the
-                                    arrival of European immigrants, mammals introduced from other continents have become equally
-                                    common. These animals include domestic animals, especially cattle and sheep, as well as a series
-                                    of wild animals such as camels, horses, donkeys and goats. The biggest natural enemy to the
-                                    grassland is the European rabbit, they are widely distributed, have strong reproductive ability,
-                                    and their destructive power is also amazing. However, Australia does not have large predators,
-                                    so the main predator is a dingo. There are very diverse reptiles, especially lizards, and
-                                    various birds including large flightless emu, and various parrots.
-                                </p>
-                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <!--copyright statement-->
+                <div>
+                    Icons made by <a href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a>
+                </div>
+                <!--copyright statement-->
+            </section>
+    <!-- stats ends-->
+    @*TEXT FOR GRASSLANDS
+        blog*@
+    <section class="blog_w3ls pb-lg-5 pb-4" id="posts">
+        <div class="container py-sm-5 py-4">
+            <div class="title-desc text-center pb-sm-3 mb-lg-5">
+                <h3 class="main-title-w3pvt">Let's Explore</h3>
+                <p>Helping animals & working on environmental issues.</p>
+            </div>
+            <div class="row mt-4">
+                @*blog grid *@
+                <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal2" role="button">
+                                <img class="card-img-bottom" src="~/img/info_grasslands.jpg" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"></span>
+
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal2" role="button">About Grasslands</a>
+                            </h5>
+                            <p>Grassland is an important kind of environment in Australia mother nature.</p>
+                            <br><br><br>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal2">
+                                Read more
+                            </button>
+
                         </div>
                     </div>
                 </div>
-                <!-- //blog modal2 -->
-                <!-- blog modal3 -->
-                <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-theme">
-                                <h5 class="modal-title" id="exampleModalLabel4">
+                @*//blog grid
+                    blog grid *@
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal3" role="button">
+                                <img class="card-img-bottom" src="~/img/vicBioregions.png" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
+                                      data-blast="bgColor"></span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal3" role="button">
+                                    Grassland Ecosystem of Victoria Volcanic
+                                    Plain
+                                </a>
+                            </h5>
+                            <p>
+                                Victorian must know about the grassland ecosystem to be able to understand more about the
+                                natural environment.
+                            </p>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal3">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @*//blog grid
+                    blog grid *@
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header p-0  position-relative">
+                            <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
+                               data-target="#exampleModal4" role="button">
+                                <img class="card-img-bottom" src="~/img/info_rabbits.jpg" alt="Card image cap">
+                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
+                                      data-blast="bgColor"></span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
+                                   data-target="#exampleModal4" role="button">
                                     Threats to biodiversity in Victorian
                                     Grassland
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body text-center">
-                                <img src="~/img/info_rabbits.jpg" class="img-fluid" alt="" />
-                                <p class="text-left my-4">
-                                    The interactions between native species are altered or destroyed by these
-                                    invasive species, and climate change, Pollution, Overexploitation, and deforestation are also
-                                    the major cause of extinction and can result in the loss of native biodiversity. The fewer
-                                    species we have on the earth, the fewer humans we will have.
-                                </p>
-                            </div>
+                                </a>
+                            </h5>
+                            <p>
+                                Understanding the threats to biodiversity is the first step to protecting Australian
+                                grassland.
+                            </p>
+                            <br><br><br><br><br>
+                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
+                                    aria-pressed="false" data-target="#exampleModal4">
+                                Read more
+                            </button>
+
                         </div>
                     </div>
                 </div>
-                <!-- //blog modal3-->
-                <h4 class="main-title-w3pvt" style="text-align: center;">
-                    Victorian Volcanic Plain Comparison (Slide to
-                    Explore)
-                </h4>
-                <p>Satellite images taken by Google</p>
+                @*//blog grid *@
             </div>
-            <!--img_slider_start-->
-            <div class="row justify-content-center">
-                <!--row justify-content-center-->
-                <div class="col-lg-6 col-md-9">
-                    <!--col-lg-4 col-md-10-->
-                    <div class="section_title text-center mb-55">
-                        <div class="img-comp-container">
-                            <div class="img-comp-img">
-                                <img src="~/img/vvp2016.jpeg" width="675" height="auto">
-                            </div>
-                            <div class="img-comp-img img-comp-overlay">
-                                <img src="~/img/vvp1984.jpeg" width="675" height="auto">
-                            </div>
-                        </div>
-                    </div>
+        </div>
+    </section>
+    @*//blog
+        blog modal1 *@
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel2">About Grasslands</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/info_grasslands.jpg" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        Grassland is a vegetation area dominated by almost continuously covered
+                        grass, and it is also one of the most widely distributed main vegetation types in the world.
+                        Usually, natural grassland can be considered as the middle part of the environmental gradient,
+                        with the forest at one end and desert at the other end. The grassland plays an important
+                        balancing role for the earth's environment.
+                        When Europeans first arrived in western Victoria, much of the extensive undulating plains they
+                        saw were covered with native grasslands. However, starting from the 1830s, the local grasslands
+                        were quickly occupied because grazing there did not require much effort. Soon after, large areas
+                        of native grassland in Victoria were completely replaced by introduced pastures, crops and
+                        weeds.
+                        The Victoria Volcanic Plain (VVP), located from the west of Melbourne to the border of South
+                        Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial
+                        era, it has only 5% of the area left.
+
+                    </p>
                 </div>
             </div>
         </div>
-        <script>
-            /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-            initComparisons();
-        </script>
-        <!--img_slider_end-->
-    </section>
-    <br><br><br><Br><br><br><br><br><br><br><Br><br>
+    </div>
+    @*//blog modal1
+        blog modal2*@
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel3">Grassland Ecosystem of Victoria Volcanic Plain</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/vicBioregions.png" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        The natural temperate grassland of the Victoria Volcanic Plain is a highly
+                        fragmented and critically endangered ecological community. It is well known that the largest
+                        native animal on the Australian grassland is the kangaroo, the biggest of which is the red
+                        kangaroo, characteristic of the natural grassland in the dry inland areas. But because of the
+                        arrival of European immigrants, mammals introduced from other continents have become equally
+                        common. These animals include domestic animals, especially cattle and sheep, as well as a series
+                        of wild animals such as camels, horses, donkeys and goats. The biggest natural enemy to the
+                        grassland is the European rabbit, they are widely distributed, have strong reproductive ability,
+                        and their destructive power is also amazing. However, Australia does not have large predators,
+                        so the main predator is a dingo. There are very diverse reptiles, especially lizards, and
+                        various birds including large flightless emu, and various parrots.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*//blog modal2
+        blog modal3 *@
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-theme">
+                    <h5 class="modal-title" id="exampleModalLabel4">
+                        Threats to biodiversity in Victorian
+                        Grassland
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/img/info_rabbits.jpg" class="img-fluid" alt="" />
+                    <p class="text-left my-4">
+                        The interactions between native species are altered or destroyed by these
+                        invasive species, and climate change, Pollution, Overexploitation, and deforestation are also
+                        the major cause of extinction and can result in the loss of native biodiversity. The fewer
+                        species we have on the earth, the fewer humans we will have.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
     <!--habitat_container_start-->
     <section align="center">
         <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
@@ -366,7 +455,7 @@
                 <a href='@Url.Action("Wetland", "Home")'>
                     <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
                     <div class="habitatOverlay habitatOverlayLeft">
-                        <div class="habitatText">Wetland</div>
+                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 25%; transform: translate(-00%, -50%); font-family: sans-serif;">Wetlands</div>
                     </div>
                 </a>
             </div>
@@ -374,26 +463,36 @@
                 <a href='@Url.Action("GrassyWoodland", "Home")'>
                     <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
                     <div class="habitatOverlay habitatOverlayFade">
-                        <div class="habitatText">Woodland</div>
+                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;">Woodlands</div>
                     </div>
                 </a>
             </div>
             <div class="habitatContainer">
                 <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
                     <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                    <div class="habitatOverlay habitatOverlayFade">
+                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;">Grassland Plains</div>
+                    </div>
+                </a>
+            </div>
+            <div class="habitatContainer">
+                <a href='@Url.Action("RockyGrassland", "Home")'>
+                    <img src="~/img/info_rocky.jpg" alt="Avatar" class="habitatImage">
                     <div class="habitatOverlay habitatOverlayRight">
-                        <div class="habitatText">Heavier-soils Plains</div>
+                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 82.5%; transform: translate(-100%, -50%); font-family: sans-serif;">Rocky<br>Grasslands</div>
                     </div>
                 </a>
             </div>
         </div>
     </section>
     <!--habitat_container_end-->
-    <br>
+
     <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
         <div class="title-desc text-center pb-3">
-            <p>Deep dive into the V.V.P. </p>
+            <h3 style="font-family: fantasy;">Have a closer look to the Victoria Volcanic Plains! </h3>
+            <h5 style="font-family: fantasy;">Glimpse of the beauty of Victoria Volcanic Plains</h5>
         </div>
+
         <div class="container-fluid" style="width: 100%;height: auto;">
             <ul class="demo row py-lg-5 py-sm-4 pb-4">
                 <li class="col-lg-3 col-sm-6">
@@ -433,7 +532,7 @@
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="~/img/laughingKookaburra.jpg" alt="laughingKookaburra" 
+                        <img style="height:350px; width: auto;" src="~/img/laughingKookaburra.jpg" alt="laughingKookaburra"
                              class="img-fluid img-thumbnail" />
                     </div>
                 </li>
@@ -461,27 +560,27 @@
                              class="img-fluid img-thumbnail" />
                     </div>
                 </li>*@
-            </ul>
-        </div>
-    </section>
-    <!-- //Grasslands -->
-    <!-- slide -->
-    <!--<div class="abt_bottom py-lg-5 bg-theme">
-        <div class="container py-sm-4 py-3">
-            <h4 class="abt-text text-capitalize text-sm-center mb-0">Join the Mission to help Victoria</h4>
-            <p class="text-white text-sm-center ">We Move The World To Protect VVP</p>
-            <div class="d-sm-flex justify-content-center">
-                <a href="DragDrop.html" role="button" class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
-                    Play The Game
-                </a>
-                <a href="#" role="button" data-toggle="modal" data-target="#grassland"
-                   class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
-                    Read more about Grasslands
-                </a>
-            </div>
-        </div>
-    </div>-->
-    <!--//slide -->
+                <!--</ul>
+                </div>
+            </section>-->
+                <!-- //Grasslands -->
+                <!-- slide -->
+                <!--<div class="abt_bottom py-lg-5 bg-theme">
+                <div class="container py-sm-4 py-3">
+                    <h4 class="abt-text text-capitalize text-sm-center mb-0">Join the Mission to help Victoria</h4>
+                    <p class="text-white text-sm-center ">We Move The World To Protect VVP</p>
+                    <div class="d-sm-flex justify-content-center">
+                        <a href="DragDrop.html" role="button" class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                            Play The Game
+                        </a>
+                        <a href="#" role="button" data-toggle="modal" data-target="#grassland"
+                           class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                            Read more about Grasslands
+                        </a>
+                    </div>
+                </div>
+            </div>-->
+                <!--//slide -->
 </body>
 
 

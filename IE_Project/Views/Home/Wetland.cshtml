@@ -7,9 +7,27 @@
 
 <head>
     <link rel='stylesheet' href='~/css/hotspot2.css'>
+    <script>
+        function check() {
+            var anyChecked = false;
+            var time = 0;
+            var form = document.getElementById('bag2');
+            var checkboxes = form.getElementsByTagName('input');
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    time++;
+                    alert(i + "Checked");
+                }
+            }
+            if (time = 7) {
+                document.getElementById("gamebtn2").style.display = "block";
+            }
+
+        }
+    </script>
 </head>
 
-<body>
+<body style="font-family:fantasy !important;">
     <!--bradcam_area_start-->
     <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
@@ -20,21 +38,29 @@
             </div>
         </div>
     </div>
+
+
     <!--bradcam_area_end-->
-    <div class="container" style="padding-top:30px">
+    <div class="container" style="padding-top:1%; padding-bottom:1%">
         <div class="section_title text-center">
-            <h3>Let's explore this grassland</h3>
-            <h1>Click the hotsposts and discover species</h1>
+            <h3>Let's see what species you can find in this grassland first</h3>
+            <p>Click the hotsposts and discover species</p>
         </div>
+        <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:4vw; " href='@Url.Action("Select", "Home")'
+           role="button">Back</a>
+        <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:58vw; " href='@Url.Action("DragDropWetland", "Home")'
+           role="button">Play</a>
     </div>
-    <div class="container_3">
-        <div class="container_3">
-            <input type="checkbox" class="input" id="input13" name="inputs_2">
-            <input type="checkbox" class="input" id="input14" name="inputs_2">
-            <input type="checkbox" class="input" id="input15" name="inputs_2">
-            <input type="checkbox" class="input" id="input16" name="inputs_2">
-            <input type="checkbox" class="input" id="input17" name="inputs_2">
-            <input type="checkbox" class="input" id="input18" name="inputs_2">
+
+    <div class="container_2">
+        <div class="container_2" id="bag2">
+            <input type="checkbox" class="input" id="input13" name="inputs2">
+            <input type="checkbox" class="input" id="input14" name="inputs2">
+            <input type="checkbox" class="input" id="input15" name="inputs2">
+            <input type="checkbox" class="input" id="input16" name="inputs2">
+            <input type="checkbox" class="input" id="input17" name="inputs2">
+            <input type="checkbox" class="input" id="input18" name="inputs2">
+            <input type="checkbox" class="input" id="input101" name="inputs2">
             <label for="input13">
                 <div id="b13" class="button">1</div>
             </label>
@@ -53,72 +79,104 @@
             <label for="input18">
                 <div id="b18" class="button">6</div>
             </label>
-            <div id="content13" class="content_3">
+            <label for="input101">
+                <div id="b101" class="button">7</div>
+            </label>
+            <div id="content13" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input13" class="cross_3">X</label>
+                    <label for="input13" class="cross_2">X</label>
                 </div>
-                <h1>Spike-sedges</h1>
-                <img src="~/img/spikeSedges.jpg" alt="Spike sedges" style="width: 200px; height: 200px">
-                <br>
-                <a href="#" class="cta_3">Find out more</a>
+                @*<h1>Spike-sedges</h1>*@
+                <img src="~/img/wetland/African Feather Grass.png" alt="Spike sedges" style="width: 30vw; height: auto; margin-left:4.5vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
             </div>
 
-            <div id="content14" class="content_3">
+            <div id="content14" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input14" class="cross_3">X</label>
+                    <label for="input14" class="cross_2">X</label>
                 </div>
-                <h1>Rushes</h1>
-                <img src="~/img/rushes.jpg" alt="rushes" style="width: 200px; height: 200px">
+                @*<h1>Rushes</h1>*@
+                <img src="~/img/wetland/Growling-Grass-Frog.png" alt="rushes" style="width: 30vw; height: auto; margin-left:4.5vw">
                 <br>
-                <a href="#" class="cta_3">Find out more</a>
+                <a href="#" class="cta_2">Find out more</a>
             </div>
 
-            <div id="content15" class="content_3">
+            <div id="content15" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input15" class="cross_3">X</label>
+                    <label for="input15" class="cross_2">X</label>
                 </div>
-                <h1>Adamson's Blowngrass</h1>
-                <img src="~/img/adamsonsBlowngrass.jpg" alt="Adamson's Blowngrass" style="width: 200px; height: 200px">
-                <br>
-                <a href="#" class="cta_3">Find out more</a>
+                @*<h1>Adamson's Blowngrass</h1>*@
+                <img src="~/img/wetland/Cane Toad.png" alt="Adamson's Blowngrass" style="width: 30vw; height: auto; margin-left:4.5vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
             </div>
 
-            <div id="content16" class="content_3">
+            <div id="content16" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input16" class="cross_3">X</label>
+                    <label for="input16" class="cross_2">X</label>
                 </div>
-                <h1>Spiny Rice-Flower</h1>
-                <img src="~/img/spinyRiceFlower.jpg" alt="Spiny Rice-flower" style="width: 200px; height: 200px">
-                <br>
-                <a href="#" class="cta_3">Find out more</a>
+                @*<h1>Spiny Rice-Flower</h1>*@
+                <img src="~/img/wetland/Eastern Curlew.png" alt="Spiny Rice-flower" style="width: 30vw; height: auto; margin-left:4.5vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
             </div>
 
-            <div id="content17" class="content_3">
+            <div id="content17" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input17" class="cross_3">X</label>
+                    <label for="input17" class="cross_2">X</label>
                 </div>
-                <h1>Swamp Fireweed</h1>
-                <img src="~/img/swampFireweed.jpg" alt="Rice Flowera" style="width: 200px; height: 200px">
-                <br>
-                <a href="#" class="cta_3">Find out more</a>
+                @*<h1>Swamp Fireweed</h1>*@
+                <img src="~/img/wetland/Thorn Apple.png" alt="Rice Flowera" style="width: 30vw; height: auto; margin-left:4.5vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
             </div>
 
-            <div id="content18" class="content_3">
+            <div id="content18" class="content_2">
                 <div style="text-align: right;">
-                    <label for="input18" class="cross_3">X</label>
+                    <label for="input18" class="cross_2">X</label>
                 </div>
-                <h1>Gorae Leek-orchid</h1>
-                <img src="~/img/goraeLeekOrchid.jpg" alt="Gorae Leek-orchid" style="width: 200px; height: 200px">
-                <br>
-                <a href="#" class="cta_3">Find out more</a>
+                @*<h1>Gorae Leek-orchid</h1>*@
+                <img src="~/img/wetland/Great Knot.png" alt="Gorae Leek-orchid" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
             </div>
 
+            <div id="content101" class="content_2">
+                <div style="text-align: right;">
+                    <label for="input101" class="cross_2">X</label>
+                </div>
+                @*<h1>Gorae Leek-orchid</h1>*@
+                <img src="~/img/wetland/Australian-Painted-snipe.png" alt="Gorae Leek-orchid" style="width: 30vw; height: auto; margin-left:4vw">
+                @*<br>
+                    <a href="#" class="cta_2">Find out more</a>*@
+            </div>
 
 
         </div>
     </div>
-    </div>
+    
 
+
+
+    @*<script>
+            function check() {
+                var anyChecked = false;
+                var time = 0;
+                var form = document.getElementById('bag2');
+                var checkboxes = form.getElementsByTagName('input');
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        time++;
+                        alert(i + "Checked");
+                    }
+                }
+                if (time = 7) {
+                    document.getElementById("gamebtn2").style.display = "block";
+                }
+
+            }
+        </script>*@
 
 
 

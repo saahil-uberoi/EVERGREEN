@@ -55,16 +55,16 @@ namespace IE_Project.Controllers
             return View();
         }
 
-        public ActionResult HeavierSoilsPlains()
+        public ActionResult RockyGrassland()
         {
-            ViewBag.Message = "Your heavier-soils plains page.";
+            ViewBag.Message = "Your Rocky Grassland page.";
 
             return View();
         }
 
-        public ActionResult RockyGrassland()
+        public ActionResult HeavierSoilsPlains()
         {
-            ViewBag.Message = "Your Rocky Grassland page.";
+            ViewBag.Message = "Your heavier-soils plains page.";
 
             return View();
         }
@@ -124,6 +124,13 @@ namespace IE_Project.Controllers
         public ActionResult DragDropWoodland()
         {
             ViewBag.Message = "Your Drag&Drop Game page.";
+
+            return View();
+        }
+
+        public ActionResult MatchingView()
+        {
+            ViewBag.Message = "Your Matching Game page.";
 
             return View();
         }

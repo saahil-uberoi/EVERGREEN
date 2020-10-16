@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3>Game Selection</h3>
+                    <h3>Select a habitat</h3>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <ul class="row py-lg-5 py-sm-4 pb-4">
                 <li class="col-lg-6 col-sm-6">
                     <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
-                        <a href='@Url.Action("DragDropRocky", "Home")' />
+                        <a href='@Url.Action("RockyGrassland", "Home")' />
                         <img src="~/img/info_rocky.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
                         <div class="habitatOverlay habitatOverlayFade">
                             <div class="habitatText">Rocky Grassland</div>
@@ -41,29 +41,32 @@
                 </li>
                 <li class="col-lg-6 col-sm-6">
                     <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
-                        <a href='@Url.Action("DragDropWoodland", "Home")' />
-                        <img src="~/img/info_woodland.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
-                        <div class="habitatOverlay habitatOverlayFade">
-                            <div class="habitatText">Woodland</div>
-                        </div>
+                        <a href='@Url.Action("GrassyWoodland", "Home")'>
+                            <img src="~/img/info_woodland.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
+                            <div class="habitatOverlay habitatOverlayFade">
+                                <div class="habitatText">Woodland</div>
+                            </div>
+                        </a>
                     </div>
                 </li>
                 <li class="col-lg-6 col-sm-6" style="margin-top: 1%;">
                     <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
-                        <a href='@Url.Action("DragDropGrassland", "Home")' />
+                        <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
                         <img src="~/img/info_soilsPlains.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
                         <div class="habitatOverlay habitatOverlayFade">
                             <div class="habitatText">Plain</div>
                         </div>
+                        </a>
                     </div>
                 </li>
                 <li class="col-lg-6 col-sm-6" style="margin-top: 1%;">
                     <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
-                        <a href='@Url.Action("DragDropWetland", "Home")' />
+                        <a href='@Url.Action("Wetland", "Home")'>
                         <img src="~/img/info_wetland.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
                         <div class="habitatOverlay habitatOverlayFade">
                             <div class="habitatText">Wetland</div>
                         </div>
+                        </a>
                     </div>
                 </li>
             </ul>
