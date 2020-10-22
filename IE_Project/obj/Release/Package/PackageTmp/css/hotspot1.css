@@ -8,7 +8,7 @@
 .container_2 {
     position: relative;
     overflow: hidden;
-    height: 60vw;
+    height: 40vw;
     background-image: url("../img/info_soilsPlains.jpg");
     background-size: 75%;
     background-repeat: no-repeat;
@@ -26,10 +26,10 @@ p_2 {
 .button {
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1vw;
     background-color: #e0dcdc;
     display: block;
-    padding: 10px 16px;
+    padding: 1vw 1.5vw;
     border-radius: 100%;
     cursor: pointer;
     animation: fadein .5s;
@@ -37,17 +37,22 @@ p_2 {
 }
 
 .content_2 {
+    position: relative;
     background: white;
+    top: -5%;
+    margin: 3.5%;
     padding: 1rem 1rem 2rem 1rem;
-    text-align: center;
     display: none;
-    margin: 10%;
-    border-radius: 8px;
+    border-radius: 1vw;
     box-shadow: 0 4px 2px -2px rgba(211,47,47,0);
+    width: 40vw;
+    height: 35vw;
+    margin-left: 30%;
 }
 
 .cross_2 {
     font-weight: bold;
+    color: red;
 }
 
 #b7 {
@@ -75,7 +80,7 @@ p_2 {
 #b11 {
     position: absolute;
     left: 20%;
-    top: 20%;
+    top: 10%;
 }
 #b12 {
     position: absolute;

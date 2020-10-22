@@ -2,17 +2,9 @@
 <html lang="zxx">
 <head>
     <title>EVERGREEN | Melgrass</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
+@*    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />*@
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
     <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
     <script src="~/js/jquery-2.2.3.min.js"></script>
     <!-- Custom Theme files -->
@@ -33,15 +25,39 @@
     <link rel="stylesheet" href="~/css/gijgo.css">
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/slicknav.css">
-    <link rel="stylesheet" href="~/css/hotspot.css">
-    <link rel="stylesheet" href="~/css/hotspot1.css">
-    <link rel="stylesheet" href="~/css/hotspot2.css">
     <link rel="stylesheet" href="~/css/imgSlider.css">
     <link rel="stylesheet" href="~/css/info.css">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <style>
+        footer {
+            width: 100%;
+            height: 10vw;
+            background-image: url("../img/footer.png");
+            background-size: 100% 100%;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/01fb327b42.js" crossorigin="anonymous"></script>
     <!-- CSS end -->
     <!-- JS here -->
+    <!--Loader-->
+    @*<script>
+            window.onload = function () {
+                //display loader on page load
+                $('.loader').fadeOut();
+                setTimeout(hideLoader, 20 * 1000);
+            }
+        </script>*@
     <!-- JS end -->
+
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -51,7 +67,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-expand-lg navbar-light navbar-fixed-top">
                 <h1>
-                    <a class="navbar-brand" href="~/Home/Index"> Melgrass </a>
+                    <a class="navbar-brand" style="font-family:fantasy;" href="~/Home/Index"> Melgrass </a>
                 </h1>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,27 +77,40 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-lg-auto text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="~/Home/Index" data-blast="color">
+                            <a class="nav-link" href="~/Home/Index" style="font-family:fantasy;" data-blast="color">
+                                <img src="https://img.icons8.com/dusk/64/000000/home.png" /><br>
                                 Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item  mt-lg-0 mt-3">
-                            <a class="nav-link" href="~/Home/#about">About</a>
+                            
+                            <a class="nav-link" style="font-family:fantasy;"href="~/Home/#about">
+                                <img src="https://img.icons8.com/bubbles/64/000000/question-mark.png" /><br>
+                                About
+                            </a>
                         </li>
                         <li class="nav-item mt-lg-0 mt-3">
-                            <a class="nav-link" href="~/Home/#grassland">Grasslands</a>
+                            <a class="nav-link" style="font-family:fantasy;" href="~/Home/#grassland">
+                                <img src="https://img.icons8.com/color/64/000000/nature.png" /><br>
+                                Grasslands
+                            </a>
                         </li>
-                        <li class="nav-item mt-lg-0 mt-3">
-                            <a class="nav-link " href="#">Search (comming soon)</a>
-                        </li>
+                        @*<li class="nav-item mt-lg-0 mt-3">
+                            <a class="nav-link" style="font-family:fantasy;" href="#">
+                                <img src="https://img.icons8.com/bubbles/64/000000/search.png" /><br>
+                            Search
+                            </a>
+                        </li>*@
                         <li class="nav-item dropdown mt-lg-0 mt-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://img.icons8.com/dusk/64/000000/controller.png" /><br>
                                 Game
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item nav-link" href="~/Home/Select">Drag & Drop</a>
+                                <a class="dropdown-item nav-link" href="~/Home/Select">Drag & Drop Game</a>
+                                <a class="dropdown-item nav-link" href="~/Home/MatchingView">Card Matching Game</a>
                                 @*<a class="dropdown-item nav-link" href="~/Home/DragDropWetland">Drag & Drop - Wetland</a>
         <a class="dropdown-item nav-link" href="~/Home/DragDropGrassland">Drag & Drop - Grassland</a>
         <a class="dropdown-item nav-link" href="~/Home/DragDropRocky">Drag & Drop - Rocky Grassland</a>
@@ -92,13 +121,13 @@
                             </div>
                         </li>
                         @*<li class="nav-item  mt-lg-0 mt-3">
-                            <a class="nav-link scroll" href="#contact">Our Team</a>
-                        </li>*@
+                                <a class="nav-link scroll" href="#contact">Our Team</a>
+                            </li>*@
                     </ul>
                     <!--<button type="button" class="btn  wthree-link-bnr bg-theme rounded-circle text-center mt-lg-0 mt-3"
-                    data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
-                        class="fa fa-user text-white"></span>
-                </button>-->
+                        data-toggle="modal" aria-pressed="false" data-target="#exampleModal" data-blast="bgColor"> <span
+                            class="fa fa-user text-white"></span>
+                    </button>-->
                 </div>
             </nav>
         </header>
@@ -108,6 +137,18 @@
             @RenderBody()
             <hr />
             <!-- footer -->
+            <!--<footer>-->
+                <!--class="cpy-right bg-theme">-->
+                <!--<div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 text-lg-right mt-lg-0 mt-4">
+                            <h4 style="font-family: fantasy;">
+                                © @DateTime.Now.Year EVERGREEN | MelGrass. All rights reserved
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </footer>-->
             <footer class="cpy-right bg-theme" data-blast="bgColor">
                 <div class="container">
                     <div class="row">
@@ -135,6 +176,7 @@
                     </div>
                 </div>
             </footer>
+            <!-- //footer -->
             <!-- //footer -->
 
         </div>

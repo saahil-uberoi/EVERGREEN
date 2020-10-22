@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_IterationTwo";
+}
+<head>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    @*bradcam_area_start *@
+    <div class="bradcam_area breadcam_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Game Selection</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*bradcam_area_end *@
+    <!-- slide -->
+    <div class="abt_bottom py-lg-3 bg-theme">
+        <div class="container py-sm-4 py-3">
+            <h4 class="abt-text text-capitalize text-sm-center mb-0">Let's explore different species in each grassland habitat</h4>
+            <p class="text-white text-sm-center ">Choose from the following grassland habitats!</p>
+        </div>
+    </div>
+    <!--//slide -->
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" style="margin-left: 5%;">
+        <div class="container-fluid" style="width: 100%;height: auto;">
+            <ul class="row py-lg-5 py-sm-4 pb-4">
+                <li class="col-lg-6 col-sm-6">
+                    <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
+                        <a href='@Url.Action("DragDropRocky", "Iteration2")' />
+                        <img src="~/img/info_rocky.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div class="habitatText">Rocky Grassland</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-6 col-sm-6">
+                    <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
+                        <a href='@Url.Action("DragDropWoodland", "Iteration2")' />
+                        <img src="~/img/info_woodland.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div class="habitatText">Woodland</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-6 col-sm-6" style="margin-top: 1%;">
+                    <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
+                        <a href='@Url.Action("DragDropGrassland", "Iteration2")' />
+                        <img src="~/img/info_soilsPlains.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div class="habitatText">Plain</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-6 col-sm-6" style="margin-top: 1%;">
+                    <div class="habitatContainer" style="width: 40vw; height: 20vw; display: block; align-items:center;">
+                        <a href='@Url.Action("DragDropWetland", "Iteration2")' />
+                        <img src="~/img/info_wetland.jpg" alt="Avatar" style="width: 40vw; height: 20vw; align-items:center;">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div class="habitatText">Wetland</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>

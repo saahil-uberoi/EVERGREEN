@@ -1,39 +1,11 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_IterationTwo";
 }
 <!DOCTYPE html>
 <html>
 <head>
     @*<script language="JavaScript" src="~/js/pw.js"></script>*@
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>MelGrass</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/img/grassland_logo.png">
-    <!-- Place favicon.ico in the root directory -->
-    <!-- CSS here -->
-    <link rel="stylesheet" href="~/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/themify-icons.css">
-    <link rel="stylesheet" href="~/css/nice-select.css">
-    <link rel="stylesheet" href="~/css/flaticon.css">
-    <link rel="stylesheet" href="~/css/gijgo.css">
-    <link rel="stylesheet" href="~/css/animate.css">
-    <link rel="stylesheet" href="~/css/slicknav.css">
-    <link rel="stylesheet" href="~/css/style1.css">
-    <link rel="stylesheet" href="~/css/hotspot.css">
-    <link rel="stylesheet" href="~/css/hotspot1.css">
-    <link rel="stylesheet" href="~/css/hotspot2.css">
-    <link rel="stylesheet" href="~/css/imgSlider.css">
-    <link rel="stylesheet" href="~/css/info.css">
-    <!-- CSS end -->
-    @* Adjust the viewport width as per device width for mobile *@
-    @*<meta name=”viewport” content=”width = device-width, initial-scale=1.0” />*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
     <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
@@ -135,7 +107,7 @@
             flex-direction: column;
             text-align: center;
             font-size: 1vw;
-            font-family: 'Lucida Handwriting';
+            @*font-family: 'Lucida Handwriting';*@
             font-weight: bold;
             background-color: #fff;
             border: 0.2vw dashed #111;
@@ -236,64 +208,7 @@
     </script>
 </head>
 
-<body translate="no">
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo-img">
-                                <a href="~/Iteration2/Index">
-                                    <img src="~/img/grassland_logo.png" alt="" style="width:60%;" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="menu_wrap d-none d-lg-block">
-                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
-                                    <div class="main-menu">
-                                        <nav>
-                                            <ul id="navigation">
-                                                <li><a class="active" href="~/Iteration2/Index">Home</a></li>
-                                                <li><a href="~/Iteration2/Grasslands">Grassland</a></li>
-                                                <li>
-                                                    <a href="#">Search <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="~/Species/Index">Species</a></li>
-                                                        @*<li><a href="single-blog.html">single-blog</a></li>*@
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Iteration2/About">about</a>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Iteration2/DragDrop">Game</a>
-                                                </li>
-                                                <li>
-                                                    <a href="~/Iteration2/Contact">Contact</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                    <div class="book_room">
-                                        <div class="book_btn">
-                                            @*<a class="popup-with-form" href="#test-form">Function</a>*@
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
+<body>
     <!--Header Start Here-->
     <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
@@ -309,8 +224,8 @@
     <div>
         <div style="text-align: center">
             <br>
-            <h2 style="font-family:'Lucida Handwriting';">How to play:</h2>
-            <h4 style="font-family:'Lucida Handwriting';">
+            <h2>How to play:</h2>
+            <h4>
                 1. Move your mouse to the icons to see their full pictures.<br>
                 2. Find the correct name of each species<br>
                 3. Identify it as endangered or invasive. <br>
@@ -330,8 +245,8 @@
     <!--Score Section End Here-->
     <!--Species classification Section Start Here-->
     <div class="box_header">
-        <div class="box_area2" style="font-size: 125%; font-family:'Lucida Handwriting'; margin-left:30px">Endangered</div>
-        <div class="box_areaq" style="font-size: 125%; font-family:'Lucida Handwriting'; text-align:right; margin-right:50px">Invasive</div>
+        <div class="box_area2" style="font-size: 125%; margin-left:3%">Endangered</div>
+        <div class="box_areaq" style="font-size: 125%; text-align:right; margin-right:4%">Invasive</div>
     </div>
     <!--Species classification Section End Here-->
     <!--bg img start-->
@@ -357,16 +272,16 @@
         <div class="dropelements" style="position:initial">
             <!--endangered-->
             <div class="box_header">
-                <div class="droppable1 box_area2" data-draggable-id="wormLizard"><span style="font-size: 70%;">Pink-tailed Worm-Lizard</span> </div>
-                <div class="droppable1 box_area1" data-draggable-id="goldenthistle" style="margin-right: 3%;"><span style="font-size: 70%;">Golden thistle</span></div>
+                <div class="droppable1 box_area2" data-draggable-id="wormLizard"><span style="font-size: 0.9vw;">Pink-tailed Worm-Lizard</span> </div>
+                <div class="droppable1 box_area1" data-draggable-id="goldenthistle" style="margin-right: 3%;"><span style="font-size: 0.9vw;">Golden thistle</span></div>
             </div>
             <div class="box_header">
-                <div class="droppable1 box_area2" data-draggable-id="asSkink"><span style="font-size: 70%;">Alpine She-oak Skink</span></div>
-                <div class="droppable1 box_area1" data-draggable-id="hardheads" style="margin-right: 3%;"><span style="font-size: 70%;">Hardheads</span></div>
+                <div class="droppable1 box_area2" data-draggable-id="asSkink"><span style="font-size: 0.9vw;">Alpine She-oak Skink</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="hardheads" style="margin-right: 3%;"><span style="font-size: 0.9vw;">Hardheads</span></div>
             </div>
             <div class="box_header">
-                <div class="droppable1 box_area2" data-draggable-id="slLizard"><span style="font-size: 70%;">Striped Legless Lizard</span></div>
-                <div class="droppable1 box_area1" data-draggable-id="wheelcactus" style="margin-right: 3%;"><span style="font-size: 70%;">Wheel Cactus</span></div>
+                <div class="droppable1 box_area2" data-draggable-id="slLizard"><span style="font-size: 0.9vw;">Striped Legless Lizard</span></div>
+                <div class="droppable1 box_area1" data-draggable-id="wheelcactus" style="margin-right: 3%;"><span style="font-size: 0.9vw;">Wheel Cactus</span></div>
             </div>
             @*<div class="droppable1" data-draggable-id="slLizard"><span style="font-size: 12px;">Striped Legless Lizard</span></div>
                 <div class="droppable1" data-draggable-id="cwSkink"><span style="font-size: 12px;">Corangamite Water Skink</span></div>
@@ -377,95 +292,8 @@
         </div>
         <!--Droppable Species Boxes End Here-->
     </div>
-    <!-- footer_start  -->
-    <div>
-        <hr />
-        <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-md-6 col-lg-5 ">
-                            <div class="footer_widget">
-                                <div class="footer_logo">
-                                    <a href="#">
-                                        <img src="~/img/grassland_logo.png" alt="">
-                                    </a>
-                                </div>
-                                <p class="address_text">
-                                    <br> <br> <br>
-                                </p>
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-dribbble"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-lg-3">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Information
-                                </h3>
-                                <ul class="links">
-                                    <li><a href="~/Iteration2/About">About</a></li>
-                                    <li><a href="~/Iteration2/Grasslands">Information</a></li>
-                                    <li><a href="~/Iteration2/Contact">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2  col-md-6 col-lg-2">
-                            <div class="footer_widget">
-                                <h3 class="footer_title">
-                                    Follow Us
-                                </h3>
-                                <ul class="links">
-                                    <li><a href="#">FaceBook</a></li>
-                                    <li><a href="#">Instagram</a></li>
-                                    <li><a href="#"> Twitter</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <!-- footer_start  -->
 
 
-    <style>
-        .home-act {
-            color: aquamarine
-        }
-    </style>
     <!-- JS here -->
     <script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="~/js/vendor/jquery-1.12.4.min.js"></script>

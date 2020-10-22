@@ -1,43 +1,43 @@
-﻿/*let imgSrc = [
+﻿let imgSrc = [
     {
         pairId: 0,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fclover-a.svg?v=1596056821579"
+            "../img/matching/Golden_Sun_Moth.jpg"
     },
     {
         pairId: 1,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fclover-9.svg?v=1596095594108"
+            "../img/matching/EU_rabbit.jpg"
     },
     {
         pairId: 2,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fclover-3.svg?v=1596095585744"
+            "../img/matching/Striped_Legless_Lizard.jpg"
     },
     {
         pairId: 3,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fhearts-a.svg?v=1596057450138"
+            "../img/matching/Hardhends.jpg"
     },
     {
         pairId: 4,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fhearts-9.svg?v=1596095606413"
+            "../img/matching/Growling_Grass_Frog.jpg"
     },
     {
         pairId: 5,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fdiamonds-9.svg?v=1596095602722"
+            "../img/matching/Australian_Painted_snipe.jpg"
     },
     {
         pairId: 7,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fclover-6.svg?v=1596095596714"
+            "../img/matching/Blackberry.jpg"
     },
     {
         pairId: 8,
         src:
-            "https://cdn.glitch.com/56d96ce9-5171-477f-8560-558ec3af0051%2Fdiamonds-3.svg?v=1596095587942"
+            "../img/matching/Plains_wanderer.jpg"
     }
 ];
 
@@ -121,9 +121,9 @@ hardBtn.addEventListener("click", () => {
     startGame(currentUser);
 });
 
-*//*--------------------------------------------------*/
-/*-------------------- OBJECTS ---------------------*/
-/*--------------------------------------------------*//*
+/*--------------------------------------------------
+-------------------- OBJECTS ---------------------
+--------------------------------------------------*/
 
 function scoreBarController(barId) {
     let scoresBar = document.getElementById(barId);
@@ -183,9 +183,9 @@ function createUserScoreDiv(username) {
     return container;
 }
 
-*//*--------------------------------------------------*/
-/*----------------- USEFULL FUNCTIONS --------------*/
-/*--------------------------------------------------*//*
+/*--------------------------------------------------
+----------------- USEFULL FUNCTIONS --------------
+--------------------------------------------------*/
 
 function goToModePage() {
     let username = document.getElementById("username").value;
@@ -282,6 +282,8 @@ function createImgDiv(img) {
     container.setAttribute("data-pair", img.pairId);
     container.style.backgroundImage = `url(${img.src})`;
     container.classList.add("cell");
+    container.setAttribute("height", '200px');
+    container.setAttribute("width", "200px");
     return container;
 }
 
@@ -315,4 +317,4 @@ let scoreContainer = document.getElementById("score-container")
 
 scoreToggle.addEventListener("click", () => {
     scoreContainer.classList.toggle("fade-toggle")
-})*/
+})

@@ -1,15 +1,10 @@
-﻿body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
-}
+﻿
 
 .container1 {
     position: relative;
     overflow: hidden;
-    height: 60vw;
-    background-image: url("../img/banyule.jpg");
+    height: 40vw;
+    background-image: url("../img/info_woodland.jpg");
     background-size: 75%;
     background-repeat: no-repeat;
     background-position: center;
@@ -26,10 +21,10 @@ p {
 .button {
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1vw;
     background-color: #e0dcdc;
     display: block;
-    padding: 10px 16px;
+    padding: 1vw 1.5vw;
     border-radius: 100%;
     cursor: pointer;
     animation: fadein .5s;
@@ -37,17 +32,22 @@ p {
 }
 
 .content {
+    position: relative;
     background: white;
+    top: -5%;
+    margin: 3.5%;
     padding: 1rem 1rem 2rem 1rem;
-    text-align: center;
     display: none;
-    margin: 10%;
     border-radius: 8px;
     box-shadow: 0 4px 2px -2px rgba(211,47,47,0);
+    width: 40vw;
+    height: 35vw;
+    margin-left: 30%;
 }
 
 .cross {
     font-weight: bold;
+    color: red;
 }
 
 #b1 {
