@@ -816,10 +816,11 @@ h4.main-title-w3pvt {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 615px;
+    height: 1000px;
     z-index: 0;
     filter: blur(0px);
     -webkit-filter:blur(0px);
+    opacity: 0.7;
 }
 
 /*.w3_stats:before {
