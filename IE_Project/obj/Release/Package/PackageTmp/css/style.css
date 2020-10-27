@@ -1,7 +1,8 @@
-body {
-    font-family: fantasy;
-    margin: 0;
+html,body {
+    font-family: "Chilanka";
     background: #fff;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body a {
@@ -20,12 +21,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: fantasy;
     margin: 0;
+    font-family: "Chilanka";
 }
 
 p {
-    font-family: 'fantasy';
+    font-family: "Chilanka";
     margin: 0;
     color: #333;
     font-size: 1em;
@@ -86,7 +87,7 @@ body a:focus {
 
 /* header */
 .navbar-light .navbar-brand {
-    font-family: fantasy;
+    font-family: "Chilanka";
     text-transform: uppercase;
     font-weight: 800;
     font-size: 0.7em;
@@ -341,7 +342,7 @@ label {
     border-radius: 0.3rem;
     outline: 0;
     color: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: "Chilanka";
 }
 
 .right-w3l input[type="submit"] {
@@ -352,7 +353,7 @@ label {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-    font-family: fantasy;
+    font-family: "Chilanka";
     cursor: pointer;
 }
 
@@ -448,7 +449,7 @@ label {
 ul.callbacks_tabs {
     position: absolute;
     z-index: 2;
-    left: 48%;
+    left: 49%;
     bottom: 20%;
     margin: 0 auto;
 }
@@ -590,6 +591,7 @@ ul.callbacks_tabs {
     display: block;
     background: #fff;
     border-radius: 50%;
+    
 }
 
 .callbacks_tabs a:hover {
@@ -607,6 +609,7 @@ ul.callbacks_tabs {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    height: 850px
 }
 
 .banner2 {
@@ -619,6 +622,7 @@ ul.callbacks_tabs {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    height:850px
 }
 
 .banner3 {
@@ -631,6 +635,7 @@ ul.callbacks_tabs {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    height: 850px
 }
 
 /*.banner1 {
@@ -1363,7 +1368,7 @@ h5.cont-form {
     text-align: center;
     text-transform: capitalize;
     font-size: 1.7em;
-    font-family: fantasy;
+    font-family: "Chilanka";
     color: #d3b800;
     font-weight: 600;
 }
@@ -1589,6 +1594,7 @@ ul.social-iconsv2 li:last-child {
     ul.callbacks_tabs {
         bottom: 15%;
         left: 46%;
+        
     }
 
     h3.main-title-w3pvt {
@@ -1748,6 +1754,7 @@ ul.social-iconsv2 li:last-child {
     ul.callbacks_tabs {
         bottom: 10%;
         left: 44%;
+        
     }
 
     .slider-info h3 {
@@ -1837,6 +1844,7 @@ ul.social-iconsv2 li:last-child {
 @media screen and (max-width: 375px) {
     ul.callbacks_tabs {
         left: 42%;
+
     }
     h3.main-title-w3pvt {
         font-size: 1.2em;

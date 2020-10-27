@@ -2,42 +2,59 @@
     {
         pairId: 0,
         src:
-            "../img/matching/Golden_Sun_Moth.jpg"
+            "../img/matching/Golden_Sun_Moth.jpg",
+        name: "Golden Sun Moth",
+        cd: "~/img/grassland/Goldern-Sun-Moth.png"
     },
     {
         pairId: 1,
         src:
-            "../img/matching/EU_rabbit.jpg"
+            "../img/matching/EU_rabbit.jpg",
+        name: "European Rabbit",
+        cd: "~/img/grassland/European-rabbit.png"
     },
     {
         pairId: 2,
         src:
-            "../img/matching/Striped_Legless_Lizard.jpg"
+            "../img/matching/Striped_Legless_Lizard.jpg",
+        name: "Striped Legless Lizard",
+        cd: "~/img/grassland/Striped-Legless-Lizard.png"
     },
     {
         pairId: 3,
         src:
-            "../img/matching/Hardhends.jpg"
+            "../img/matching/Hardhends.jpg",
+        name: "Hardhends",
+        cd: "../img/grassland/Hardheads.png"
+
     },
     {
         pairId: 4,
         src:
-            "../img/matching/Growling_Grass_Frog.jpg"
+            "../img/matching/Growling_Grass_Frog.jpg",
+        name: "Growling Grass Frog",
+        cd: "../img/grassland/Growling-Grass-Frog.png"
     },
     {
         pairId: 5,
         src:
-            "../img/matching/Australian_Painted_snipe.jpg"
+            "../img/matching/Australian_Painted_snipe.jpg",
+        name: "Australian Painted-snipe",
+        cd: "../img/grassland/Australian-Painted-snipe.png"
     },
     {
         pairId: 7,
         src:
-            "../img/matching/Blackberry.jpg"
+            "../img/matching/Blackberry.jpg",
+        name: "Blackberry",
+        cd: "../img/grassland/Blackberry.png"
     },
     {
         pairId: 8,
         src:
-            "../img/matching/Plains_wanderer.jpg"
+            "../img/matching/Plains_wanderer.jpg",
+        name: "Plains-wanderer",
+        cd: "../img/grassland/Plains-wanderer.png"
     }
 ];
 
@@ -72,11 +89,14 @@ imgDivArray.forEach(targetCard => {
                 tries++;
                 if (areEqualCards(targetCard, lastCard)) {
                     discoveredCards.push(targetCard);
+                    prompt(targetCard, lastCard);
+                    
 
                     if (isGameEnd(discoveredCards, imgDivArray)) {
                         setTimeout(() => {
                             winGame(currentUser);
                         }, 300);
+                        
                     }
                 } else {
                     discoveredCards.pop();
@@ -187,12 +207,15 @@ function createUserScoreDiv(username) {
 ----------------- USEFULL FUNCTIONS --------------
 --------------------------------------------------*/
 
+
 function goToModePage() {
     let username = document.getElementById("username").value;
     if (isValidUsername(username)) {
         currentUser = username.toLowerCase();
         modeContainer.classList.remove("hide");
         chooseUserDiv.classList.add("hide");
+    } else {
+        alert("Not a valid name");
     }
 }
 
@@ -256,8 +279,19 @@ function areEqualCards(card1, card2) {
     return card1.getAttribute("data-pair") === card2.getAttribute("data-pair");
 }
 
+function prompt(card1, card2) {
+/*alert(card2.getAttribute("sName") + " discovered");*/
+    const content = document.createElement('div');
+    var name = card2.getAttribute("sName");
+    var cd = card2.getAttribute("cd");
+    Swal.fire({
+        title: name + "!",
+        /*imageUrl: '<a href="anylink.com" target="_blank" class="// I added a sprite image like spr3-wslogo">",*/
+        })
+}
+
 function isValidUsername(name) {
-    return name !== undefined && name.trim() !== "";
+    return name !== undefined && name.trim() !== "" && isNaN(name);
 }
 
 function isFlipped(card) {
@@ -280,10 +314,13 @@ function createGridContentArray(imgs) {
 function createImgDiv(img) {
     let container = document.createElement("div");
     container.setAttribute("data-pair", img.pairId);
+    container.setAttribute("sName", img.name);
+    container.setAttribute("cd", img.cd);
     container.style.backgroundImage = `url(${img.src})`;
+    container.setAttribute("height", '300px');
+    container.setAttribute("width", "250px");
     container.classList.add("cell");
-    container.setAttribute("height", '200px');
-    container.setAttribute("width", "200px");
+    
     return container;
 }
 

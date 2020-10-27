@@ -1,4 +1,6 @@
-﻿<head>
+﻿<!DOCTYPE html>
+<html style="max-width: 100%; overflow-x: hidden;">
+<head>
     @*<script language="JavaScript" src="~/js/pw.js"></script>*@
     <!-- JS here -->
     <script src="~/js/imgDiff.js"></script>
@@ -12,12 +14,31 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="text/javascript" src="~/js/vedio.js"></script>
+    <!--Scrolling Nav JavaScript -->
+    <script src="~/js/counter.js"></script>
+    <!-- start-smooth-scrolling -->
+    <script src="~/js/easing.js"></script>
+    <!-- ??? -->
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- ??? -->
     <!-- JS end -->
     <!-- CSS here -->
     <link rel="stylesheet" href="~/css/imgDiff.css">
     <link rel="stylesheet" href="~/css/video.css">
+    <link rel="stylesheet" href="~/css/drawer.css">
     @*<link href="css/font-awesome.min.css" rel="stylesheet">*@
     <!-- CSS end -->
+
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <!-- main banner -->
@@ -29,10 +50,9 @@
                     <div class="container">
                         <div class="banner-text">
                             <div class="slider-info">
-                                <h3>Protect the Victoria Volcanic Plains</h3>
+                                <h3>Let's explore the Victoria Volcanic Plains</h3>
                                 <span class="line"></span>
-                                <p>We move the world to protect the grasslands</p>
-                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#about"
+                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#grassland"
                                    role="button">View More</a>
                             </div>
                         </div>
@@ -42,67 +62,191 @@
                     <div class="container">
                         <div class="banner-text">
                             <div class="slider-info">
-                                <br><br><br><br>
                                 <h3>Play the Games!</h3>
-                                <br><br>
                                 <span class="line"></span>
-
-                                <p></p>
                                 <a class="btn bg-theme mt-4 w3_pvt-link-bnr" data-blast="bgColor" href="~/Home/Select"
                                    role="button">Play</a>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li class="banner banner3">
-                    <div class="container">
-                        <div class="banner-text">
-                            <div class="slider-info">
-                                <h3>Let's explore the Victoria Volcanic Plains</h3>
-                                <span class="line"></span>
-                                <p>What should you know about the VVP</p>
-                                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#grassland"
-                                   role="button">View More</a>
+                @*<li class="banner banner3">
+                        <div class="container">
+                            <div class="banner-text">
+                                <div class="slider-info">
+                                    <h3>Melgrass</h3>
+                                    <span class="line"></span>
+                                    <p></p>
+                                    <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll" data-blast="bgColor" href="#about"
+                                       role="button">About us</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>*@
             </ul>
         </div>
     </div>
     <hr>
     <!-- banner ends-->
-    <!--  About Us-->
-    <section class="wthree-slide-btm pt-lg-5" id="about">
+    <!-- Grasslands -->
+    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">
+        <div class="container-fluid" style="width: 100%; height:auto;">
+            <!--text_slider_start-->
+            <div class="title-desc text-center pb-3">
+                <!-- //blog modal3-->
+                <!--Map Section-->
+                <section class="wthree-slide-btm pt-lg-5" id="grassland"></section>
+                <h1 class="main-title-w3pvt" style="text-align: center; font-family: Chilanka;">Grasslands</h1><br />
+
+                <!--vedio start-->
+                <iframe width=900 height=400 src="https://www.youtube.com/embed/gfkHKTSdtEo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!--vedio end-->
+        <!--Collapsible Drawers start-->
+        <section>
+            <ul class="drawer-list">
+                <li class="drawer">
+                    <div class="drawer__header">
+                        <div style="position:relative; left:95%;">
+                            <i class="fas fa-chevron-down fa-2x"></i>
+                        </div>
+                        <div class="drawer__icon-container">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF
+0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIF
+ZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllc
+l8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw
+Oi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCA
+wIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bW
+w6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNBNEUyNzY7IiBkPSJNMjQyL
+jQxOCwyOTguODYzbDIxLjM2Ny00Mi43MzVjLTIuNTg0LTAuMTkxLTUuMTc4LTAuMjg4LTcuNzg0
+LTAuMjg4DQoJYy01Ny4yMjksMC0xMDMuNzg1LDQ2LjU1Ny0xMDMuNzg1LDEwMy43ODRjMCw3LjA
+yNCwwLjcxMywxMy45NjQsMi4wOTEsMjAuNzU3SDE5Ny4zYy0yLjMwNC02LjQ5Ny0zLjU3LTEzLj
+Q4MS0zLjU3LTIwLjc1Nw0KCUMxOTMuNzMsMzI5Ljk1MywyMTQuNTkzLDMwNS4wNzksMjQyLjQxO
+CwyOTguODYzeiIvPg0KPHBhdGggZD0iTTUyLjYyOCw0MjIuMjE3YzEuMTU3LDAsMi4zMzMtMC4x
+MjIsMy41MDktMC4zMjJoLTcuMTI5QzUwLjE5LDQyMi4xMDUsNTEuNDAxLDQyMi4yMTcsNTIuNjI
+4LDQyMi4yMTd6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojRjJEMjNEOyIgZD0iTTI1Ni4wMDEsMj
+U1LjgzOWMyLjYwNiwwLDUuMiwwLjA5Nyw3Ljc4NCwwLjI4OGwxOS42MDgtMzkuMjE4DQoJYy04L
+jk5LTEuNzE2LTE4LjE1NS0yLjU4NC0yNy4zOTMtMi41ODRjLTgwLjExOCwwLTE0NS4yOTcsNjUu
+MTc5LTE0NS4yOTcsMTQ1LjI5N2MwLDYuOTg1LDAuNTIzLDEzLjkxMywxLjUwMywyMC43NTdoNDI
+uMTAyDQoJYy0xLjM3OC02Ljc5My0yLjA5MS0xMy43MzMtMi4wOTEtMjAuNzU3QzE1Mi4yMTYsMz
+AyLjM5NiwxOTguNzcyLDI1NS44MzksMjU2LjAwMSwyNTUuODM5eiIvPg0KPHBhdGggZD0iTTEzO
+C41NDksNDIxLjkwN2MwLjEwNywwLDAuMjE0LTAuMDEyLDAuMzIxLTAuMDE0aC0wLjY3QzEzOC4z
+MTcsNDIxLjg5NiwxMzguNDMyLDQyMS45MDcsMTM4LjU0OSw0MjEuOTA3eiIvPg0KPHBvbHlnb24
+gc3R5bGU9ImZpbGw6I0E3ODk2NjsiIHBvaW50cz0iMzM3LjY0MywzMjkuMTc5IDMzNy42NDMsMz
+gwLjM3OSAzNTguNCwzODAuMzc5IDM3OS4xNTcsMzgwLjM3OSAzNzkuMTU3LDMyOS4xNzkgDQoJM
+zU4LjQsMzI5LjE3OSAiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiM3OEI5RUI7IiBkPSJNMjM1LjI0
+MywzNTkuNjIzYzAtMTEuNDQ1LDkuMzEtMjAuNzU3LDIwLjc1Ny0yMC43NTdjLTcuMTkzLDAtMTM
+uODc0LTMuNzI1LTE3LjY1Ny05Ljg0NA0KCWMtMy43ODItNi4xMTktNC4xMjUtMTMuNzYtMC45MD
+gtMjAuMTk1bDQuOTgzLTkuOTYzYy0yNy44MjUsNi4yMTYtNDguNjg4LDMxLjA4OS00OC42ODgsN
+jAuNzU5YzAsNy4yNzYsMS4yNjYsMTQuMjYsMy41NywyMC43NTcNCglIMjU2QzI0NC41NTMsMzgw
+LjM3OSwyMzUuMjQzLDM3MS4wNjgsMjM1LjI0MywzNTkuNjIzeiIvPg0KPHBhdGggc3R5bGU9ImZ
+pbGw6I0VFODcwMDsiIGQ9Ik0yNTYsMjE0LjMyNWM5LjIzOC0wLjAwMSwxOC40MDMsMC44NjYsMj
+cuMzkzLDIuNTg0bDE5LjEzMi0zOC4yNjQNCgljLTE1LjEwOC0zLjg3NS0zMC42ODQtNS44MzMtN
+DYuNTI2LTUuODMzYy0xMDMuMDA5LDAtMTg2LjgxMSw4My44MDMtMTg2LjgxMSwxODYuODExYzAs
+Ni45NDIsMC4zOTYsMTMuODc5LDEuMTU1LDIwLjc1N2g0MS44NjENCgljLTAuOTgtNi44NDQtMS4
+1MDMtMTMuNzcxLTEuNTAzLTIwLjc1N0MxMTAuNzAzLDI3OS41MDYsMTc1Ljg4MiwyMTQuMzI1LD
+I1NiwyMTQuMzI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Q4MTQzQTsiIGQ9Ik02OS4xODksM
+zU5LjYyM2MwLTEwMy4wMDcsODMuODAyLTE4Ni44MTEsMTg2LjgxMS0xODYuODExYzE1Ljg0Mi0w
+LjAwMSwzMS40MTcsMS45NTgsNDYuNTI2LDUuODMzDQoJbDE4LjkwOC0zNy44MTZjLTIxLjE0LTY
+uMzIxLTQzLjA3Ni05LjUzMS02NS40MzQtOS41M2MtMTI1Ljg5OCwwLTIyOC4zMjQsMTAyLjQyNi
+0yMjguMzI0LDIyOC4zMjQNCgljMCw2LjkzMywwLjMzMSwxMy44NjMsMC45NTIsMjAuNzU3aDQxL
+jcxN0M2OS41ODUsMzczLjUwMiw2OS4xODksMzY2LjU2NSw2OS4xODksMzU5LjYyM3oiLz4NCjxw
+YXRoIHN0eWxlPSJmaWxsOiMzNjhCNEM7IiBkPSJNNDkxLjI0MywzODAuMzc5SDM4MC41NDFoLTI
+wLjc1N2gtMjAuNzU3SDI1NmgtNTguN2gtNDIuOTkzaC00Mi4xMDJINzAuMzQ1SDI4LjYyOGgtNy
+44NzENCglDOS4yOTMsMzgwLjM3OSwwLDM4OS42NzEsMCw0MDEuMTM2YzAsMTEuNDYzLDkuMjkzL
+DIwLjc1NywyMC43NTcsMjAuNzU3aDI4LjI1MWg3LjEyOUgxMzguMmgwLjY3SDI1NmgxMDMuNzg0
+aDEzMS40NTkNCgljMTEuNDYzLDAsMjAuNzU3LTkuMjkzLDIwLjc1Ny0yMC43NTdDNTEyLDM4OS4
+2NzMsNTAyLjcwNywzODAuMzc5LDQ5MS4yNDMsMzgwLjM3OXoiLz4NCjxwYXRoIHN0eWxlPSJmaW
+xsOiNBNEUyNzY7IiBkPSJNNDgwLjI2OCwzMDcuODY2TDM3Ni45NjUsMTAxLjI1OWMtMy41MTMtN
+y4wMjgtMTAuNjk0LTExLjQ2Ny0xOC41NTEtMTEuNDczDQoJYy0wLjAwNCwwLTAuMDA4LDAtMC4w
+MTQsMGMtNy44NjMsMC0xNS4wNSw0LjQ0Mi0xOC41NjUsMTEuNDc0TDMyMC4wNSwxNDAuODNsLTE
+4LjkwOCwzNy44MTZMMjgyLjAxLDIxNi45MWwtMTkuNjA4LDM5LjIxOA0KCWwtMjEuMzY3LDQyLj
+czNWwtNC45ODMsOS45NjNjLTMuMjE3LDYuNDM1LTIuODc0LDE0LjA3NiwwLjkwOCwyMC4xOTVjM
+y43ODIsNi4xMTksMTAuNDY0LDkuODQ0LDE3LjY1Nyw5Ljg0NGg4My4wMjdIMzU4LjRoMC4wMTQN
+CgloMjAuNzQzaDgzLjAyN2MwLjAwNywwLDAuMDE4LDAsMC4wMjYsMGMxMS40NjUsMCwyMC43NTc
+tOS4yOTMsMjAuNzU3LTIwLjc1N0M0ODIuOTY3LDMxNC4zODQsNDgxLjk4NiwzMTAuODg4LDQ4MC
+4yNjgsMzA3Ljg2NnoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiM2NEMzN0Q7IiBkPSJNMzU4LjQsO
+DkuNzg1Yy03Ljg2MywwLTE1LjA1LDQuNDQyLTE4LjU2NSwxMS40NzRsLTE5Ljc4NSwzOS41Njls
+LTE4LjkwOCwzNy44MTZsLTE5LjEzMiwzOC4yNjQNCglsLTE5LjYwOCwzOS4yMThsLTIxLjM2Nyw
+0Mi43MzVsLTQuOTgzLDkuOTYzYy0zLjIxNyw2LjQzNS0yLjg3NCwxNC4wNzYsMC45MDgsMjAuMT
+k1YzMuNzgyLDYuMTE5LDEwLjQ2NCw5Ljg0NCwxNy42NTcsOS44NDRoODMuMDI3DQoJSDM1OC40a
+DAuMDE0Vjg5Ljc4M0MzNTguNDA4LDg5Ljc4NiwzNTguNDA0LDg5Ljc4NSwzNTguNCw4OS43ODV6
+Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9
+nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz
+4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+D
+Qo8L3N2Zz4NCg==" alt="rainbow" class="drawer__icon">
+                        </div>
+                        <h1 class="drawer__headline main-title-w3pvt">
+                            Changing history of Victorian grassland
+                        </h1>
+                        <br />
+                    </div>
+                    <div class="drawer__content row no-gutters">
+                        <div class="col-lg-5">
+                            @*<div class="slide-banner" style="border-radius: 90%;">
+                                </div>*@
+                            <br /><br />
+                            <img src="~/img/info_grasslands.jpg" class="img-fluid" alt="" style="border-radius: 10%;" />
+                        </div>
+                        <div class="col-lg-7 drawer__inner-content">
+                            <div class="container">
+                                <div class="row flex-column mt-lg-4 mt-3">
+                                    <div class="row" style="margin-left:3%;">
+                                        <div class="col-sm-9 ">
+                                            <div class="abt-txt">
+                                                <h3 style="max-width:100%">Grassland is an important kind of environment in Australia mother nature.</h3><br />
+                                                <p style="color:white; font-family: Chilanka; font-size: 1.2vw">
+                                                    Grassland is a vegetation area dominated by almost continuously covered
+                                                    grass, and it is also one of the most widely distributed main vegetation types in the world.
+                                                    Usually, natural grassland can be considered as the middle part of the environmental gradient,
+                                                    with the forest at one end and desert at the other end. The grassland plays an important
+                                                    balancing role for the earth's environment.
+                                                    When Europeans first arrived in western Victoria, much of the extensive undulating plains they
+                                                    saw were covered with native grasslands. However, starting from the 1830s, the local grasslands
+                                                    were quickly occupied because grazing there did not require much effort. Soon after, large areas
+                                                    of native grassland in Victoria were completely replaced by introduced pastures, crops and
+                                                    weeds.
+                                                    The Victoria Volcanic Plain (VVP), located from the west of Melbourne to the border of South
+                                                    Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial
+                                                    era, it has only 5% of the area left.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!--Collapsible Drawers end-->
+        <!--img_slider_end-->
+        <h4 style="font-family: Chilanka; text-align: center; ">Victorian Volcanic Plain Comparison (Slide the blue dot)</h4>
         <div class="container pt-sm-5 pt-4">
             <div class="row no-gutters">
-                <div class="col-lg-5">
-                    <div class="slide-banner">
-                    </div>
-                </div>
-                <div class="col-lg-7">
+                <div class="col-lg-4">
                     <div class="bg-abt light-bg">
                         <div class="container">
-                            <div class="title-desc  pb-sm-3">
-                                <h4 class="main-title-w3pvt">About Melgrass</h4>
-                                <p>Helping the Victoria Voclanic Plains to regrow.</p>
+                            <div class="title-desc pb-sm-3">
+                                <h4 style="font-family: Chilanka; text-align: center;">Spot the Difference between the Two Images.</h4>
+                                <br>
+                                <h6 style="font-family: Chilanka;">Satellite images taken by GoogleEarth.</h6>
                             </div>
                             <div class="row flex-column mt-lg-4 mt-3">
                                 <div class="abt-grid">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <div class="abt-icon" data-blast="bgColor">
-                                                <span class="fa fa-ravelry"></span>
+                                            <div class="abt-icon">
+                                                @*<span class="fas fa-not-equal"></span>*@
                                             </div>
                                         </div>
                                         <div class="col-sm-9 pl-sm-0">
                                             <div class="abt-txt ml-sm-0">
-                                                <p>
-                                                    Here you can learn more about the Victorian Volcanic Plain (VVP) and
-                                                    the importance of biodiversity to the grassland ecosystem while
-                                                    playing games. We hope to raise children's awareness of protecting
-                                                    the grassland ecosystem from the perspective of protecting
-                                                    biodiversity.
+                                                <p style="font-family: Chilanka;">
+                                                    Victoria Volcanic Plains in 1984 and Victoria Volcanic Plains in 2016. See the difference with your own eyes.
+                                                    Identify the reasons for this change with us further.
                                                 </p>
                                                 <br><br><br><br><br>
                                             </div>
@@ -113,384 +257,337 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                            <img src="~/img/vvp2016.jpeg" width="650vh" height="auto"
+                                 style="margin-left: auto; margin-right: auto;">
+                        </div>
+                        <div class="img-comp-img img-comp-overlay">
+                            <img src="~/img/vvp1984.jpeg" width="650vh" height="auto"
+                                 style="margin-left: auto; margin-right: auto;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- //about -->
-    <!-- Scrolling Nav JavaScript -->
-    <!--<script src="js/counter.js"></script>-->
-    <!-- start-smooth-scrolling -->
-    <!--<script src="js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
+    <!--img_slider_end-->
+    <br /><br /><br /><br />
+    <!--Collapsible Drawers start-->
+    <section>
+        <ul class="drawer-list">
+            <li class="drawer">
+                <div class="drawer__header">
+                    <div style="position:relative; left:95%;">
+                        <i class="fas fa-chevron-down fa-2x"></i>
+                    </div>
+                    <div class="drawer__icon-container">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF
+0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIF
+ZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllc
+l8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw
+Oi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCA
+wIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bW
+w6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRkI2NTU7IiBkPSJNMTEyL
+jQ4NSwwYy0wLjAwMiwwLTAuMDAzLDAtMC4wMDUsMEM1MC40NiwwLDAsNTAuNDYsMCwxMTIuNDg1
+UzUwLjQ2LDIyNC45NywxMTIuNDgsMjI0Ljk3DQoJYzAuMDAyLDAsMC4wMDMsMCwwLjAwNSwwYzY
+yLjAyNS0wLjAwMywxMTIuNDg1LTUwLjQ2MSwxMTIuNDg1LTExMi40ODVTMTc0LjUxLDAuMDAzLD
+ExMi40ODUsMHoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNFRTg3MDA7IiBkPSJNMTEyLjQ4LDBDN
+TAuNDYsMCwwLDUwLjQ2LDAsMTEyLjQ4NVM1MC40NiwyMjQuOTcsMTEyLjQ4LDIyNC45N2MwLjAw
+MiwwLDAuMDAzLDAsMC4wMDUsMFYwDQoJQzExMi40ODMsMCwxMTIuNDgyLDAsMTEyLjQ4LDB6Ii8
++DQo8cGF0aCBzdHlsZT0iZmlsbDojRjJEMjNEOyIgZD0iTTQ4OC43MjcsNDY1LjQ1NUgzODcuOD
+c5aC0yMy4yNzNoLTIzLjI3M2gtNjAuMTc3TDE2My44NTEsMzQ4LjE0OQ0KCWMtNC41NDctNC41N
+DctMTAuNTA4LTYuODE5LTE2LjQ2OC02LjgxNmMtNS45NTIsMC4wMDMtMTEuOTAzLDIuMjc1LTE2
+LjQ0NSw2LjgxNkw2LjgxNyw0NzIuMjcNCgljLTAuNDgzLDAuNDgzLTAuOTM0LDAuOTg3LTEuMzY
+1LDEuNTAyYy0wLjEzNSwwLjE2MS0wLjI2MiwwLjMyNy0wLjM5MywwLjQ5MmMtMC4yOTMsMC4zNz
+EtMC41NzksMC43NDktMC44NSwxLjEzNw0KCWMtMC4xMzcsMC4xOTUtMC4yNzMsMC4zOTEtMC40M
+DMsMC41OWMtMC4yNjQsMC40MDMtMC41MSwwLjgxNi0wLjc0OSwxLjIzN2MtMC4wOTksMC4xNzct
+MC4yMDksMC4zNDktMC4zMDYsMC41MjYNCgljLTAuMjk4LDAuNTU5LTAuNTczLDEuMTMxLTAuODI
+1LDEuNzE2Yy0wLjEwNCwwLjI0Mi0wLjE5NSwwLjQ5LTAuMjkyLDAuNzM1Yy0wLjE1MiwwLjM4My
+0wLjI5NSwwLjc3LTAuNDI0LDEuMTYyDQoJYy0wLjA5MiwwLjI3My0wLjE3OCwwLjU0OS0wLjI2M
+SwwLjgyNGMtMC4xMywwLjQ0NS0wLjI0MiwwLjg5Ny0wLjM0OCwxLjM1MWMtMC4wNDcsMC4yMDUt
+MC4xMDQsMC40MDYtMC4xNDYsMC42MTMNCgljLTAuMTI5LDAuNjQ3LTAuMjI3LDEuMzA1LTAuMjk
+5LDEuOTY5Yy0wLjAyMywwLjIwMy0wLjAzNiwwLjQwOC0wLjA1NCwwLjYxM2MtMC4wNDUsMC41ND
+MtMC4wNzQsMS4wODktMC4wODQsMS42NDINCglDMC4wMTcsNDg4LjQ5NiwwLDQ4OC42MDksMCw0O
+DguNzI3YzAsMC4wNjUsMC4wMDksMC4xMjcsMC4wMTEsMC4xOTFjMC4wMDUsMC43MTEsMC4wMzks
+MS40MTUsMC4xMDYsMi4xMQ0KCWMwLjAxMiwwLjEzMywwLjAzNiwwLjI2NywwLjA1MywwLjRjMC4
+wNjQsMC41NTEsMC4xNDcsMS4wOTcsMC4yNSwxLjYzNWMwLjA0OCwwLjI1NiwwLjEwMSwwLjUxLD
+AuMTU4LDAuNzY1DQoJYzAuMDk2LDAuNDI4LDAuMjA2LDAuODQ5LDAuMzI2LDEuMjY4YzAuMDczL
+DAuMjU2LDAuMTQsMC41MTQsMC4yMjIsMC43N2MwLjE5MSwwLjU5NCwwLjQwMywxLjE4NSwwLjY0
+NSwxLjc2OQ0KCWMwLjAwMywwLjAwNiwwLjAwNiwwLjAxMiwwLjAwOSwwLjAyYzAuMDk1LDAuMjM
+sMC4yMDksMC40NTEsMC4zMTIsMC42NzhjMC4xOCwwLjM5OSwwLjM2NiwwLjc5NiwwLjU2OSwxLj
+E4Mg0KCWMwLjEyNCwwLjIzOSwwLjI1OCwwLjQ3NSwwLjM5MSwwLjcwN2MwLjIxOSwwLjM4NSwwL
+jQ0OCwwLjc2MywwLjY4NywxLjEzNGMwLjEyNiwwLjE5NCwwLjI0OCwwLjM4OCwwLjM3OSwwLjU3
+OQ0KCWMwLjM3MiwwLjU0LDAuNzYsMS4wNjcsMS4xNzYsMS41NzNjMC4wMDksMC4wMDgsMC4wMTY
+sMC4wMTksMC4wMjIsMC4wMjhjMC40MzEsMC41MjMsMC44OTIsMS4wMjEsMS4zNjcsMS41MDMNCg
+ljMC4xMzMsMC4xMzcsMC4yNzMsMC4yNjUsMC40MTEsMC4zOTljMC4zNTQsMC4zNDQsMC43MiwwL
+jY3NiwxLjA5NywwLjk5OGMwLjE2NCwwLjE0LDAuMzI2LDAuMjc5LDAuNDkyLDAuNDE0DQoJYzAu
+NDI0LDAuMzQxLDAuODYxLDAuNjY2LDEuMzA2LDAuOTc2YzAuMTEyLDAuMDc4LDAuMjE5LDAuMTY
+zLDAuMzM0LDAuMjM5YzAuNTMxLDAuMzU3LDEuMDgxLDAuNjg2LDEuNjQ1LDAuOTk5DQoJYzAuMj
+I1LDAuMTI2LDAuNDU1LDAuMjM5LDAuNjgzLDAuMzU3YzAuMzY5LDAuMTkxLDAuNzQ1LDAuMzcyL
+DEuMTI4LDAuNTQzYzAuMjU0LDAuMTE1LDAuNTEyLDAuMjI3LDAuNzcxLDAuMzMyDQoJYzAuNDMz
+LDAuMTc1LDAuODc0LDAuMzM0LDEuMzE5LDAuNDg0YzAuMjA1LDAuMDY4LDAuNDA2LDAuMTQ3LDA
+uNjEzLDAuMjA5YzAuNjA4LDAuMTg2LDEuMjI3LDAuMzQxLDEuODU0LDAuNDc4DQoJYzAuMjM0LD
+AuMDUxLDAuNDczLDAuMDksMC43MDksMC4xMzNjMC40NzYsMC4wODcsMC45NTQsMC4xNjEsMS40M
+zgsMC4yMmMwLjIyNSwwLjAyNiwwLjQ0NywwLjA1NiwwLjY3NSwwLjA3Ng0KCWMwLjY5NywwLjA1
+OSwxLjQwMSwwLjEwMiwyLjExNiwwLjEwMmgxMjQuMTA5aDEyNC4xMzRoOTMuMDkxaDEyNC4xMjF
+DNTAxLjU4LDUxMiw1MTIsNTAxLjU4LDUxMiw0ODguNzI3DQoJQzUxMiw0NzUuODczLDUwMS41OC
+w0NjUuNDU1LDQ4OC43MjcsNDY1LjQ1NXoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNFRUJGMDA7I
+iBkPSJNMTMwLjkzOSwzNDguMTQ5TDYuODE3LDQ3Mi4yN2MtMC40ODMsMC40ODMtMC45MzQsMC45
+ODctMS4zNjUsMS41MDINCgljLTAuMTM1LDAuMTYxLTAuMjYyLDAuMzI3LTAuMzkzLDAuNDkyYy0
+wLjI5MywwLjM3MS0wLjU3OSwwLjc0OS0wLjg1LDEuMTM3Yy0wLjEzNywwLjE5NS0wLjI3MywwLj
+M5MS0wLjQwMywwLjU5DQoJYy0wLjI2NCwwLjQwMy0wLjUxLDAuODE2LTAuNzQ5LDEuMjM3Yy0wL
+jA5OSwwLjE3Ny0wLjIwOSwwLjM0OS0wLjMwNiwwLjUyNmMtMC4yOTgsMC41NTktMC41NzMsMS4x
+MzEtMC44MjUsMS43MTYNCgljLTAuMTA0LDAuMjQyLTAuMTk1LDAuNDktMC4yOTIsMC43MzVjLTA
+uMTUyLDAuMzgzLTAuMjk1LDAuNzctMC40MjQsMS4xNjJjLTAuMDkyLDAuMjczLTAuMTc4LDAuNT
+Q5LTAuMjYxLDAuODI0DQoJYy0wLjEzLDAuNDQ1LTAuMjQyLDAuODk3LTAuMzQ4LDEuMzUxYy0wL
+jA0NywwLjIwNS0wLjEwNCwwLjQwNi0wLjE0NiwwLjYxM2MtMC4xMjksMC42NDctMC4yMjcsMS4z
+MDUtMC4yOTksMS45NjkNCgljLTAuMDIzLDAuMjAzLTAuMDM2LDAuNDA4LTAuMDU0LDAuNjEzYy0
+wLjA0NSwwLjU0My0wLjA3NCwxLjA4OS0wLjA4NCwxLjY0MkMwLjAxNyw0ODguNDk2LDAsNDg4Lj
+YwOSwwLDQ4OC43MjcNCgljMCwwLjA2NSwwLjAwOSwwLjEyNywwLjAxMSwwLjE5MWMwLjAwNSwwL
+jcxMSwwLjAzOSwxLjQxNSwwLjEwNiwyLjExYzAuMDEyLDAuMTMzLDAuMDM2LDAuMjY3LDAuMDUz
+LDAuNA0KCWMwLjA2NCwwLjU1MSwwLjE0NywxLjA5NywwLjI1LDEuNjM1YzAuMDQ4LDAuMjU2LDA
+uMTAxLDAuNTEsMC4xNTgsMC43NjVjMC4wOTYsMC40MjgsMC4yMDYsMC44NDksMC4zMjYsMS4yNj
+gNCgljMC4wNzMsMC4yNTYsMC4xNCwwLjUxNCwwLjIyMiwwLjc3YzAuMTkxLDAuNTk0LDAuNDAzL
+DEuMTg1LDAuNjQ1LDEuNzY5YzAuMDAzLDAuMDA2LDAuMDA2LDAuMDEyLDAuMDA5LDAuMDINCglj
+MC4wOTUsMC4yMywwLjIwOSwwLjQ1MSwwLjMxMiwwLjY3OGMwLjE4LDAuMzk5LDAuMzY2LDAuNzk
+2LDAuNTY5LDEuMTgyYzAuMTI0LDAuMjM5LDAuMjU4LDAuNDc1LDAuMzkxLDAuNzA3DQoJYzAuMj
+E5LDAuMzg1LDAuNDQ4LDAuNzYzLDAuNjg3LDEuMTM0YzAuMTI2LDAuMTk0LDAuMjQ4LDAuMzg4L
+DAuMzc5LDAuNTc5YzAuMzcyLDAuNTQsMC43NiwxLjA2NywxLjE3NiwxLjU3Mw0KCWMwLjAwOSww
+LjAwOCwwLjAxNiwwLjAxOSwwLjAyMiwwLjAyOGMwLjQzMSwwLjUyMywwLjg5MiwxLjAyMSwxLjM
+2NywxLjUwM2MwLjEzMywwLjEzNywwLjI3MywwLjI2NSwwLjQxMSwwLjM5OQ0KCWMwLjM1NCwwLj
+M0NCwwLjcyLDAuNjc2LDEuMDk3LDAuOTk4YzAuMTY0LDAuMTQsMC4zMjYsMC4yNzksMC40OTIsM
+C40MTRjMC40MjQsMC4zNDEsMC44NjEsMC42NjYsMS4zMDYsMC45NzYNCgljMC4xMTIsMC4wNzgs
+MC4yMTksMC4xNjMsMC4zMzQsMC4yMzljMC41MzEsMC4zNTcsMS4wODEsMC42ODYsMS42NDUsMC4
+5OTljMC4yMjUsMC4xMjYsMC40NTUsMC4yMzksMC42ODMsMC4zNTcNCgljMC4zNjksMC4xOTEsMC
+43NDUsMC4zNzIsMS4xMjgsMC41NDNjMC4yNTQsMC4xMTUsMC41MTIsMC4yMjcsMC43NzEsMC4zM
+zJjMC40MzMsMC4xNzUsMC44NzQsMC4zMzQsMS4zMTksMC40ODQNCgljMC4yMDUsMC4wNjgsMC40
+MDYsMC4xNDcsMC42MTMsMC4yMDljMC42MDgsMC4xODYsMS4yMjcsMC4zNDEsMS44NTQsMC40Nzh
+jMC4yMzQsMC4wNTEsMC40NzMsMC4wOSwwLjcwOSwwLjEzMw0KCWMwLjQ3NiwwLjA4NywwLjk1NC
+wwLjE2MSwxLjQzOCwwLjIyYzAuMjI1LDAuMDI2LDAuNDQ3LDAuMDU2LDAuNjc1LDAuMDc2YzAuN
+jk3LDAuMDU5LDEuNDAxLDAuMTAyLDIuMTE2LDAuMTAyaDEyNC4xMDlWMzQxLjMzMw0KCUMxNDEu
+NDMsMzQxLjMzNiwxMzUuNDc4LDM0My42MDgsMTMwLjkzOSwzNDguMTQ5eiIvPg0KPHBhdGggc3R
+5bGU9ImZpbGw6I0E0RTI3NjsiIGQ9Ik00NDIuMTgyLDI3OS4yNzNjLTEyLjg1MywwLTIzLjI3My
+wxMC40MTgtMjMuMjczLDIzLjI3M3YzMS4wM2MwLDIxLjYxOS0xMi43MDIsNDAuMzIxLTMxLjAzL
+DQ5LjA1Mw0KCXYtMzMuNTM4VjE2Mi45MDljMC0xMi44NTQtMTAuNDItMjMuMjczLTIzLjI3My0y
+My4yNzNzLTIzLjI3MywxMC40MTgtMjMuMjczLDIzLjI3M3YxNTcuNjU5DQoJYy0xOC4zMy04Ljc
+zMi0zMS4wMy0yNy40MzUtMzEuMDMtNDkuMDUzdi0zMS4wM2MwLTEyLjg1NC0xMC40Mi0yMy4yNz
+MtMjMuMjczLTIzLjI3M2MtMTIuODUzLDAtMjMuMjczLDEwLjQxOC0yMy4yNzMsMjMuMjczdjMxL
+jAzDQoJYzAsNDcuNTk2LDMzLjE1Niw4Ny41NjksNzcuNTc2LDk4LjEwN3Y0MS41Mjl2NTQuMzAz
+aDIzLjI3M2gyMy4yNzN2LTMzLjc3MmM0NC40Mi0xMC41MzgsNzcuNTc2LTUwLjUxMSw3Ny41NzY
+tOTguMTA3di0zMS4wMw0KCUM0NjUuNDU1LDI4OS42OTEsNDU1LjAzNSwyNzkuMjczLDQ0Mi4xOD
+IsMjc5LjI3M3oiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiM2NEMzN0Q7IiBkPSJNMzQxLjMzMywxN
+jIuOTA5djE1Ny42NTljLTE4LjMzLTguNzMyLTMxLjAzLTI3LjQzNS0zMS4wMy00OS4wNTN2LTMx
+LjAzDQoJYzAtMTIuODU0LTEwLjQyLTIzLjI3My0yMy4yNzMtMjMuMjczYy0xMi44NTMsMC0yMy4
+yNzMsMTAuNDE4LTIzLjI3MywyMy4yNzN2MzEuMDNjMCw0Ny41OTYsMzMuMTU2LDg3LjU2OSw3Ny
+41NzYsOTguMTA3djQxLjUyOQ0KCXY1NC4zMDNoMjMuMjczVjEzOS42MzZDMzUxLjc1MywxMzkuN
+jM2LDM0MS4zMzMsMTUwLjA1NSwzNDEuMzMzLDE2Mi45MDl6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0K
+PC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjw
+vZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2
+c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" alt="rainbow" class="drawer__icon">
+                    </div>
 
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script>-->
-    <!-- //end-smooth-scrolling -->
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- stats ends-->
-    <!-- Grasslands -->
-    <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5" id="grassland">
-        <div class="container-fluid" style="width: 85%; height:relative;">
-            <!--text_slider_start-->
-            <div class="title-desc text-center pb-3">
-                <hr>
-                @*<h2 class="main-title-w3pvt">Grasslands</h2>*@
-
-                <!-- //blog modal3-->
-                <!--Map Section-->
-            <section class="wthree-slide-btm pt-lg-5" id="grassland">
-                <h1 class="main-title-w3pvt" style="text-align: center; font-family: fantasy;">Grasslands</h1>
-
-                <!--vedio-->
-                @*<div>
-                    <h4 style="text-align: center;">Victoria Volcanic Plains?</h4>
-                    <br>
-                    <video style="width:700px; height:500px" id="video" controls="" preload="none" poster="~/img/videoPoster.png">
-                        <source id="mp4" src="~/Content/aboutVVP.mp4" type="video/mp4">
-                        <p>Your user agent does not support the HTML5 Video element.</p>
-                    </video>*@
-                    <iframe width="1045" height="514" src="https://www.youtube.com/embed/CbAVF_MNn1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-            </iframe>
+                    <h1 class="drawer__headline main-title-w3pvt">
+                        Grassland Ecosystem of Victoria Volcanic
+                        Plain
+                    </h1>
+                    <br />
                 </div>
-                <br><br><br>
-                <!--vedio-->
-
-                <h4 style="font-family:fantasy; text-align: center;">Victorian Volcanic Plain Comparison (Slide to Explore)</h4>
-                <div class="container pt-sm-5 pt-4">
-                    <div class="row no-gutters">
-                        <div class="col-lg-4">
-                            <div class="bg-abt light-bg">
-                                <div class="container">
-                                    <div class="title-desc pb-sm-3">
-                                        <h4 style="font-family:fantasy; text-align: center;">Spot the Difference between the Two Images.</h4>
-                                        <br>
-                                        <h6 style="font-family:fantasy;">Satellite images taken by GoogleEarth.</h6>
-                                    </div>
-                                    <div class="row flex-column mt-lg-4 mt-3">
-                                        <div class="abt-grid">
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <div class="abt-icon">
-                                                        <span class="fas fa-not-equal"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-9 pl-sm-0">
-                                                    <div class="abt-txt ml-sm-0">
-                                                        <p style="font-family:fantasy;">
-                                                            Victoria Volcanic Plains in 1984 and Victoria Volcanic Plains in 2016. See the difference with your own eyes.
-                                                            Identify the reasons for this change with us further.
-                                                        </p>
-                                                        <br><br><br><br><br>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <div class="drawer__content row no-gutters">
+                    <div class="col-lg-5">
+                        @*<div class="slide-banner" ></div>*@
+                        <br /><br />
+                        <img src="~/img/vicBioregions.png" class="img-fluid" alt="" style="border-radius: 5%;" />
+                    </div>
+                    <div class="col-lg-7 drawer__inner-content">
+                        <div class="container">
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="row" style="margin-left:3%;">
+                                    <div class="col-sm-9 ">
+                                        <div class="abt-txt">
+                                            <h5 style="font-weight: bold;">
+                                                Victorian must know about the grassland ecosystem to be able to understand more about the
+                                                natural environment.
+                                            </h5><br />
+                                            <p style="color:white; font-family: Chilanka; font-size: 1.2vw">
+                                                The natural temperate grassland of the Victoria Volcanic Plain is a highly
+                                                fragmented and critically endangered ecological community. It is well known that the largest
+                                                native animal on the Australian grassland is the kangaroo, the biggest of which is the red
+                                                kangaroo, characteristic of the natural grassland in the dry inland areas. But because of the
+                                                arrival of European immigrants, mammals introduced from other continents have become equally
+                                                common. These animals include domestic animals, especially cattle and sheep, as well as a series
+                                                of wild animals such as camels, horses, donkeys and goats. The biggest natural enemy to the
+                                                grassland is the European rabbit, they are widely distributed, have strong reproductive ability,
+                                                and their destructive power is also amazing. However, Australia does not have large predators,
+                                                so the main predator is a dingo. There are very diverse reptiles, especially lizards, and
+                                                various birds including large flightless emu, and various parrots.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="img-comp-container">
-                                <div class="img-comp-img">
-                                    <img src="~/img/vvp2016.jpeg" width="650vh" height="auto"
-                                         style="margin-left: auto; margin-right: auto;">
-                                </div>
-                                <div class="img-comp-img img-comp-overlay">
-                                    <img src="~/img/vvp1984.jpeg" width="650vh" height="auto"
-                                         style="margin-left: auto; margin-right: auto;">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </section>
-            </div>
-            <script>
-                /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-                initComparisons();
-            </script>
-            <!--img_slider_end-->
+            </li>
+        </ul>
     </section>
-    <br><br><br>
-    
-
-    <br><br><br>
+    <!--Collapsible Drawers end-->
     <!-- stats -->
-            <section class="w3_stats py-sm-5 py-4" id="stats">
-                <div class="container">
-                    <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
-                    <div class="py-lg-5 w3-stats">
-                        <figure class="highcharts-figure">
-                            <div id="container">
-                                <script src='~/js/BarChart.js'></script>
-                                <!--description-->
-                            </div>
-                        </figure>
+    <section class="w3_stats py-sm-5 py-4" id="stats">
+        <div class="container">
+            <h2 class="w3pvt-title">We Move The World To Protect Animals </h2><br><br>
+            <div class="py-lg-5 w3-stats">
+                <figure class="highcharts-figure">
+                    <div id="container">
+                        <script src='~/js/BarChart.js'></script>
+                        <!--description-->
                     </div>
-                </div>
-                <!--copyright statement-->
-                <div>
-                    Icons made by <a href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a>
-                </div>
-                <!--copyright statement-->
-            </section>
-    <!-- stats ends-->
-    @*TEXT FOR GRASSLANDS
-        blog*@
-    <section class="blog_w3ls pb-lg-5 pb-4" id="posts">
-        <div class="container py-sm-5 py-4">
-            <div class="title-desc text-center pb-sm-3 mb-lg-5">
-                <h3 class="main-title-w3pvt">Let's Explore</h3>
-                <p>Helping animals & working on environmental issues.</p>
-            </div>
-            <div class="row mt-4">
-                @*blog grid *@
-                <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
-                               data-target="#exampleModal2" role="button">
-                                <img class="card-img-bottom" src="~/img/info_grasslands.jpg" alt="Card image cap">
-                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"></span>
-
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="#exampleModal2" data-toggle="modal" aria-pressed="false"
-                                   data-target="#exampleModal2" role="button">About Grasslands</a>
-                            </h5>
-                            <p>Grassland is an important kind of environment in Australia mother nature.</p>
-                            <br><br><br>
-                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                    aria-pressed="false" data-target="#exampleModal2">
-                                Read more
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-                @*//blog grid
-                    blog grid *@
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
-                               data-target="#exampleModal3" role="button">
-                                <img class="card-img-bottom" src="~/img/vicBioregions.png" alt="Card image cap">
-                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
-                                      data-blast="bgColor"></span>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="#exampleModal3" data-toggle="modal" aria-pressed="false"
-                                   data-target="#exampleModal3" role="button">
-                                    Grassland Ecosystem of Victoria Volcanic
-                                    Plain
-                                </a>
-                            </h5>
-                            <p>
-                                Victorian must know about the grassland ecosystem to be able to understand more about the
-                                natural environment.
-                            </p>
-                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                    aria-pressed="false" data-target="#exampleModal3">
-                                Read more
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                @*//blog grid
-                    blog grid *@
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto">
-                    <div class="card">
-                        <div class="card-header p-0  position-relative">
-                            <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
-                               data-target="#exampleModal4" role="button">
-                                <img class="card-img-bottom" src="~/img/info_rabbits.jpg" alt="Card image cap">
-                                <span class="fa fa-user post-icon bg-theme" aria-hidden="true"
-                                      data-blast="bgColor"></span>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="#exampleModal4" data-toggle="modal" aria-pressed="false"
-                                   data-target="#exampleModal4" role="button">
-                                    Threats to biodiversity in Victorian
-                                    Grassland
-                                </a>
-                            </h5>
-                            <p>
-                                Understanding the threats to biodiversity is the first step to protecting Australian
-                                grassland.
-                            </p>
-                            <br><br><br><br><br>
-                            <button type="button" class="btn blog-btn wthree-bnr-btn" data-toggle="modal"
-                                    aria-pressed="false" data-target="#exampleModal4">
-                                Read more
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-                @*//blog grid *@
+                </figure>
             </div>
         </div>
+        <!--copyright statement-->
+        <div>
+            Icons made by <a href="https://www.flaticon.local/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.local/" title="Flaticon">www.flaticon.local</a>
+        </div>
+        <!--copyright statement-->
     </section>
-    @*//blog
-        blog modal1 *@
-    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-theme">
-                    <h5 class="modal-title" id="exampleModalLabel2">About Grasslands</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="~/img/info_grasslands.jpg" class="img-fluid" alt="" />
-                    <p class="text-left my-4">
-                        Grassland is a vegetation area dominated by almost continuously covered
-                        grass, and it is also one of the most widely distributed main vegetation types in the world.
-                        Usually, natural grassland can be considered as the middle part of the environmental gradient,
-                        with the forest at one end and desert at the other end. The grassland plays an important
-                        balancing role for the earth's environment.
-                        When Europeans first arrived in western Victoria, much of the extensive undulating plains they
-                        saw were covered with native grasslands. However, starting from the 1830s, the local grasslands
-                        were quickly occupied because grazing there did not require much effort. Soon after, large areas
-                        of native grassland in Victoria were completely replaced by introduced pastures, crops and
-                        weeds.
-                        The Victoria Volcanic Plain (VVP), located from the west of Melbourne to the border of South
-                        Australia, is the largest natural grassland nowadays, but compared to the pre-European colonial
-                        era, it has only 5% of the area left.
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    @*//blog modal1
-        blog modal2*@
-    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-theme">
-                    <h5 class="modal-title" id="exampleModalLabel3">Grassland Ecosystem of Victoria Volcanic Plain</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="~/img/vicBioregions.png" class="img-fluid" alt="" />
-                    <p class="text-left my-4">
-                        The natural temperate grassland of the Victoria Volcanic Plain is a highly
-                        fragmented and critically endangered ecological community. It is well known that the largest
-                        native animal on the Australian grassland is the kangaroo, the biggest of which is the red
-                        kangaroo, characteristic of the natural grassland in the dry inland areas. But because of the
-                        arrival of European immigrants, mammals introduced from other continents have become equally
-                        common. These animals include domestic animals, especially cattle and sheep, as well as a series
-                        of wild animals such as camels, horses, donkeys and goats. The biggest natural enemy to the
-                        grassland is the European rabbit, they are widely distributed, have strong reproductive ability,
-                        and their destructive power is also amazing. However, Australia does not have large predators,
-                        so the main predator is a dingo. There are very diverse reptiles, especially lizards, and
-                        various birds including large flightless emu, and various parrots.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    @*//blog modal2
-        blog modal3 *@
-    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-theme">
-                    <h5 class="modal-title" id="exampleModalLabel4">
+    <!-- stats ends-->
+    <!--Collapsible Drawers start-->
+    <section>
+        <ul class="drawer-list">
+            <li class="drawer">
+                <div class="drawer__header">
+                    <div style="position:relative; left:95%;">
+                        <i class="fas fa-chevron-down fa-2x"></i>
+                    </div>
+                    <div class="drawer__icon-container">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF
+0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIF
+ZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllc
+l8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw
+Oi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCA
+wIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bW
+w6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiM2RTc2RTU7IiBkP
+SJNNDg4LjcwMSw3Ny41ODZjLTYuMTI3LDAtMTIuMTMxLDIuNDgyLTE2LjQ1OSw2LjgxMWMtNC4z
+MjgsNC4zNDQtNi44MTIsMTAuMzMyLTYuODEyLDE2LjQ2MQ0KCQljMCw2LjEyOCwyLjQ4NCwxMi4
+xMTcsNi44MTIsMTYuNDYxYzQuMzI4LDQuMzI4LDEwLjMzMiw2LjgxMSwxNi40NTksNi44MTFjNi
+4xMjgsMCwxMi4xMTgtMi40ODIsMTYuNDQ3LTYuODExDQoJCWM0LjM0NC00LjMyOCw2LjgyNS0xM
+C4zMzIsNi44MjUtMTYuNDYxcy0yLjQ4Mi0xMi4xMzItNi44MjUtMTYuNDYxQzUwMC44MTksODAu
+MDY4LDQ5NC44MTMsNzcuNTg2LDQ4OC43MDEsNzcuNTg2eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWx
+sOiM2RTc2RTU7IiBkPSJNMzU1Ljg4NSw2Ljg0MWMtNC4zMjgsNC4zMTMtNi44MTIsMTAuMzE3LT
+YuODEyLDE2LjQ0NXMyLjQ4NCwxMi4xMzIsNi44MTIsMTYuNDYxDQoJCWM0LjMyOCw0LjMyOCwxM
+C4zMzIsNi44MTEsMTYuNDU5LDYuODExYzYuMTEzLDAsMTIuMTE4LTIuNDgyLDE2LjQ0Ny02Ljgx
+MWM0LjM0NC00LjMyOCw2LjgyNS0xMC4zMzIsNi44MjUtMTYuNDYxDQoJCXMtMi40ODItMTIuMTE
+3LTYuODI1LTE2LjQ0NWMtNC4zMjgtNC4zNDQtMTAuMzMyLTYuODI2LTE2LjQ0Ny02LjgyNkMzNj
+YuMjE4LDAuMDE1LDM2MC4yMTQsMi40OTcsMzU1Ljg4NSw2Ljg0MXoiLz4NCgk8cGF0aCBzdHlsZ
+T0iZmlsbDojNkU3NkU1OyIgZD0iTTI3Mi40MzQsMTE3LjMxOGM0LjM0NC00LjMyOCw2LjgyNS0x
+MC4zMzIsNi44MjUtMTYuNDYxcy0yLjQ4Mi0xMi4xMTctNi44MjUtMTYuNDYxDQoJCWMtNC4zMjg
+tNC4zMjgtMTAuMzE3LTYuODExLTE2LjQ0Ny02LjgxMWMtNi4xMjcsMC0xMi4xMzEsMi40ODItMT
+YuNDU5LDYuODExYy00LjMyOCw0LjM0NC02LjgxMiwxMC4zMzItNi44MTIsMTYuNDYxDQoJCXMyL
+jQ4NCwxMi4xMzIsNi44MTIsMTYuNDYxYzQuMzI4LDQuMzI4LDEwLjMzMiw2LjgxMSwxNi40NTks
+Ni44MTFDMjYyLjEsMTI0LjEyOCwyNjguMTA2LDEyMS42NDYsMjcyLjQzNCwxMTcuMzE4eiIvPg0
+KCTxwYXRoIHN0eWxlPSJmaWxsOiM2RTc2RTU7IiBkPSJNNi44MTUsMjM5LjUzOWMtNC4zMjgsNC
+4zNDQtNi44MTIsMTAuMzMyLTYuODEyLDE2LjQ2MWMwLDYuMTI4LDIuNDg0LDEyLjEzMiw2LjgxM
+iwxNi40NjENCgkJYzQuMzI4LDQuMzI4LDEwLjMzMiw2LjgxMSwxNi40NTksNi44MTFjNi4xMTMs
+MCwxMi4xMTctMi40ODIsMTYuNDYxLTYuODExYzQuMzI4LTQuMzI4LDYuODExLTEwLjMzMiw2Ljg
+xMS0xNi40NjENCgkJYzAtNi4xMjgtMi40ODItMTIuMTE3LTYuODExLTE2LjQ2MWMtNC4zNDQtNC
+4zMjgtMTAuMzQ4LTYuODExLTE2LjQ2MS02LjgxMUMxNy4xNDgsMjMyLjcyOCwxMS4xNDQsMjM1L
+jIxLDYuODE1LDIzOS41Mzl6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6IzZFNzZFNTsiIGQ9Ik0y
+MDguNSwyMzkuNTM5Yy00LjMyOCw0LjM0NC02LjgxMiwxMC4zMzItNi44MTIsMTYuNDYxYzAsNi4
+xMjgsMi40ODQsMTIuMTMyLDYuODEyLDE2LjQ2MQ0KCQljNC4zMjgsNC4zMjgsMTAuMzMyLDYuOD
+ExLDE2LjQ1OSw2LjgxMWM2LjExMywwLDEyLjExOC0yLjQ4MiwxNi40NjEtNi44MTFjNC4zMjgtN
+C4zNDQsNi44MTEtMTAuMzMyLDYuODExLTE2LjQ2MQ0KCQljMC02LjEyOC0yLjQ4Mi0xMi4xMTct
+Ni44MTEtMTYuNDYxYy00LjM0NC00LjMyOC0xMC4zMzItNi44MTEtMTYuNDYxLTYuODExQzIxOC4
+4MzMsMjMyLjcyOCwyMTIuODI5LDIzNS4yMSwyMDguNSwyMzkuNTM5eiIvPg0KCTxwYXRoIHN0eW
+xlPSJmaWxsOiM2RTc2RTU7IiBkPSJNMTA3LjY1OCwzMTcuMTFjLTQuMzI4LDQuMzQ0LTYuODEyL
+DEwLjMzMi02LjgxMiwxNi40NjFzMi40ODQsMTIuMTE3LDYuODEyLDE2LjQ2MQ0KCQljNC4zMjgs
+NC4zMjgsMTAuMzMyLDYuODExLDE2LjQ1OSw2LjgxMWM2LjEyOCwwLDEyLjExOC0yLjQ4MiwxNi4
+0NDctNi44MTFjNC4zNDQtNC4zNDQsNi44MjUtMTAuMzMyLDYuODI1LTE2LjQ2MQ0KCQlzLTIuND
+gyLTEyLjExNy02LjgyNS0xNi40NjFjLTQuMzI4LTQuMzI4LTEwLjMxNy02LjgxMS0xNi40NDctN
+i44MTFDMTE3Ljk5LDMxMC4yOTksMTExLjk4NiwzMTIuNzgxLDEwNy42NTgsMzE3LjExeiIvPg0K
+PC9nPg0KPHBvbHlnb24gc3R5bGU9ImZpbGw6I0E3ODk2NjsiIHBvaW50cz0iMzk1LjYxMiw0NjU
+uNDQzIDM5NS42MTIsNDA5LjA3MyAzNzIuMzQxLDQwOS4wNzMgMzQ5LjA3LDQwOS4wNzMgMzQ5Lj
+A3LDQ2NS40NDMgDQoJMzcyLjM0MSw0NjUuNDQzICIvPg0KPHBhdGggc3R5bGU9ImZpbGw6IzM2O
+EI0QzsiIGQ9Ik0yMy4yNzEsNTExLjk4NWgzNDkuMDdoMTE2LjM1N2MxMi44NTIsMCwyMy4yNzEt
+MTAuNDE5LDIzLjI3MS0yMy4yNzENCgljMC0xMi44NTQtMTAuNDE5LTIzLjI3MS0yMy4yNzEtMjM
+uMjcxaC05My4wODVoLTIzLjI3MUgzNDkuMDdIMjMuMjcxQzEwLjQxOSw0NjUuNDQzLDAsNDc1Lj
+g2LDAsNDg4LjcxNA0KCUMwLDUwMS41NjYsMTAuNDE5LDUxMS45ODUsMjMuMjcxLDUxMS45ODV6I
+i8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNkU3NkU1OyIgZD0iTTE4Mi43OTIsMTYzLjk2OWMtMTUu
+NzE3LTEyLjYwMi0yNC43MzEtMzEuMzY0LTI0LjczMS01MS40NzF2LTAuMDAyDQoJYzAtMjAuMTE
+xLDkuMDE1LTM4Ljg3MiwyNC43MzMtNTEuNDc2YzUuNTA5LTQuNDE3LDguNzEzLTExLjA5Niw4Lj
+cxMy0xOC4xNTZzLTMuMjA1LTEzLjczOS04LjcxNC0xOC4xNTYNCglDMTYyLjkzNSw4Ljc4NSwxM
+zcuOTYsMC4wMTYsMTEyLjQ3MywwLjAxNkM1MC40NTcsMC4wMTYsMCw1MC40NzMsMCwxMTIuNDk0
+djAuMDAyYzAsNjIuMDIsNTAuNDU3LDExMi40NzYsMTEyLjQ3MywxMTIuNDc2DQoJYzI1LjQ4Nyw
+wLDUwLjQ2LTguNzY5LDcwLjMxOC0yNC42OTJjNS41MDktNC40MTcsOC43MTQtMTEuMDk2LDguNz
+E0LTE4LjE1NkMxOTEuNTA3LDE3NS4wNjMsMTg4LjMwMSwxNjguMzg2LDE4Mi43OTIsMTYzLjk2O
+XoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiM0MjRFREU7IiBkPSJNMTgyLjc5Myw2MS4wMThjNS41
+MDktNC40MTcsOC43MTMtMTEuMDk2LDguNzEzLTE4LjE1NnMtMy4yMDUtMTMuNzM5LTguNzE0LTE
+4LjE1Ng0KCUMxNjIuOTM1LDguNzg1LDEzNy45NiwwLjAxNiwxMTIuNDczLDAuMDE2QzUwLjQ1Ny
+wwLjAxNiwwLDUwLjQ3MywwLDExMi40OTRoMTU4LjA2QzE1OC4wNiw5Mi4zODUsMTY3LjA3Niw3M
+y42MjIsMTgyLjc5Myw2MS4wMTh6Ig0KCS8+DQo8cGF0aCBzdHlsZT0iZmlsbDojQTRFMjc2OyIg
+ZD0iTTUwOC45NzMsMzg0LjE0NUwzOTMuMTU1LDE1Mi41MDljLTMuOTQxLTcuODg0LTExLjk5OS0
+xMi44NjQtMjAuODE0LTEyLjg2NA0KCWMtOC44MTUsMC0xNi44NzMsNC45OC0yMC44MTQsMTIuOD
+Y0TDIzNS4xNzEsMzg1LjIyMmMtMy42MDcsNy4yMTQtMy4yMjIsMTUuNzgxLDEuMDE4LDIyLjY0M
+Q0KCWM0LjI0LDYuODYsMTEuNzMyLDExLjAzNywxOS43OTYsMTEuMDM3aDkzLjA4NWgyMy4yNzFo
+MjMuMjcxaDkzLjA4NWMwLjAwOSwwLDAuMDE5LDAsMC4wMzEsMGMxMi44NTQsMCwyMy4yNzEtMTA
+uNDE5LDIzLjI3MS0yMy4yNzENCglDNTEyLDM5MS40NTIsNTEwLjksMzg3LjUzNSw1MDguOTczLD
+M4NC4xNDV6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojNjRDMzdEOyIgZD0iTTM1MS41MjcsMTUyL
+jUwOUwyMzUuMTcxLDM4NS4yMjJjLTMuNjA3LDcuMjE0LTMuMjIyLDE1Ljc4MSwxLjAxOCwyMi42
+NDENCgljNC4yNCw2Ljg2LDExLjczMiwxMS4wMzcsMTkuNzk2LDExLjAzN2g5My4wODVoMjMuMjc
+xVjEzOS42NDRDMzYzLjUyNiwxMzkuNjQ0LDM1NS40NjgsMTQ0LjYyNCwzNTEuNTI3LDE1Mi41MD
+l6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KP
+C9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwv
+Zz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c
++DQo8L3N2Zz4NCg==" alt="rainbow" class="drawer__icon">
+                    </div>
+                    <h1 class="drawer__headline main-title-w3pvt">
                         Threats to biodiversity in Victorian
                         Grassland
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    </h1>
+                    <br />
                 </div>
-                <div class="modal-body text-center">
-                    <img src="~/img/info_rabbits.jpg" class="img-fluid" alt="" />
-                    <p class="text-left my-4">
-                        The interactions between native species are altered or destroyed by these
-                        invasive species, and climate change, Pollution, Overexploitation, and deforestation are also
-                        the major cause of extinction and can result in the loss of native biodiversity. The fewer
-                        species we have on the earth, the fewer humans we will have.
-                    </p>
+                <div class="drawer__content row no-gutters">
+                    <div class="col-lg-5">
+                        @*<div class="slide-banner"  style="border-radius: 90%;">
+                            </div>*@
+                        <br /><br />
+                        <img src="~/img/info_rabbits.jpg" class="img-fluid" alt="" style="border-radius:10%;" />
+                    </div>
+                    <div class="col-lg-7 drawer__inner-content">
+                        <div class="container">
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="row" style="margin-left:3%;">
+                                    <div class="col-sm-9 ">
+                                        <div class="abt-txt">
+                                            <h5 style="font-weight: bold;">
+                                                Understanding the threats to biodiversity is the first step to protecting Australian
+                                                grassland.
+                                            </h5><br />
+                                            <p style="color:white; font-family: Chilanka; font-size: 1.2vw">
+                                                The interactions between native species are altered or destroyed by these
+                                                invasive species, and climate change, Pollution, Overexploitation, and deforestation are also
+                                                the major cause of extinction and can result in the loss of native biodiversity. The fewer
+                                                species we have on the earth, the fewer humans we will have.
+                                            </p>
+                                            <br><br><br><br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <!--habitat_container_start-->
-    <section align="center">
-        <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
-            <h1 style="text-align: center;">Discover species in each habitat</h1>
-            <p>Click the image to discover more</p>
-            <br>
-            <br>
-        </div>
-        <div>
-            <div class="habitatContainer">
-                <a href='@Url.Action("Wetland", "Home")'>
-                    <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
-                    <div class="habitatOverlay habitatOverlayLeft">
-                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 25%; transform: translate(-00%, -50%); font-family: sans-serif;">Wetlands</div>
-                    </div>
-                </a>
-            </div>
-            <div class="habitatContainer">
-                <a href='@Url.Action("GrassyWoodland", "Home")'>
-                    <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
-                    <div class="habitatOverlay habitatOverlayFade">
-                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;">Woodlands</div>
-                    </div>
-                </a>
-            </div>
-            <div class="habitatContainer">
-                <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
-                    <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
-                    <div class="habitatOverlay habitatOverlayFade">
-                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;">Grassland Plains</div>
-                    </div>
-                </a>
-            </div>
-            <div class="habitatContainer">
-                <a href='@Url.Action("RockyGrassland", "Home")'>
-                    <img src="~/img/info_rocky.jpg" alt="Avatar" class="habitatImage">
-                    <div class="habitatOverlay habitatOverlayRight">
-                        <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 82.5%; transform: translate(-100%, -50%); font-family: sans-serif;">Rocky<br>Grasslands</div>
-                    </div>
-                </a>
-            </div>
-        </div>
+            </li>
+        </ul>
     </section>
-    <!--habitat_container_end-->
-
+    <!--Collapsible Drawers end-->
+    <!--Gallary start-->
     <section class="wthree-row w3-gallery cliptop-portfolio-wthree pt-lg-5">
         <div class="title-desc text-center pb-3">
-            <h3 style="font-family: fantasy;">Have a closer look to the Victoria Volcanic Plains! </h3>
-            <h5 style="font-family: fantasy;">Glimpse of the beauty of Victoria Volcanic Plains</h5>
+            <h3 style="font-family: Chilanka;">Have a closer look to the Victoria Volcanic Plains! </h3>
+            <h5 style="font-family: Chilanka;">Glimpse of the beauty of Victoria Volcanic Plains</h5>
         </div>
 
         <div class="container-fluid" style="width: 100%;height: auto;">
@@ -509,7 +606,7 @@
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
-                        <img style="height:350px; width: 600px; margin-left: -1%" src="~/img/swampEverlasting.jpg" alt=" swampEverlasting" class="img-fluid img-thumbnail" />
+                        <img style="height:350px; width: 600px; margin-left: -1%" src="~/img/GrowlingGrassFrog.jpg" alt=" swampEverlasting" class="img-fluid img-thumbnail" /> @*need change*@
                     </div>
                 </li>
                 <li class="col-lg-3 col-sm-6">
@@ -520,7 +617,7 @@
                 </li>
                 <li class="col-lg-3 col-sm-6">
                     <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="~/img/grassy_woodlands.jpg" alt="grassyWoodlands "
+                        <img style="height:350px; width: auto;" src="~/img/riceFlower.jpg" alt="grassyWoodlands "
                              class="img-fluid img-thumbnail" />
                     </div>
                 </li>
@@ -542,46 +639,126 @@
                              class="img-fluid img-thumbnail" />
                     </div>
                 </li>
-                @*<li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 450px;" src="~/img/rushes.jpg" alt=" rushes"
-                             class="img-fluid img-thumbnail" />
-                    </div>
-                </li>
-                <li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: 450px;" src="~/img/wallabyGrass.jpg" alt="wallabyGrass"
-                             class="img-fluid img-thumbnail" />
-                    </div>
-                </li>*@
-                @*<li class="col-lg-3 col-sm-6">
-                    <div class="gallery-grid1">
-                        <img style="height:350px; width: auto;" src="~/img/g5.jpg" alt=" "
-                             class="img-fluid img-thumbnail" />
-                    </div>
-                </li>*@
-                <!--</ul>
+            </ul>
+        </div>
+    </section>
+    <!--Gallary end-->
+    <!--habitat_container_start-->
+    @*<section align="center">
+            <div class="col-xs-12 col-md-12 col-ld-12 col-sm-12">
+                <h1 style="text-align: center;"></h1>
+                <p></p>
+                <br>
+                <br>
+            </div>
+            <div>
+                <div class="habitatContainer">
+                    <a href='@Url.Action("Wetland", "Home")'>
+                        <img src="~/img/info_wetland.jpg" alt="Avatar" class="habitatImage">
+                        <div class="habitatOverlay habitatOverlayLeft">
+                            <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 25%; transform: translate(-00%, -50%); font-family: sans-serif;"></div>
+                        </div>
+                    </a>
                 </div>
-            </section>-->
-                <!-- //Grasslands -->
-                <!-- slide -->
-                <!--<div class="abt_bottom py-lg-5 bg-theme">
-                <div class="container py-sm-4 py-3">
-                    <h4 class="abt-text text-capitalize text-sm-center mb-0">Join the Mission to help Victoria</h4>
-                    <p class="text-white text-sm-center ">We Move The World To Protect VVP</p>
-                    <div class="d-sm-flex justify-content-center">
-                        <a href="DragDrop.html" role="button" class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
-                            Play The Game
-                        </a>
-                        <a href="#" role="button" data-toggle="modal" data-target="#grassland"
-                           class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
-                            Read more about Grasslands
-                        </a>
+                <div class="habitatContainer">
+                    <a href='@Url.Action("GrassyWoodland", "Home")'>
+                        <img src="~/img/info_woodland.jpg" alt="Avatar" class="habitatImage">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="habitatContainer">
+                    <a href='@Url.Action("HeavierSoilsPlains", "Home")'>
+                        <img src="~/img/info_soilsPlains.jpg" alt="Avatar" class="habitatImage">
+                        <div class="habitatOverlay habitatOverlayFade">
+                            <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif;"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="habitatContainer">
+                    <a href='@Url.Action("RockyGrassland", "Home")'>
+                        <img src="~/img/info_rocky.jpg" alt="Avatar" class="habitatImage">
+                        <div class="habitatOverlay habitatOverlayRight">
+                            <div style="color: white; font-size: 2.5vw; position: absolute; top: 50%; left: 82.5%; transform: translate(-100%, -50%); font-family: sans-serif;"><br></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>*@
+    <!--habitat_container_end-->
+    <!-- About Us start-->
+    <section class="wthree-slide-btm pt-lg-5" id="about">
+        <div class="container pt-sm-5 pt-4">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <div class="slide-banner">
                     </div>
                 </div>
-            </div>-->
-                <!--//slide -->
+                <div class="col-lg-7">
+                    <div class="bg-abt light-bg">
+                        <div class="container">
+                            <div class="title-desc  pb-sm-3">
+                                <h4 class="main-title-w3pvt">About Melgrass</h4>
+                                <p>Helping the Victoria Voclanic Plains to regrow.</p>
+                            </div>
+                            <div class="row flex-column mt-lg-4 mt-3">
+                                <div class="abt-grid">
+                                    <div class="row">
+                                        <!--<div class="col-sm-3">
+                                            <!--<div class="abt-icon" data-blast="bgColor">-->
+                                                <!--@*<span class="fa fa-ravelry"></span>*@-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col-sm-9 pl-sm-0">
+                                            <div class="abt-txt ml-sm-0">
+                                                <p style="font-size:medium; margin-left:6%">
+                                                    Here you can learn more about the Victorian Volcanic Plain (VVP) and
+                                                    the importance of biodiversity to the grassland ecosystem while
+                                                    playing games. We hope to raise children's awareness of protecting
+                                                    the grassland ecosystem from the perspective of protecting
+                                                    biodiversity.
+                                                </p>
+                                                <br><br><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us end-->
+    <!-- //Grasslands -->
+    <!-- slide -->
+    @*<div class="abt_bottom py-lg-5 bg-theme">
+            <div class="container py-sm-4 py-3">
+                <h4 class="abt-text text-capitalize text-sm-center mb-0">Join the Mission to help Victoria</h4>
+                <p class="text-white text-sm-center ">We Move The World To Protect VVP</p>
+                <div class="d-sm-flex justify-content-center">
+                    <a href="DragDrop.html" role="button" class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                        Play The Game
+                    </a>
+                    <a href="#" role="button" data-toggle="modal" data-target="#grassland"
+                       class="btn light-bg mt-sm-4 mt-3 ml-3 w3_pvt-link-bnr">
+                        Read more about Grasslands
+                    </a>
+                </div>
+            </div>
+        </div>*@
+
+
+    <script>
+        /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+        initComparisons();
+    </script>
+    <!-- collapsible drawer -->
+    <script type="text/javascript" src="~/js/drawer.js">
+    </script>
 </body>
 
-
+</html>
 

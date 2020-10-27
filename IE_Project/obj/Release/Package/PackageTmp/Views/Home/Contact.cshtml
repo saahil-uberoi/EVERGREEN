@@ -1,11 +1,132 @@
-﻿<!doctype html>
+﻿@model IE_Project.Models.ContactModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-    <title>Contact</title>
-    @{ 
-       ViewBag.Title = "Contact";
-       Layout = "~/Views/Shared/_Layout.cshtml"; 
-     }
+
+
+    <style>
+        body {
+}
+
+        .map {
+            width: 700px;
+            height: 400px;
+           
+        }
+
+        #map {
+            width: 60%;
+            height: 400px;
+            display: inline-block;
+            background-image: url(../img/hoarySunray.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10%;
+        }
+
+.map-c {
+  float: right;
+  width: 35%;
+  height: 100%;
+  padding: 25px;
+  box-sizing: border-box
+}
+
+h1 {
+  margin: 0;
+  font-weight: normal;
+  color: rgb(60, 60, 70);
+  font-size: 28px
+}
+
+p {
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 30px
+}
+
+.det {
+  font-size: 12px;
+  margin-bottom: 15px
+}
+
+i {
+  float: left;
+  font-size: 18px !important;
+  margin: 0 8px 0 0
+}
+
+button {
+  margin: 15px 4px;
+  padding: 13px 9px;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  color: #546973;
+  border: 2px solid #78909C;
+  transition: all 0.3s;
+  border-radius: 8px;
+  outline:0
+}
+
+button:hover {
+  border-color: rgb(90, 90, 90);
+  color: rgb(90, 90, 90)
+}
+
+button:after {
+  content: 'Directions';
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  font-size: 11px;
+  margin-top: 8px
+}
+
+.fa-envelope:after {
+  content:'Email';
+  margin:8px 13px 0
+}
+
+@@media only screen and (max-width: 720px) {
+  .map {
+    height: 450px;
+    margin: calc(50vh - 225px) auto;
+    overflow: hidden
+  }
+  #map {
+    width: 100%;
+    height: 200px;
+  }
+  .map-c {
+    float: right;
+    width: 100%;
+  }
+  button {
+    float: right;
+    margin-top: -75px
+  }
+}
+
+@@media only screen and (max-width: 460px) {
+  p {
+    display: none
+  }
+  h1 {
+    margin-bottom:20px
+  }
+  button {
+    float: none;
+    margin-top: 10px
+  }
+  .det {
+    margin-bottom: 9px
+  }
+}
+    </style>
 </head>
 <body>
     <!-- bradcam_area_start -->
@@ -13,32 +134,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3>About us</h3>
+                    <h3>Contact us</h3>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- bradcam_area_end -->
+    <!--content start-->
+    <!-- Team Introduction -->
+    <br /><br />
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-8">
-                <div class="slider_text">
-                    <address>
-                        900 Dandenong Road<br />
-                        Caulfield, VIC Australia<br />
-                        <abbr title="Phone">P:</abbr>
-                        + 61 3 990 32000
-                    </address>
-
-                    <address>
-                        <strong>Support:</strong>   <a href="klai0012@student.monash.edu">klai0012@student.monash.edu</a><br />
-                        <strong>Marketing:</strong> <a href="klai0012@student.monash.edu">klai0012@student.monash.edu</a>
-                    </address>
-                </div>
-            </div>
+        <div id="map"></div>
+        <div class="map-c">
+            <h1>Melgrass</h1>
+            <p>
+                Learn more about the Victorian Volcanic Plain (VVP) and
+                the importance of biodiversity to the grassland ecosystem while
+                playing games.
+            </p>
+            <div class="det"><i class="fa fa-map-marker"></i> 900 Dandenong Rd, Caulfield East VIC 3145</div>
+            @*<div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>*@
+            <div class="det"><i class="fa fa-globe"></i> https://evergreen.azurewebsites.net/</div>
+            <div class="det"><i class="fa fa-envelope"></i> </div>
+            @*<center>
+            <button class="fa fa-car"></button>
+            <button class="fa fa-envelope"></button>
+        </center>*@
         </div>
     </div>
+    <!--contant end-->
+
+
     
+
+
 </body>
 </html>
 

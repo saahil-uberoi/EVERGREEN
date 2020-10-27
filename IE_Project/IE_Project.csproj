@@ -246,6 +246,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\dargdrop.cs" />
     <Compile Include="Models\Dgame.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Species.cs" />
@@ -297,6 +298,7 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\button.css" />
+    <Content Include="css\drawer.css" />
     <Content Include="css\hotspot3.css" />
     <Content Include="css\imgDiff.css" />
     <Content Include="css\imgSelect.css" />
@@ -409,6 +411,7 @@
     <Content Include="img\vicBioregions.png" />
     <Content Include="img\vvp1984.jpeg" />
     <Content Include="img\vvp2016.jpeg" />
+    <Content Include="img\africanDaisy.jpg" />
     <Content Include="img\wetland\African Feather Grass.png" />
     <Content Include="img\wetland\Australian-Painted-snipe.png" />
     <Content Include="img\wetland\Cane Toad.png" />
@@ -433,6 +436,7 @@
     <Content Include="js\button.js" />
     <Content Include="js\contact.js" />
     <Content Include="js\counter.js" />
+    <Content Include="js\drawer.js" />
     <Content Include="js\imgDiff.js" />
     <Content Include="js\logic.js" />
     <Content Include="js\memorycard.js" />
@@ -459,7 +463,6 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\popper.min.js" />
-    <Content Include="js\myjs.js" />
     <Content Include="js\pw.js" />
     <Content Include="js\responsiveslides.min.js" />
     <Content Include="js\scrolling-nav.js" />
@@ -646,6 +649,7 @@
     <Content Include="Views\Iteration2\RockyGrassland.cshtml" />
     <Content Include="Views\Shared\_IterationTwo.cshtml" />
     <Content Include="Views\Home\MatchingView.cshtml" />
+    <Content Include="Views\Home\SuccessMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
