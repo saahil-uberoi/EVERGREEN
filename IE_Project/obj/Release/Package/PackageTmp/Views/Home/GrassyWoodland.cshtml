@@ -2,10 +2,23 @@
 <html>
 <head>
     <link rel='stylesheet' href='~/css/hotspot.css'>
-    
+    <style>
+        .box_header {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .box_area1 {
+            float: right;
+        }
+
+        .box_area2 {
+            float: left;
+        }
+    </style>
 </head>
 
-<body style="font-family:fantasy !important;">
+<body>
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg overlay">
         <div class="container">
@@ -22,12 +35,19 @@
             <h3>Let's see what species you can find in this grassland first</h3>
             <p>Click the hotsposts and discover species</p>
         </div>
-        <div style="font-family: Chilanka;">
-            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:4vw; " href='@Url.Action("Select", "Home")'
+
+        <div class="box_header" style="font-family: Chilanka;">
+            <a class="btn bg-theme w3_pvt-link-bnr box_area2" id="gamebtn2"  href='@Url.Action("Select", "Home")'
                role="button">Back</a>
-            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:58vw; " href='@Url.Action("DragDropWoodland", "Home")'
+            <a class="btn bg-theme w3_pvt-link-bnr box_area1" id="gamebtn2"  href='@Url.Action("DragDropWoodland", "Home")'
                role="button">Play</a>
         </div>
+        @*<section style="font-family: Chilanka;">
+            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; left:1%; " href='@Url.Action("Select", "Home")'
+               role="button">Back</a>
+            <a class="btn bg-theme w3_pvt-link-bnr" id="gamebtn2" style="position:relative; margin-left:85% " href='@Url.Action("DragDropWoodland", "Home")'
+               role="button">Play</a>
+        </section>*@
     </div>
     <div class="container1">
         <div class="container1">

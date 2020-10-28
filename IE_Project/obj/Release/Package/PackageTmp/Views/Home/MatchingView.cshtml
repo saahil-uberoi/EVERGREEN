@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/memorycard.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="~/js/button.js"></script>
+    <script src="~/js/notify.min.js"></script>
     <script>
         function goBack() {
             window.history.back()
@@ -63,15 +64,7 @@
     </style>
 
 </head>
-<body font-family: Chilanka;
-      background-color: hsla(208, 80%, 98%, 1);
-      padding: 0 10rem;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      overflow-x: hidden;">
+<body style="background-image: url(../img/videoPoster.png); background-size:100% 100%; background-repeat:no-repeat;">
     <!-- bradcam_area_end -->
     @*<div class="bradcam_area breadcam_bg overlay">
             <div class="container">
@@ -106,9 +99,13 @@
             <div id="images-grid" class="hide images-grid"></div>
 
             <div id="mode-container" class="hide">
-                <h1>Be ready</h1>
-                <h4>You have 4 seconds to memorise the cards</h4>
-                <h1>Choose the difficulty</h1>
+                <h1 style="padding-bottom:5px">How to play:</h1>
+                <h4 style="margin-bottom:0%">(&#8544;) You have 4 seconds to memorise the cards</h4>
+                <h4 style="margin-bottom:0%; margin-top:0%">(&#8545;) Click to flip & see cards</h4>
+                <h4 style="margin-bottom: 0%; margin-top: 0%">(&#8546;) Find all matching pairs in the shortest time</h4>
+                <h4 style="margin-bottom: 0%; margin-top: 0%">(&#8547;) You can still make mistakes in the Easy mode</h4>
+                <h4 style="margin-top:0%">(&#8548;) BUT you will immidiatly lose when you make a mistake in Hard mode</h4>
+                <h1>Choose the difficulty:</h1>
                 <div class="mode-btns">
                     <button id="easy-btn" class="game-button">
                         Easy
@@ -156,9 +153,12 @@
             <div id="user-scores" class="user-scores"></div>
         </div>
     </div>
-    <div >
-        <button class="game-button" style="width:6vw; height:3vw" onclick="goBack()"><span style="font-family: Chilanka; position:relative; left: -1.2vw">Back</span></button>
-    </div>
+    <section style="margin-left:-5%">
+       @* <button class="game-button" style="width:6vw; height:3vw; margin-left:0.2%" onclick="goBack()"><span style="font-family: Chilanka; position:relative; left: -1.2vw">Back</span></button>*@
+        <button class="game-button" onclick="goBack()" style="font-family: Chilanka;">
+            Back
+        </button>
+    </section>
 
     <script src="~/js/memorycard.js"></script>
 </body>

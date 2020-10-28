@@ -215,7 +215,7 @@ function goToModePage() {
         modeContainer.classList.remove("hide");
         chooseUserDiv.classList.add("hide");
     } else {
-        alert("Not a valid name");
+        alert("This is NOT a valid name!");
     }
 }
 
@@ -280,18 +280,31 @@ function areEqualCards(card1, card2) {
 }
 
 function prompt(card1, card2) {
-/*alert(card2.getAttribute("sName") + " discovered");*/
+    /*alert(card2.getAttribute("sName") + " discovered");*/
     const content = document.createElement('div');
     var name = card2.getAttribute("sName");
     var cd = card2.getAttribute("cd");
+
+    /*Swal.fire({
+        title: name + "!",
+        *//*imageUrl: '<a href="anylink.com" target="_blank" class="// I added a sprite image like spr3-wslogo">",*//*
+    })*/
+    /*$.notify(name + " " + "!", "info", { position: "center" });*/
+
+    $.notify(
+        name + " " + "!", "info", { globalPosition: 'top left'}
+    );
+}
+
+function rule() {
     Swal.fire({
         title: name + "!",
-        /*imageUrl: '<a href="anylink.com" target="_blank" class="// I added a sprite image like spr3-wslogo">",*/
-        })
+        
+    })
 }
 
 function isValidUsername(name) {
-    return name !== undefined && name.trim() !== "" && isNaN(name);
+    return name !== undefined && name.trim() !== "" && isNaN(name) && !name.includes(" ");
 }
 
 function isFlipped(card) {
