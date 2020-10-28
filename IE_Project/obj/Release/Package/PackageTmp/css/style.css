@@ -1,8 +1,8 @@
 html,body {
     font-family: "Chilanka";
     background: #fff;
-    /*max-width: 100%;
-    overflow-x: hidden;*/
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body a {

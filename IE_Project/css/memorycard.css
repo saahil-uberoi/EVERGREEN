@@ -428,4 +428,15 @@ strong {
         bottom: 0;
         transform: translateX(-62%) translateY(26%);
     }
+
+    .my-class {
+        background: #304CD8;
+        background: -webkit-linear-gradient(left, #304CD8 0%, #9F3762 100%);
+        background: -ms-linear-gradient(left, #304CD8 0%, #9F3762 100%);
+        background: linear-gradient(to right, #304CD8 0%, #9F3762 100%);
+        color: #fff;
+        font-size: 25px;
+        padding: 35px;
+        text-align: center;
+    }
 }

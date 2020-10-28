@@ -10,7 +10,6 @@
     <script src="https://kit.fontawesome.com/56942480bb.js" crossorigin="anonymous"></script>
     @*<link rel="stylesheet" type="text/css" href="~/css/memorycard.css">
         <script src="~/js/memorycard.js"></script>*@
-    <link rel="stylesheet" type="text/css" href="~/css/button.css">
     <link rel="stylesheet" type="text/css" href="~/css/memorycard.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="~/js/button.js"></script>
@@ -86,13 +85,11 @@
                            id="username"
                            name="username"
                            autocomplete="off"
-                           spellcheck="false"
-                           />
+                           spellcheck="false" />
                     <p class="placeholder" id="placeholder">Username</p>
                 </div>
                 <button id="play" class="game-button">
-                    <i class="fas fa-gamepad"
-                       ></i>
+                    <i class="fas fa-gamepad"></i>
                 </button>
             </div>
 
@@ -130,7 +127,7 @@
                 <h1>
                     You loose! 😵
                 </h1>
-                @*<h3 style="">You did <strong id="tries-span"></strong> pairs in a row </h3>*@
+                <h3 style="font-family:Chilanka; color:crimson">You did <strong id="tries-span" style="color: crimson"></strong> pairs in a row </h3>
                 <button class="play-again-btn game-button">
                     <i class="fas fa-undo-alt"></i>
                 </button>
@@ -154,7 +151,7 @@
         </div>
     </div>
     <section style="margin-left:-5%">
-       @* <button class="game-button" style="width:6vw; height:3vw; margin-left:0.2%" onclick="goBack()"><span style="font-family: Chilanka; position:relative; left: -1.2vw">Back</span></button>*@
+        @* <button class="game-button" style="width:6vw; height:3vw; margin-left:0.2%" onclick="goBack()"><span style="font-family: Chilanka; position:relative; left: -1.2vw">Back</span></button>*@
         <button class="game-button" onclick="goBack()" style="font-family: Chilanka;">
             Back
         </button>

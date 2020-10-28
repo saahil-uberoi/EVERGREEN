@@ -272,8 +272,8 @@ C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Ivan\source\repos\IE_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csprojAssemblyReference.cache
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csproj.CoreCompileInputs.cache
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csproj.CopyComplete
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.dll
 C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.pdb
+C:\Users\Ivan\source\repos\IE_Project\obj\Debug\IE_Project.csprojAssemblyReference.cache

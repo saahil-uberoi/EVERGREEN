@@ -89,7 +89,33 @@ imgDivArray.forEach(targetCard => {
                 tries++;
                 if (areEqualCards(targetCard, lastCard)) {
                     discoveredCards.push(targetCard);
-                    prompt(targetCard, lastCard);
+                    var name = targetCard.getAttribute("sName");
+                    var msg = name + " ! ";
+                    $.notify.addStyle('happyblue', {
+                        html: "<div><span data-notify-text/></div>",
+                        classes: {
+                            base: {
+                                "position": "relative",
+                                "left":"-40%",
+                                "font-family": "Chilanka",
+                                "font-size": "1vw",
+                                "padding": "1vw",
+                                "border-radius": "60%",
+                                "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+                            },
+                            superblue: {
+                                "color": "#fff",
+                                "background-color": "#4B7EE0"
+                            },
+                            pos: { globalPosition: 'top center'}
+                        }
+                    });
+
+                    $.notify(msg, {
+                        style: 'happyblue',
+                        className: 'superblue',
+                        globalPosition: 'top center',
+                    });
                     
 
                     if (isGameEnd(discoveredCards, imgDivArray)) {
@@ -279,29 +305,47 @@ function areEqualCards(card1, card2) {
     return card1.getAttribute("data-pair") === card2.getAttribute("data-pair");
 }
 
-function prompt(card1, card2) {
-    /*alert(card2.getAttribute("sName") + " discovered");*/
+/*function prompt(card1, card2) {
+    *//*alert(card2.getAttribute("sName") + " discovered");*//*
     const content = document.createElement('div');
     var name = card2.getAttribute("sName");
     var cd = card2.getAttribute("cd");
+    var msg = name + " !";
 
-    /*Swal.fire({
+    *//*Swal.fire({
         title: name + "!",
         *//*imageUrl: '<a href="anylink.com" target="_blank" class="// I added a sprite image like spr3-wslogo">",*//*
-    })*/
+})*/
     /*$.notify(name + " " + "!", "info", { position: "center" });*/
 
-    $.notify(
-        name + " " + "!", "info", { globalPosition: 'top left'}
-    );
+    /*$.notify(
+        msg, "info", { align: "center", verticalAlign: "top" }
+    );*//*
+    $.notify("Hello World!", { class: "my-class", delay: 0, align: "center", verticalAlign: "middle", animationType: "scale" });
 }
+*/
 
-function rule() {
-    Swal.fire({
-        title: name + "!",
-        
-    })
-}
+/*function prompt(card1, card2) {
+    $.notify.addStyle('happyblue', {
+        html: "<span><span data-notify-text/></span>",
+        classes: {
+            base: {
+                "white-space": "nowrap",
+                "background-color": "lightblue",
+                "padding": "5px"
+            },
+            superblue: {
+                "color": "white",
+                "background-color": "blue"
+            }
+        }
+    });
+
+    $.notify("Message", {
+        style: 'happyblue',
+        className: 'superblue'
+    });
+}*/
 
 function isValidUsername(name) {
     return name !== undefined && name.trim() !== "" && isNaN(name) && !name.includes(" ");

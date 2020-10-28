@@ -19,7 +19,7 @@
         }
 
         #map {
-            width: 60%;
+            width: 50%;
             height: 400px;
             display: inline-block;
             background-image: url(../img/hoarySunray.jpg);
@@ -30,7 +30,7 @@
 
 .map-c {
   float: right;
-  width: 35%;
+  width: 45%;
   height: 100%;
   padding: 25px;
   box-sizing: border-box
@@ -86,10 +86,10 @@ button:after {
   margin-top: 8px
 }
 
-.fa-envelope:after {
+@*.fa-envelope:after {
   content:'Email';
   margin:8px 13px 0
-}
+}*@
 
 @@media only screen and (max-width: 720px) {
   .map {
@@ -145,17 +145,19 @@ button:after {
     <br /><br />
     <div class="container">
         <div id="map"></div>
-        <div class="map-c">
-            <h1>Melgrass</h1>
-            <p>
-                Learn more about the Victorian Volcanic Plain (VVP) and
-                the importance of biodiversity to the grassland ecosystem while
-                playing games.
+        <div class="map-c" style="margin-right:0px">
+            <h2>Our Vision</h2>
+            <p style="font-size:80%">
+                The vision lies in protecting the grasslands of Victoria that have been severely comprised due to the negligence of the people and the community and try and restore them.
             </p>
-            <div class="det"><i class="fa fa-map-marker"></i> 900 Dandenong Rd, Caulfield East VIC 3145</div>
+            <div class="det" style="font-size:60%"><i class="fa fa-map-marker"></i> 900 Dandenong Rd, Caulfield East VIC 3145</div>
             @*<div class="det"><i class="fa fa-phone"></i> 001 2045 509</div>*@
-            <div class="det"><i class="fa fa-globe"></i> https://evergreen.azurewebsites.net/</div>
-            <div class="det"><i class="fa fa-envelope"></i> </div>
+            <div class="det" style="font-size:60%"><i class="fa fa-globe"></i> https://evergreen.azurewebsites.net/</div>
+            <div class="det" style="font-size:60%"><i class="fa fa-envelope"></i> Technical support: <a href="https://www.linkedin.com/in/kawai-lai/">https://www.linkedin.com/in/kawai-lai/</a></div>
+            <div class="det" style="font-size:60%"><i class="fa fa-envelope"></i> UI/UX: <a href="https://www.linkedin.com/in/saahiluberoi/">https://www.linkedin.com/in/saahiluberoi/</a></div>
+            <div class="det" style="font-size:60%"><i class="fa fa-envelope"></i> Data visualisation: <a href="https://www.linkedin.com/in/kun-liang-06678516b/">https://www.linkedin.com/in/kun-liang-06678516b/</a></div>
+            <div class="det" style="font-size:60%"><i class="fa fa-envelope"></i> Business analyst: <a href="https://www.linkedin.com/in/yu-wang-16b236165">https://www.linkedin.com/in/yu-wang-16b236165</a></div>
+            
             @*<center>
             <button class="fa fa-car"></button>
             <button class="fa fa-envelope"></button>
